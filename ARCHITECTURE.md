@@ -192,3 +192,6 @@ Guest cards now display 5-line clamped original reviews with a conditional `…m
 
 ## Review action redesign — 2026-11-15
 Every review card now has a persistent `Bekijk review` button positioned between a maximum-five-line excerpt and the author/date/platform footer; short cards also support opening the full review. Accessible dialog logic remains unchanged except selector updated. The prior overlay-at-end-of-fifth-line interaction and overflow checks were removed.
+
+## Layered introductory image collage — 2026-11-15
+Static semantic 4-photo collage positioned between introductory lodge copy and the KPI band. Photo elements are ordinary figures with descriptive alt text, visual overlap controlled in CSS absolute layout and z-index; mobile repositioning uses breakpoint overrides. Uses existing remotely hosted image assets and no JS dependencies.
