@@ -207,3 +207,6 @@ In `assets/css/home.css`: `--footer-background:#302C2A`, `--footer-heading:var(-
 
 ## Footer information hierarchy refinement — 2026-11-15
 `index.html` footer `.footer-columns` now contains five groups: `.footer-contact` followed by Gipfel Lodge, De lodge, Eben im Pongau and Service. CSS in `assets/css/home.css`: desktop grid `1.65fr repeat(4,minmax(0,1fr))`, under 900px `.footer-contact` spans full row, remaining groups use 2 columns (also maintained under 350px). Informational destination entries are `<span>` elements pending real pages. CSS URL `?v=20261115-footer-groups`.
+
+## Footer mobile masthead — 2026-11-15
+At `max-width:590px`, `.footer-top` is a two-column/2-row CSS grid (`minmax(64px,.42fr) minmax(0,1.58fr)`), footer emblem occupying the left column across both rows and `.footer-top-location`/`.footer-top-email` right-aligned on the right. `.footer-brand span` is hidden only on mobile. At `max-width:370px`, column and font sizes scale down. The main contact block remains full-width and four section groups remain 2×2. Stylesheet cache-bust `?v=20261115-footer-mobile-layout`.
