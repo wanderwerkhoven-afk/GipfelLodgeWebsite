@@ -104,3 +104,11 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Backdrop, staggered links, animated icon, close button, Escape, focus loop and inert closed state.
 - [ ] Verify visually in Safari and GitHub Pages after deployment.
 - Code: `index.html` (`#menuToggle`, `#navigation`, `#menuClose`, `#menuBackdrop`), `assets/css/home.css` (navigation selectors), `assets/js/home.js` (`setMenuOpen`).
+
+### Topbar restoration — 2026-11-15 [IMPLEMENTED, VISUAL QA PENDING]
+- [x] Reproduced original Gipfel-Lodge topbar structure: left gold nine-dot toggle, absolutely centered logo, right globe/flag dropdown and gold clipped BOOK button.
+- [x] Preserved animated popup menu, now anchored to left nine-dot trigger.
+- [x] Mobile logo stack and responsive topbar rules based on legacy `css/site_css/components/global.css`.
+- [ ] Browser/device comparison against original; exact pixel equivalence not yet verified.
+- [ ] Translate content before enabling language switches; only Dutch is currently active.
+- [ ] Connect BOOK to verified booking provider (currently #contact).
