@@ -255,3 +255,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Reflect Airbnb as explicitly stated, and label Trade Tracker, Holidu and Fewobird/Bestfewo as listed channels (not automatically the primary review-hosting platform).
 - [x] Show long reviews without truncation, preserve carousel and source URL.
 - [ ] QA transcription against original guest data, including Sara's original phrasing and emoji on the Philipp/Damian cards; visual QA on iPhone and desktop.
+
+### Five-line review preview and full-text popup — 2026-11-15
+- [x] Clamp each guest review to a maximum of five visible lines on cards.
+- [x] Display `…meer tonen` aligned with the end of the fifth line only when text overflows, and open an accessible native modal with the complete original guest review, author, date, stars and sourced platform.
+- [x] Backdrop closes dialog, Escape works, and focus returns to the clicked control; short reviews have no expand control.
+- [ ] Visually test inline ellipsis alignment, overflow detection and native dialog behavior on iOS Safari and desktop.
