@@ -584,3 +584,16 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 @media(max-width:590px){
   .footer-mountain-edge{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:750 / 90;height:auto}
 }
+
+/* The source SVG embeds a raster silhouette with tiny transparent edge pixels.
+   Overscan the mask horizontally to ensure the foothills reach both viewport edges. */
+.footer-mountain-edge{
+  width:100%;margin-left:0;max-width:100%;
+}
+.footer-mountain-edge::after{
+  inset:0 -8px 0 -8px;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%;
+}
+@media(max-width:590px){
+  .footer-mountain-edge{width:100%;margin-left:0;max-width:100%}
+}
