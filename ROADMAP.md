@@ -186,3 +186,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] White mountain emblem and wordmark over hero; charcoal-colored emblem and text on the white scrolled header.
 - [x] CSS filter transition with reduced-motion support; asset version refreshed.
 - [ ] Verify appearance against source PNG transparency on mobile Safari.
+
+### Hero shade update — 2026-11-15
+- [x] Replace dark navy hero gradients with lighter Stone Charcoal overlay: 50% left, 25% middle, 10% right and 20% bottom.
+- [x] Expose overlay color and opacity as editable CSS variables.
+- [ ] Verify image and white text contrast on desktop and mobile (summer and winter slides).
