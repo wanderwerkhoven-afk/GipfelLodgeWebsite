@@ -409,7 +409,7 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 .review-card-footer{margin-top:auto}
 @media(max-width:480px){.review-card>.review-original{font-size:21px;line-height:1.42}}
 
-/* Five-line review previews with an inline-looking end-of-line expansion control. */
+/* Five-line preview and persistent review action before author details. */
 :root{--review-preview-lines:5;--review-dialog-background:var(--color-limestone)}
 .review-card .review-preview{position:relative;margin:24px 0 34px;flex:none;min-width:0}
 .review-card .review-preview>.review-original{
@@ -418,15 +418,17 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   font:400 clamp(19px,1.8vw,25px)/1.43 var(--serif);margin:0;max-width:100%;
 }
 .review-card .review-preview>.review-no-text{font-style:italic;color:var(--reviews-muted)}
-.review-show-more{
-  display:none;position:absolute;right:0;bottom:0;z-index:1;
-  padding:0 0 0 2.8em;border:0;border-radius:0;
-  background:linear-gradient(90deg,transparent 0%,var(--reviews-card-background) 38%,var(--reviews-card-background) 100%);
-  color:var(--reviews-text);font:600 clamp(16px,1.65vw,21px)/1.43 var(--serif);
-  cursor:pointer;text-decoration:underline;text-underline-offset:3px;
+.review-card .review-preview{margin-bottom:16px;flex:1}
+.review-card-action{display:flex;justify-content:flex-end;align-items:center;margin:0 0 18px;min-height:40px}
+.review-open-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:40px;padding:9px 16px;border:1px solid var(--reviews-accent);
+  background:transparent;color:var(--reviews-text);font:600 12px/1.25 var(--sans);
+  letter-spacing:.045em;text-transform:uppercase;cursor:pointer;
+  transition:background-color .2s ease,color .2s ease;
 }
-.review-preview.has-overflow .review-show-more{display:inline-block}
-.review-show-more:focus-visible{outline:2px solid var(--reviews-text);outline-offset:3px}
+.review-open-btn:hover{background:var(--reviews-accent);color:#fff}
+.review-open-btn:focus-visible{outline:2px solid var(--reviews-text);outline-offset:3px}
 .review-dialog{position:fixed;inset:0;margin:auto;width:min(90vw,740px);max-width:740px;max-height:min(85dvh,850px);padding:0;border:0;background:var(--review-dialog-background);color:var(--reviews-text);box-shadow:0 30px 90px rgba(0,0,0,.22);overflow-y:auto;overscroll-behavior:contain}
 .review-dialog::backdrop{background:rgba(25,25,23,.34);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .review-dialog[open]{animation:review-dialog-in 260ms ease-out both}
@@ -440,3 +442,5 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 .review-dialog-source{font:600 12px var(--sans);color:var(--reviews-text);text-decoration:underline;text-underline-offset:4px}
 @media(max-width:480px){.review-card .review-preview>.review-original{font-size:21px;line-height:1.42}.review-dialog{width:calc(100% - 24px);max-height:85dvh}.review-dialog-inner{padding:36px 23px 28px}}
 @media(prefers-reduced-motion:reduce){.review-dialog[open]{animation:none}}
+
+@media(prefers-reduced-motion:reduce){.review-open-btn{transition:none}}
