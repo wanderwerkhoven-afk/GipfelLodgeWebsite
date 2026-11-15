@@ -183,3 +183,6 @@ Reviews are static HTML summaries of real guest feedback from the exact Villa fo
 
 ## Confirmed review platform metadata — 2026-11-15
 Source labels are asserted only for explicitly attributed channels. Luisa and Christian => Airbnb per Villa for You. John => origin unconfirmed (Trade Tracker Nederland referral is not a verified review-hosting platform). Peter/Timo => unknown. All five reviews link collectively to Villa for You as the publication source. No dynamic attribution pipeline is implemented.
+
+## Full review corpus from provided screenshots — 2026-11-15
+Static carousel now holds all 13 original review texts (in original language, not paraphrases), transcribed from the screenshots directly supplied by the owner. Each uses article/block quote metadata, author, month/year and channel as explicitly shown by Villa for You, with affiliate/partner channel distinctions. No API or dynamic sync. CSS provides unrestricted text height so negative as well as positive content is shown without clipping; the carousel remains horizontally swipeable. Timo text is a publisher placeholder, not a guest quote.
