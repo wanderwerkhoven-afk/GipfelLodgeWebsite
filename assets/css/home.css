@@ -361,7 +361,7 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   .lightbox-figure img{will-change:auto}
 }
 
-/* Source-attributed reviews, summarised to avoid unlicensed reproduction. */
+/* Full original guest reviews transcribed from owner-provided screenshots. */
 :root{
   --reviews-background:var(--color-limestone);
   --reviews-card-background:#E8E0D5;
@@ -400,3 +400,11 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 @media(max-width:850px){.reviews-header{grid-template-columns:1fr}.reviews-score{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}.reviews-score strong{grid-row:1/4}.reviews-score small{grid-column:2}.review-card{flex-basis:clamp(270px,70vw,390px)}.reviews-bottom{align-items:flex-start;flex-direction:column}}
 @media(max-width:480px){.reviews-section{padding:68px 0}.reviews-heading h2{font-size:clamp(43px,11vw,60px)}.reviews-bottom-actions{width:100%;justify-content:space-between;gap:12px}.reviews-source-link{white-space:normal}.review-card{min-height:300px;padding:25px}}
 @media(prefers-reduced-motion:reduce){.reviews-cards{scroll-behavior:auto}}
+
+/* Read the entire original review in each card, including long guest comments. */
+.reviews-cards{align-items:stretch}
+.review-card{height:auto;min-height:320px}
+.review-card>.review-original{font:400 clamp(19px,1.8vw,25px)/1.43 var(--serif);margin:24px 0 34px;flex:1;white-space:pre-wrap;overflow-wrap:anywhere}
+.review-card>.review-no-text{font-style:italic;color:var(--reviews-muted)}
+.review-card-footer{margin-top:auto}
+@media(max-width:480px){.review-card>.review-original{font-size:21px;line-height:1.42}}
