@@ -204,3 +204,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Editorial footer tokens — 2026-11-15
 In `assets/css/home.css`: `--footer-background:#302C2A`, `--footer-heading:var(--color-limestone)`, `--footer-body:#D5CFCA`, `--footer-accent:var(--color-natural-oak)`, `--footer-rule:rgba(242,239,232,.20)`. Footer selectors `.footer-shell`, `.footer-top`, `.footer-brand`, `.footer-columns`, `.footer-column`, `.footer-bottom` govern the new multi-column layout. Values apply to current HTML footer and supersede old single-line `.footer`. Existing `#year` ID preserved for dynamic year.
+
+## Footer information hierarchy refinement — 2026-11-15
+`index.html` footer `.footer-columns` now contains five groups: `.footer-contact` followed by Gipfel Lodge, De lodge, Eben im Pongau and Service. CSS in `assets/css/home.css`: desktop grid `1.65fr repeat(4,minmax(0,1fr))`, under 900px `.footer-contact` spans full row, remaining groups use 2 columns (also maintained under 350px). Informational destination entries are `<span>` elements pending real pages. CSS URL `?v=20261115-footer-groups`.
