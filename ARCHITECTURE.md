@@ -210,3 +210,6 @@ Responsive full-width inline SVG mountain silhouette sits directly before the sh
 
 ## Original mountain footer divider asset — 2026-11-15
 The footer transition now uses the original SVG asset imported from the historical `Gipfel-Lodge` repo (`assets/icons/devider-mountain.svg`), not a hand-constructed path. A local copy lives in the editable website repository to avoid cross-repository serving. Rendered by the existing decorative wrapper, with intrinsic 750:90 ratio and no JS.
+
+## Full-width colour-matched mountain edge — 2026-11-15
+The original source SVG remains unchanged and is applied as an alpha mask to an absolutely positioned pseudo-element filled with the footer CSS colour token. This prevents the original black pigment appearing above the dark-taupe footer. The containing decorative block extends to viewport width and uses the preceding closing section's ivory background. Includes WebKit mask property for Safari; mobile Safari visual verification remains outstanding.
