@@ -148,3 +148,6 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### KPI responsive correction — 2026-11-15
 - [x] Desktop KPI layout 3 columns × 2 rows; <=800px layout 2 columns × 3 rows, including small phones.
 - [ ] Verify actual responsive appearance on devices.
+
+### KPI content revision — 2026-11-15
+- [x] Updated woonruimte to 135 m², occupancy to 2–10 personen, and private sauna display to Sauna / privé. Grid unchanged (3×2 desktop, 2×3 mobile).
