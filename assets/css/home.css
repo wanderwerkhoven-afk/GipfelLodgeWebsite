@@ -450,3 +450,37 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   .review-card-action{min-height:32px;margin-bottom:15px}
   .review-open-btn{min-height:32px;padding:7px 11px;font-size:10px;letter-spacing:.035em}
 }
+
+/* Editorial layered-photo collage between introductory copy and the KPI band. */
+:root{
+  --collage-overlap:clamp(20px,4.5vw,70px);
+  --collage-shadow:0 18px 48px rgba(42,38,33,.15);
+  --collage-frame:5px solid var(--color-section-ivory);
+}
+.lodge-collage{padding-bottom:clamp(80px,9vw,140px);background:var(--color-section-ivory)}
+.lodge-collage-stage{position:relative;width:100%;height:clamp(420px,52vw,685px);isolation:isolate}
+.lodge-collage-photo{position:absolute;margin:0;overflow:hidden;box-shadow:var(--collage-shadow);border:var(--collage-frame);background:var(--color-travertine)}
+.lodge-collage-photo img{width:100%;height:100%;object-fit:cover;transition:transform 650ms cubic-bezier(.2,.7,.2,1)}
+.lodge-collage-photo:hover img{transform:scale(1.055)}
+.lodge-collage-photo--main{width:54%;height:78%;left:23%;top:10%;z-index:3}
+.lodge-collage-photo--left{width:31%;height:55%;left:0;top:0;z-index:2;transform:rotate(-2.5deg)}
+.lodge-collage-photo--right{width:31%;height:58%;right:0;top:1%;z-index:2;transform:rotate(2deg)}
+.lodge-collage-photo--detail{width:32%;height:43%;right:5%;bottom:0;z-index:4;transform:rotate(-1.8deg)}
+@media(max-width:800px){
+ .lodge-collage{padding-bottom:75px}
+ .lodge-collage-stage{height:clamp(365px,70vw,540px)}
+ .lodge-collage-photo--main{width:64%;left:18%;height:70%;top:13%}
+ .lodge-collage-photo--left{width:40%;height:45%;top:1%}
+ .lodge-collage-photo--right{width:36%;height:48%;top:0}
+ .lodge-collage-photo--detail{width:40%;height:37%;right:1%;bottom:0}
+}
+@media(max-width:590px){
+ .lodge-collage{padding-bottom:57px}
+ .lodge-collage-stage{height:clamp(310px,91vw,460px)}
+ .lodge-collage-photo{border-width:3px}
+ .lodge-collage-photo--main{left:13%;top:17%;width:74%;height:67%}
+ .lodge-collage-photo--left{left:0;top:2%;width:47%;height:42%;transform:rotate(-3deg)}
+ .lodge-collage-photo--right{right:0;top:0;width:46%;height:40%;transform:rotate(3deg)}
+ .lodge-collage-photo--detail{right:0;bottom:0;width:46%;height:34%;transform:rotate(-2deg)}
+}
+@media(prefers-reduced-motion:reduce){.lodge-collage-photo img{transition:none}}
