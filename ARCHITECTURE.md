@@ -168,3 +168,6 @@ Footer navigation hierarchy follows the reference: contact/location plus four ca
 
 ## Footer mobile layout refinement — 2026-11-15
 Woodridge reference mobile masthead replicated in structure: solo Gipfel Lodge emblem left, location and contact email stacked at right, followed by location/contact block then 2×2 grouped navigation. Desktop layout unchanged. Changes are CSS-only plus stylesheet URL version increment; no new contact data invented.
+
+## Gallery modal architecture — 2026-11-15
+Image grid remains in `index.html` and is now interactive through semantic button tiles. A single native HTML `<dialog>` serves all four gallery photos; the JS controller fills image `src`/`alt` and visible figcaption from each tile, invokes `showModal()`, supports close/backdrop/Escape and restores focus. CSS ensures object-fit contain in a fullscreen charcoal overlay. No external lightbox dependencies.
