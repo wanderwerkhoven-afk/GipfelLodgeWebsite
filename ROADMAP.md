@@ -151,3 +151,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 
 ### KPI content revision — 2026-11-15
 - [x] Updated woonruimte to 135 m², occupancy to 2–10 personen, and private sauna display to Sauna / privé. Grid unchanged (3×2 desktop, 2×3 mobile).
+
+### Alpine Luxury theme tokens — 2026-11-15
+- [x] Added five central CSS color variables for charcoal, limestone, natural oak, travertine, and graphite.
+- [x] Wired existing semantic aliases and major section colors to the new palette.
+- [ ] Visual contrast and device QA; remaining decorative fixed color values can be consolidated in a later cleanup.
