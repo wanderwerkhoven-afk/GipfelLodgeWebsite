@@ -246,3 +246,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Collage responsive help text — 2026-11-15
 `index.html` `#collageInstructions` now has `.collage-hint-desktop` and `.collage-hint-touch` inline spans. CSS hides touch text by default and swaps visibility inside `@media(pointer:coarse), (max-width:800px)`. Stylesheet version `20261115-collage-hints`.
+
+## Mountain silhouette footer edge — 2026-11-15
+`.footer-mountain-edge` (decorative `aria-hidden` inline SVG) is inserted between `</main>` and `<footer>` in `index.html`. The dark skyline inherits `--footer-background`; CSS `height:clamp(64px,10.5vw,150px)` and mobile `clamp(70px,19vw,110px)`, background `var(--color-limestone)`. Stylesheet cache key `20261115-footer-mountains`. This is a newly constructed vector contour; not a previously verified image asset.
