@@ -219,11 +219,11 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 .footer-brand em{font-style:normal}
 .footer-top-location,.footer-top-email{font:400 clamp(17px,2.25vw,29px)/1.35 var(--serif);color:var(--footer-heading);text-decoration:none;white-space:normal;overflow-wrap:anywhere}
 .footer-top-email:hover{color:var(--footer-accent)}
-.footer-columns{display:grid;grid-template-columns:1.55fr 1fr 1fr 1fr;gap:clamp(22px,3.4vw,64px);padding:clamp(58px,8vw,108px) 0 clamp(40px,5vw,76px)}
+.footer-columns{display:grid;grid-template-columns:1.65fr repeat(4,minmax(0,1fr));gap:clamp(16px,2.7vw,46px);padding:clamp(58px,8vw,108px) 0 clamp(40px,5vw,76px)}
 .footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
 .footer-column h3{margin:0 0 16px;font:700 12px/1.5 var(--sans);letter-spacing:.105em;text-transform:uppercase;color:var(--footer-heading)}
 .footer-column p{margin:0 0 12px;color:var(--footer-body)}
-.footer-column a{color:var(--footer-body);text-decoration:none;text-underline-offset:4px;transition:color .2s ease}
+.footer-column a,.footer-column>span{color:var(--footer-body);text-decoration:none;text-underline-offset:4px;transition:color .2s ease}
 .footer-column a:hover,.footer-column a:focus-visible{color:var(--footer-heading);text-decoration:underline}
 .footer-bottom{display:flex;justify-content:space-between;gap:16px;padding-top:20px;border-top:1px solid var(--footer-rule);font-size:12px;color:var(--footer-body)}
 @media(max-width:900px){
@@ -245,3 +245,15 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 }
 @media(max-width:350px){.footer-columns{grid-template-columns:1fr;gap:26px}}
 @media(prefers-reduced-motion:reduce){.footer-column a{transition:none}}
+
+/* Reference-equivalent footer information hierarchy: contact first, then 4 sections. */
+@media(max-width:900px){
+  .footer-contact{grid-column:1/-1}
+}
+@media(max-width:590px){
+  .footer-contact{grid-column:1/-1}
+  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 18px}
+}
+@media(max-width:350px){
+  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
