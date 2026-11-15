@@ -208,3 +208,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Mobile footer masthead is now compact: standalone white mountain emblem left, location and email right, aligned as 2-column layout.
 - [x] Hide large footer wordmark only on phones; retain desktop branding and 2×2 information categories below the full-width contact block.
 - [ ] Verify appearance and line breaks on 320–430px iOS Safari.
+
+### Fullscreen gallery viewer — 2026-11-15
+- [x] Open each 'Ontdek de lodge' gallery photo in a full-screen native modal with the original image title beneath.
+- [x] Accessible gallery triggers, close button, Escape key and backdrop click; focus returns to the triggering tile after closing.
+- [x] Keep original gallery layout and aspect ratio via `object-fit:contain` in viewer; CSS and JS cache-busted.
+- [ ] Verify mobile iOS Safari fullscreen image sizing and dialog behavior.
