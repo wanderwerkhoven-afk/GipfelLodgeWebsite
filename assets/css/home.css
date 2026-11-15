@@ -78,3 +78,30 @@ section.content{padding:110px 0}.intro{display:grid;grid-template-columns:1.15fr
  .topbar .nav{left:0;right:auto;top:calc(100% + 20px)}
 }
 @media(max-width:380px){.logo-text-part.left,.logo-text-part.right{font-size:.8rem}.topbar-logo img{height:32px}.topbar-logo{column-gap:8px}.topbar-actions{gap:7px}.topbar .topbar-book{padding:7px 9px}}
+
+/* Header revision: language left, centered brand, BOOK + classic hamburger right. */
+.topbar-language{display:flex;align-items:center;justify-content:flex-start;flex:0 0 62px;min-width:0}
+.topbar .topbar-actions{margin-left:auto;gap:24px}
+.topbar .menu-anchor{flex:0 0 auto;margin:0;z-index:3}
+.topbar-hamburger{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:40px;height:40px;padding:8px;border:0;background:transparent;color:var(--gold);cursor:pointer;transition:opacity .25s,transform .25s}
+.topbar-hamburger:hover{opacity:.8;transform:scale(1.05)}
+.hamburger-lines{display:flex;flex-direction:column;justify-content:space-between;width:25px;height:18px}
+.hamburger-lines span{display:block;width:100%;height:2px;border-radius:2px;background:currentColor;transform-origin:center;transition:transform .3s,opacity .2s}
+.topbar-hamburger[aria-expanded="true"] .hamburger-lines span:first-child{transform:translateY(8px) rotate(45deg)}
+.topbar-hamburger[aria-expanded="true"] .hamburger-lines span:nth-child(2){opacity:0}
+.topbar-hamburger[aria-expanded="true"] .hamburger-lines span:last-child{transform:translateY(-8px) rotate(-45deg)}
+.topbar .nav{left:auto;right:0;transform-origin:top right}
+.topbar-language .lang-menu{left:0;right:auto}
+.topbar .topbar-hamburger:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(max-width:590px){
+ .topbar-language{flex-basis:40px}
+ .topbar .topbar-actions{gap:9px}
+ .topbar .menu-anchor{flex-basis:auto}
+ .topbar-hamburger{width:32px;height:36px;padding:5px}
+ .hamburger-lines{width:23px;height:16px}
+ .topbar-hamburger[aria-expanded="true"] .hamburger-lines span:first-child{transform:translateY(7px) rotate(45deg)}
+ .topbar-hamburger[aria-expanded="true"] .hamburger-lines span:last-child{transform:translateY(-7px) rotate(-45deg)}
+ .topbar .nav{left:auto;right:0;top:calc(100% + 17px)}
+}
+@media(max-width:380px){.topbar .topbar-actions{gap:6px}.topbar-language{flex-basis:32px}.lang-toggle{gap:3px}}
+@media(prefers-reduced-motion:reduce){.hamburger-lines span,.topbar-hamburger{transition:none}}
