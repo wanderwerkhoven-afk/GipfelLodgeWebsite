@@ -189,3 +189,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Transparent header hotfix — 2026-11-15
 `assets/css/home.css` adds `body>main{padding-top:0;margin-top:0}`, `main>.hero{margin-top:0}`, and explicit `body>.topbar:not(.is-scrolled){background-color:transparent}`. `index.html` now loads versioned stylesheet and script query strings (`?v=20261115-header2`) to invalidate earlier cached assets. Adaptive variables remain `--color-topbar-solid`, `--color-topbar-solid-text`, `--topbar-transition-duration`.
+
+## Hero header white-foreground token — 2026-11-15
+`--color-topbar-hero-foreground:#FFFFFF` controls text/icon contrast in `body>.topbar:not(.is-scrolled)`. Logo lettering, language icon, hamburger strokes, and BOOK background use it. Flag is monochromatically filtered white in hero state; returns to full color when scrolled. Existing white-topbar state remains charcoal controls. Cache-busted CSS to `?v=20261115-header3`.
