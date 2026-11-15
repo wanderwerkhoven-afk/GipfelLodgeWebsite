@@ -191,3 +191,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Replace dark navy hero gradients with lighter Stone Charcoal overlay: 50% left, 25% middle, 10% right and 20% bottom.
 - [x] Expose overlay color and opacity as editable CSS variables.
 - [ ] Verify image and white text contrast on desktop and mobile (summer and winter slides).
+
+### Editorial footer inspired by Woodridge — 2026-11-15
+- [x] Replace single-line footer with logo/location/email masthead and four-column contact, site, accommodation and service navigation.
+- [x] Responsive 4 columns desktop / 2 columns mobile, single column below 350px; muted dark taupe and warm ivory text.
+- [x] Reuse site logo and verified public contact email; no phone/social handles invented.
+- [ ] Confirm full street address and phone/social profiles before adding; visual QA on mobile and desktop.
