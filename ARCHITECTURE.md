@@ -129,3 +129,6 @@ The intro section `#lodge` contains an editorial intro followed by a full-width 
 
 ## KPI sixth item — 2026-11-15
 Sixth KPI added in `index.html`: private sauna, completing the fixed 3-column × 2-row grid. Existing CSS unchanged. Prior documentation describing five entries is historical.
+
+## KPI responsive layout correction — 2026-11-15
+Current KPI presentation is 3 columns × 2 rows on desktop, 2 columns × 3 rows on screens <=800px. The sixth item remains private sauna. Earlier fixed-three-column-on-mobile notes are historical. Device QA pending.
