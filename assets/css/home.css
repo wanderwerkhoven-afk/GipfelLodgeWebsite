@@ -189,3 +189,9 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 /* Current language is shown as a two-letter code; flags are retained in the menu. */
 .active-language-code{display:inline-block;min-width:2ch;font:600 12px/1 var(--sans);letter-spacing:.08em;color:inherit;text-align:center}
 @media(max-width:590px){.active-language-code{font-size:11px}.lang-toggle{gap:7px}}
+
+/* Adaptive lodge emblem: white on the photo, charcoal on the white header. */
+:root{--logo-light-filter:brightness(0) invert(1);--logo-dark-filter:brightness(0) opacity(.78)}
+.topbar-logo img{filter:var(--logo-light-filter);transition:filter var(--topbar-transition-duration) ease}
+.topbar.is-scrolled .topbar-logo img{filter:var(--logo-dark-filter)}
+@media(prefers-reduced-motion:reduce){.topbar-logo img{transition:none}}
