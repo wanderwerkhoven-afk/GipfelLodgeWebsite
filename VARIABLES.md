@@ -252,3 +252,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Original mountain footer divider — 2026-11-15
 The source repo `wanderwerkhoven-afk/Gipfel-Lodge`, `assets/icons/devider-mountain.svg` (viewBox 0 0 750 90, embedded image) has been copied unchanged into the same path in `GipfelLodgeWebsite`. `index.html` `.footer-mountain-edge > img` now references local original SVG; `assets/css/home.css` sets full-width aspect ratio 750/90. Cache key `20261115-original-mountain`. This supersedes the temporary authored inline mountain SVG from the prior commit.
+
+## Mountain divider colour correction — 2026-11-15
+`assets/css/home.css` `.footer-mountain-edge::after` uses CSS `mask-image` / `-webkit-mask-image` on the local `../../assets/icons/devider-mountain.svg`, with solid `background:var(--footer-background)` instead of rendering the original SVG's black pixels. `.footer-mountain-edge` uses `width:100vw` and `margin-left:calc(50% - 50vw)` for full-bleed width; the area above the peaks uses `var(--color-section-ivory)`. The old `<img>` is hidden but retained in markup. CSS cache bust key: `20261115-mountain-color-width`.
