@@ -197,3 +197,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Responsive 4 columns desktop / 2 columns mobile, single column below 350px; muted dark taupe and warm ivory text.
 - [x] Reuse site logo and verified public contact email; no phone/social handles invented.
 - [ ] Confirm full street address and phone/social profiles before adding; visual QA on mobile and desktop.
+
+### Footer information hierarchy refinement — 2026-11-15
+- [x] Match reference footer grouping: location/contact, Gipfel Lodge, De lodge, Eben im Pongau and Service.
+- [x] Desktop five-column grid and mobile full-width contact section followed by four groups in a 2×2 grid.
+- [x] Show future destination information as text rather than fake links; use existing sections and email links for actionable entries.
+- [ ] Create dedicated content pages for environment, winter/summer activities and guest information before making those labels navigable.
