@@ -1,6 +1,16 @@
 (()=>{
 'use strict';
 const hero=document.querySelector('.hero');
+const topbar=document.querySelector('.topbar');
+// Switch header only after its lower edge crosses the bottom of the hero.
+function updateTopbar(){
+  if(!topbar||!hero)return;
+  const pastHero=hero.getBoundingClientRect().bottom<=topbar.getBoundingClientRect().bottom;
+  topbar.classList.toggle('is-scrolled',pastHero);
+}
+window.addEventListener('scroll',updateTopbar,{passive:true});
+window.addEventListener('resize',updateTopbar,{passive:true});
+updateTopbar();
 const slides=[...document.querySelectorAll('.slide')];
 const slideStatus=document.getElementById('slideStatus');
 let index=0;
