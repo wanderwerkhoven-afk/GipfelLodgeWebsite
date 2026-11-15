@@ -243,3 +243,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Collage pickup motion — 2026-11-15
 `assets/css/home.css` `--collage-pickup-scale:1.055`, `--collage-pickup-duration:520ms`, per-photo `--collage-photo-tilt` and `@keyframes collage-pickup-wiggle` drive a short 520ms lift/wobble on `.lodge-collage-photo.is-dragging`; release restores original transform using a 220ms CSS transition. Reduces motion for `prefers-reduced-motion:reduce`. CSS cache version `20261115-collage-pickup`.
+
+## Collage responsive help text — 2026-11-15
+`index.html` `#collageInstructions` now has `.collage-hint-desktop` and `.collage-hint-touch` inline spans. CSS hides touch text by default and swaps visibility inside `@media(pointer:coarse), (max-width:800px)`. Stylesheet version `20261115-collage-hints`.
