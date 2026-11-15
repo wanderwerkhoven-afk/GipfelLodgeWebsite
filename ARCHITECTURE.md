@@ -111,3 +111,6 @@ Current implementation is an anchored, animated popup: `index.html` defines `#me
 
 ## Original topbar adaptation — 2026-11-15
 Header markup in `index.html` now mirrors the original repository's left nine-dot icon, center logo and right language/BOOK actions. Styling in `assets/css/home.css` is based on the legacy `css/site_css/components/global.css`, scoped to the new project and integrated with the custom floating navigation. `assets/js/home.js` owns menu and language popup state. Flag icons depend on external flag-icons CSS; logo remains hosted on `gipfellodge.at`. Language menu currently displays six choices but only Dutch is active; other languages are not interactive until translated. BOOK targets the contact section, not a real booking engine. GitHub Pages visual verification pending.
+
+## Header rearrangement — 2026-11-15
+Header now orders language on the left, centered logo, and BOOK plus classic animated hamburger on the right. HTML is in `index.html`; layout and line-to-X animation in `assets/css/home.css`; existing `setMenuOpen` and language toggle behavior in `assets/js/home.js` are reused without changes. Visual QA pending.
