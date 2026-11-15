@@ -166,3 +166,6 @@ The `.kpi-grid` now contains six `.kpi-item` elements. Sixth: `<strong>Privé</s
 
 ## KPI breakpoint correction — 2026-11-15
 Current `.kpi-grid` CSS at end of `assets/css/home.css` overrides earlier KPI rules: desktop `repeat(3,minmax(0,1fr))` with two rows; `@media(max-width:800px)` uses `repeat(2,minmax(0,1fr))` with three rows, maintained at 480px and 330px. Older notes about fixed 3-column mobile layout are superseded.
+
+## KPI content revision — 2026-11-15
+Current `index.html` KPI values supersede earlier entries: `135 m²` / `woonruimte`, `2 – 10` / `personen`, and `Sauna` / `privé`. CSS and JS unchanged.
