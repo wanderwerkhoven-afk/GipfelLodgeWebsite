@@ -130,3 +130,9 @@ Original source: legacy `Gipfel-Lodge/index.html` header and `css/site_css/compo
 - `.topbar-hamburger`, `.hamburger-lines` (HTML/CSS): classic three-line menu trigger; uses `#menuToggle` and `aria-expanded` to animate to X.
 - `.topbar .nav` (CSS): anchored to right of hamburger with `transform-origin: top right`; JavaScript `setMenuOpen` remains unchanged.
 - `.topbar-language .lang-menu` (CSS): language popup aligns left under selector.
+
+## Menu cleanup — 2026-11-15
+- Removed `#menuClose` / `closeButton` from `index.html`, `assets/js/home.js` and obsolete `.menu-close` CSS. Any earlier registry references to these identifiers are historical, **not current**.
+- `setMenuOpen(true)` now focuses `#navigation a` (first link), and keyboard Tab cycling uses only `#navigation a` elements.
+- The right-side `#menuToggle` (`.topbar-hamburger`) is the sole visible menu toggle/close control. Backdrop and Escape continue to dismiss the menu.
+- Removed obsolete `.topbar-dots` styles and older hamburger styles. Do not reintroduce duplicate close controls.
