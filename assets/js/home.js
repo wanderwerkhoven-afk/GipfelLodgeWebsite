@@ -45,6 +45,33 @@ if(hero&&slides.length>1){
 }
 
 
+// Full-screen gallery: native modal handles focus trap and Escape key.
+const galleryLightbox=document.getElementById('galleryLightbox');
+const galleryLightboxImage=document.getElementById('galleryLightboxImage');
+const galleryLightboxTitle=document.getElementById('galleryLightboxTitle');
+const galleryLightboxClose=document.getElementById('galleryLightboxClose');
+const galleryTriggers=[...document.querySelectorAll('.gallery-trigger')];
+let galleryLastTrigger=null;
+galleryTriggers.forEach(trigger=>trigger.addEventListener('click',()=>{
+  if(!galleryLightbox||!galleryLightboxImage||!galleryLightboxTitle)return;
+  const img=trigger.querySelector('img');
+  if(!img)return;
+  galleryLastTrigger=trigger;
+  galleryLightboxImage.src=img.currentSrc||img.src;
+  galleryLightboxImage.alt=img.alt;
+  galleryLightboxTitle.textContent=trigger.querySelector('span')?.textContent?.trim()||img.alt;
+  galleryLightbox.showModal();
+  galleryLightboxClose?.focus();
+}));
+galleryLightboxClose?.addEventListener('click',()=>galleryLightbox?.close());
+galleryLightbox?.addEventListener('click',event=>{
+  if(event.target===galleryLightbox)galleryLightbox.close();
+});
+galleryLightbox?.addEventListener('close',()=>{
+  galleryLightboxImage?.removeAttribute('src');
+  galleryLastTrigger?.focus({preventScroll:true});
+});
+
 const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 const backdrop=document.getElementById('menuBackdrop');
