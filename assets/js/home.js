@@ -14,7 +14,7 @@ const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 const closeButton=document.getElementById('menuClose');
 const backdrop=document.getElementById('menuBackdrop');
-let returnFocus=false;
+
 function setMenuOpen(open,{restoreFocus=false}={}){
   if(!toggle||!nav||!backdrop)return;
   nav.classList.toggle('open',open);
@@ -39,6 +39,23 @@ document.addEventListener('keydown',event=>{
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
   }
+});
+const languageToggle=document.getElementById('languageToggle');
+const languageMenu=document.getElementById('languageMenu');
+const languageDropdown=languageToggle?.closest('.lang-dropdown');
+function setLanguageOpen(open){
+  if(!languageToggle||!languageMenu||!languageDropdown)return;
+  languageDropdown.classList.toggle('is-open',open);
+  languageToggle.setAttribute('aria-expanded',String(open));
+  languageMenu.setAttribute('aria-hidden',String(!open));
+  languageMenu.inert=!open;
+}
+languageToggle?.addEventListener('click',()=>setLanguageOpen(!languageDropdown.classList.contains('is-open')));
+document.addEventListener('click',event=>{
+  if(languageDropdown&&!languageDropdown.contains(event.target))setLanguageOpen(false);
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&languageDropdown?.classList.contains('is-open')){setLanguageOpen(false);languageToggle.focus();}
 });
 document.getElementById('year').textContent=new Date().getFullYear();
 })();
