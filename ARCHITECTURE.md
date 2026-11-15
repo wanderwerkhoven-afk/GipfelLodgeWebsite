@@ -156,3 +156,6 @@ The header's language trigger now contains a globe plus `NL` abbreviation. Flag 
 
 ## Adaptive logo emblem — 2026-11-15
 Logo asset is unchanged, with CSS filters switching mountain icon from white while overlaying hero to charcoal when the fixed header is solid white. The existing `.is-scrolled` class from `home.js` drives the visual mode; no JavaScript changes required.
+
+## Hero overlay palette — 2026-11-15
+`assets/css/home.css` `.hero:after` now uses centralized RGB + opacity design tokens for a charcoal horizontal gradient and a subtle bottom gradient. Tokens are declared alongside the primary palette in `:root`. Overlay remains pointer-transparent; carousel and adaptive topbar behavior are unchanged. Mobile visual QA remains pending.
