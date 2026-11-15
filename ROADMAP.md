@@ -203,3 +203,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Desktop five-column grid and mobile full-width contact section followed by four groups in a 2×2 grid.
 - [x] Show future destination information as text rather than fake links; use existing sections and email links for actionable entries.
 - [ ] Create dedicated content pages for environment, winter/summer activities and guest information before making those labels navigable.
+
+### Footer mobile reference alignment — 2026-11-15
+- [x] Mobile footer masthead is now compact: standalone white mountain emblem left, location and email right, aligned as 2-column layout.
+- [x] Hide large footer wordmark only on phones; retain desktop branding and 2×2 information categories below the full-width contact block.
+- [ ] Verify appearance and line breaks on 320–430px iOS Safari.
