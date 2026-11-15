@@ -411,7 +411,7 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 
 /* Five-line review previews with an inline-looking end-of-line expansion control. */
 :root{--review-preview-lines:5;--review-dialog-background:var(--color-limestone)}
-.review-card .review-preview{position:relative;margin:24px 0 34px;flex:1;min-width:0}
+.review-card .review-preview{position:relative;margin:24px 0 34px;flex:none;min-width:0}
 .review-card .review-preview>.review-original{
   display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--review-preview-lines);
   line-clamp:var(--review-preview-lines);overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere;
@@ -422,7 +422,7 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   display:none;position:absolute;right:0;bottom:0;z-index:1;
   padding:0 0 0 2.8em;border:0;border-radius:0;
   background:linear-gradient(90deg,transparent 0%,var(--reviews-card-background) 38%,var(--reviews-card-background) 100%);
-  color:var(--reviews-text);font:600 .79em/1.43 var(--serif);
+  color:var(--reviews-text);font:600 clamp(16px,1.65vw,21px)/1.43 var(--serif);
   cursor:pointer;text-decoration:underline;text-underline-offset:3px;
 }
 .review-preview.has-overflow .review-show-more{display:inline-block}
