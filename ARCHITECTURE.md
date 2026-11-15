@@ -135,3 +135,6 @@ Current KPI presentation is 3 columns × 2 rows on desktop, 2 columns × 3 rows 
 
 ## KPI content revision — 2026-11-15
 Static KPI content in `index.html` updated to 135 m² living area, 2–10 persons, and Sauna / privé; no change to CSS responsive layout or JS.
+
+## Theme architecture — 2026-11-15
+`assets/css/home.css` `:root` is the source of truth for five Modern Alpine Luxury palette tokens (`--color-stone-charcoal`, `--color-limestone`, `--color-natural-oak`, `--color-travertine`, `--color-warm-graphite`). Backward-compatible aliases `--ink`, `--gold`, `--sand`, and `--wood` reference these tokens. Core topbar, navigation, KPI, background and footer surfaces reference the centralized palette. A separate `tokens.css` is not yet used.
