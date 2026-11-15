@@ -114,3 +114,6 @@ Header markup in `index.html` now mirrors the original repository's left nine-do
 
 ## Header rearrangement — 2026-11-15
 Header now orders language on the left, centered logo, and BOOK plus classic animated hamburger on the right. HTML is in `index.html`; layout and line-to-X animation in `assets/css/home.css`; existing `setMenuOpen` and language toggle behavior in `assets/js/home.js` are reused without changes. Visual QA pending.
+
+## Menu close control cleanup — 2026-11-15
+Removed `#menuClose` from the floating panel and its JS/CSS wiring. The topbar `#menuToggle` is the only visible toggle; `setMenuOpen` focuses the first nav link on opening, traps Tab among nav links, and restores focus to trigger when dismissed with Escape/backdrop. Legacy documentation mentioning `#menuClose` describes a prior version only. Browser QA pending.
