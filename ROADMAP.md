@@ -112,3 +112,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [ ] Browser/device comparison against original; exact pixel equivalence not yet verified.
 - [ ] Translate content before enabling language switches; only Dutch is currently active.
 - [ ] Connect BOOK to verified booking provider (currently #contact).
+
+### Topbar arrangement — 2026-11-15 [IMPLEMENTED, QA PENDING]
+- [x] Language selector moved to the left, logo stays centered, BOOK and classic three-line hamburger on the right.
+- [x] Hamburger animates into X and floating nav anchors to the right edge of its trigger.
+- [ ] Verify narrow iPhone layout and GitHub Pages rendering.
