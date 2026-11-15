@@ -165,3 +165,6 @@ Logo asset is unchanged, with CSS filters switching mountain icon from white whi
 
 ## Footer grouping — 2026-11-15
 Footer navigation hierarchy follows the reference: contact/location plus four categories (Gipfel Lodge, De lodge, Eben im Pongau, Service). Desktop displays five columns; mobile displays contact full width then a 2×2 category layout. Functional links target existing anchors or email. Destination-category entries remain non-interactive until corresponding content exists. Previous four-column footer notes are historical.
+
+## Footer mobile layout refinement — 2026-11-15
+Woodridge reference mobile masthead replicated in structure: solo Gipfel Lodge emblem left, location and contact email stacked at right, followed by location/contact block then 2×2 grouped navigation. Desktop layout unchanged. Changes are CSS-only plus stylesheet URL version increment; no new contact data invented.
