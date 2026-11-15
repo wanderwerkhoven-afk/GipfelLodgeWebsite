@@ -135,6 +135,18 @@ galleryLightbox?.addEventListener('close',()=>{
   galleryLastTrigger?.focus({preventScroll:true});
 });
 
+// Guests can swipe the review strip or use its previous/next buttons.
+const reviewsCards=document.getElementById('reviewsCards');
+function scrollReview(direction){
+  if(!reviewsCards)return;
+  const first=reviewsCards.querySelector('.review-card');
+  const gap=parseFloat(getComputedStyle(reviewsCards).gap)||0;
+  const step=(first?.getBoundingClientRect().width||300)+gap;
+  reviewsCards.scrollBy({left:direction*step,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+document.getElementById('reviewsPrev')?.addEventListener('click',()=>scrollReview(-1));
+document.getElementById('reviewsNext')?.addEventListener('click',()=>scrollReview(1));
+
 const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 const backdrop=document.getElementById('menuBackdrop');
