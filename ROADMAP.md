@@ -292,3 +292,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Add a decorative scalable alpine mountain silhouette immediately above the footer, coloured with the shared footer background token.
 - [x] Responsive desktop/mobile heights with a full-width inline SVG (no loading or network dependency).
 - [ ] Visually QA skyline contour and preceding section background on desktop/mobile.
+
+### Use original footer mountain asset — 2026-11-15
+- [x] Locate `assets/icons/devider-mountain.svg` in the original `wanderwerkhoven-afk/Gipfel-Lodge` repository and copy unchanged into the new website.
+- [x] Replace provisional custom SVG path with original image and responsive full-width intrinsic aspect ratio.
+- [ ] QA original SVG rendering, background contrast and transition into footer on mobile/desktop.
