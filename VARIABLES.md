@@ -1,20 +1,20 @@
 # VARIABLES — Code location, symbol and dependency registry
 Version 1.0 | Updated 2026-11-15 | Scope: actual `main` branch at initial homepage commit.
-**Important:** all current CSS and JavaScript are inline in `index.html`. Locations below use stable selectors and code anchors, not line numbers (which shift). Paths beginning `assets/` are **planned** unless explicitly noted. This file inventories identifiable named variables/functions/selectors; HTML text and every CSS property are not individual program variables.
+**Important:** current CSS is in `assets/css/home.css` and current JavaScript is in `assets/js/home.js`; HTML is in `index.html`. Locations below use stable selectors and code anchors, not line numbers (which shift). Paths beginning `assets/` are **planned** unless explicitly noted. This file inventories identifiable named variables/functions/selectors; HTML text and every CSS property are not individual program variables.
 
 ## 1. Current file registry
 | Path | Status | Responsibility | Called/used by |
 |---|---|---|---|
-| `index.html` | EXISTS | All HTML, CSS in `<style>`, JS in final `<script>` | Browser / GitHub Pages |
+| `index.html` | EXISTS | Semantic HTML; references external stylesheet and deferred script | Browser / GitHub Pages |
 | `ROADMAP.md` | EXISTS after documentation commit | Milestones and decisions | Maintainers |
 | `VARIABLES.md` | EXISTS after documentation commit | Symbol/dependency map | Maintainers |
 | `ARCHITECTURE.md` | EXISTS after documentation commit | Architecture and contracts | Maintainers |
 | `assets/css/tokens.css` | PLANNED | Global CSS custom properties | Stylesheets |
-| `assets/css/home.css` | PLANNED | Home layout and components | `index.html` |
-| `assets/js/home.js` | PLANNED | Carousel and menu handlers | `index.html` |
+| `assets/css/home.css` | EXISTS | All current CSS, including :root tokens, components and responsive layout | `index.html` |
+| `assets/js/home.js` | EXISTS | Carousel, menu handlers and footer year | `index.html` |
 | `assets/images/` | PLANNED | Local optimized media | HTML/CSS |
 
-## 2. CSS custom properties — `index.html` > `<style>` > `:root`
+## 2. CSS custom properties — `assets/css/home.css` > `:root`
 | Symbol | Initial value | Role | Referenced by |
 |---|---|---|---|
 | `--ink` | `#20303d` | Primary dark text/background | `body`, `.book`, `.btn.primary`, `.closing` |
@@ -29,7 +29,7 @@ Version 1.0 | Updated 2026-11-15 | Scope: actual `main` branch at initial homepa
 - All currently visible images and logo use `https://gipfellodge.at/assets/images/...`. This is a runtime dependency on the existing site, not local assets.
 - No package manager, runtime framework, backend, database or PMS integration is present in the new repository.
 
-## 3. JavaScript symbols — `index.html` > last `<script>` > IIFE
+## 3. JavaScript symbols — `assets/js/home.js` > IIFE
 | Symbol | Type / scope | Defined by | Read/written by | Purpose |
 |---|---|---|---|---|
 | `slides` | `const`, local array | `document.querySelectorAll('.slide')` | `show` | Hero slide nodes |
@@ -87,7 +87,7 @@ Images → browser requests legacy `gipfellodge.at` URLs (no CMS/data binding).
 - Contact CTA currently uses `info@gipfellodge.at`; verify destination before launch.
 - No booking API, prices, availability state, form validation, secrets, authentication or server-side code.
 - GitHub Pages publishing not verified.
-- CSS is minified in a single inline block; line-level mapping should be introduced during refactor.
+- CSS remains compact in `assets/css/home.css`; format it for easier line-level mapping in a future maintenance change.
 
 ## 8. Required registry template for future additions
 For every new or changed identifier record:
