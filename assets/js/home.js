@@ -55,6 +55,7 @@ const reducedGalleryMotion=window.matchMedia('(prefers-reduced-motion: reduce)')
 let galleryLastTrigger=null;
 let galleryMotion=null;
 let galleryClosing=false;
+let galleryOpening=false;
 
 function galleryTransform(fromRect,toRect){
   const dx=(fromRect.left+fromRect.width/2)-(toRect.left+toRect.width/2);
@@ -74,9 +75,10 @@ function animateGalleryImage(frames,duration){
   });
 }
 async function openGallery(trigger){
-  if(!galleryLightbox||!galleryLightboxImage||!galleryLightboxTitle||galleryLightbox.open)return;
+  if(!galleryLightbox||!galleryLightboxImage||!galleryLightboxTitle||galleryLightbox.open||galleryOpening)return;
   const source=trigger.querySelector('img');
   if(!source)return;
+  galleryOpening=true;
   galleryLastTrigger=trigger;
   galleryLightboxImage.src=source.currentSrc||source.src;
   galleryLightboxImage.alt=source.alt;
@@ -85,7 +87,7 @@ async function openGallery(trigger){
   galleryLightbox.classList.add('is-entering');
   // Wait for the dimensions of the full-size photo before measuring the destination.
   try{await galleryLightboxImage.decode();}catch(e){}
-  if(galleryLightbox.open)return;
+  if(galleryLightbox.open){galleryOpening=false;return;}
   const sourceRect=source.getBoundingClientRect();
   galleryLightbox.showModal();
   galleryLightboxClose?.focus({preventScroll:true});
@@ -98,6 +100,7 @@ async function openGallery(trigger){
     ],560);
   }
   galleryLightbox.classList.remove('is-entering');
+  galleryOpening=false;
 }
 async function closeGallery(){
   if(!galleryLightbox?.open||galleryClosing)return;
