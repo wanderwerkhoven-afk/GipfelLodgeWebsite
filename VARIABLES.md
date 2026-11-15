@@ -258,3 +258,6 @@ The source repo `wanderwerkhoven-afk/Gipfel-Lodge`, `assets/icons/devider-mounta
 
 ## Mountain divider edge overscan — 2026-11-15
 `.footer-mountain-edge::after { inset:0 -8px 0 -8px; }` expands the original SVG mask by 8 pixels horizontally within its clipped container, compensating for faint transparent pixels at the source image edges. Wrapper now uses `width:100%` to avoid subpixel viewport-offset issues. Cache version `20261115-mountain-edge-overscan`.
+
+## Mountain silhouette zoom — 2026-11-16
+Footer mountain mask now uses `mask-size:104% 104%` / `-webkit-mask-size:104% 104%` and `mask-position:center bottom` instead of `inset:0 -8px`. Mask `inset:0` and its existing `--footer-background` fill stay unchanged. Cache version `20261116-mountain-zoom`.
