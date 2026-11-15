@@ -120,3 +120,6 @@ Removed `#menuClose` from the floating panel and its JS/CSS wiring. The topbar `
 
 ## Responsive / touch interaction contract — 2026-11-15
 The existing hero in `index.html` is an arrow-driven image carousel. `assets/js/home.js` now routes pointer swipe gestures and arrow clicks through the same `show(n)` function. A gesture is accepted only for horizontal movement >=55px and at least 1.35 times vertical movement; link/button gestures are ignored. `assets/css/home.css` applies `touch-action: pan-y pinch-zoom`, mobile breakpoints, safe-area positioning and responsive overflow constraints. Slide state updates `aria-hidden` and `#slideStatus`. The current four-image gallery is a static grid and is not converted into a carousel. Future navigable galleries should reuse this contract and keep visible arrow controls. Physical-device and browser QA remains pending.
+
+## KPI section presentation — 2026-11-15
+The intro section `#lodge` contains an editorial intro followed by a full-width `.kpi-band` and `.kpi-grid`. Each `.kpi-item` holds static value/label text; presentation lives in `assets/css/home.css` with responsive 3/2/1-column grid breakpoints. No JavaScript. Existing KPI facts preserved; the user-supplied image is a styling reference, not a source for new property facts. Visual QA pending.
