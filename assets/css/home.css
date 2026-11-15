@@ -484,3 +484,14 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
  .lodge-collage-photo--detail{right:0;bottom:0;width:46%;height:34%;transform:rotate(-2deg)}
 }
 @media(prefers-reduced-motion:reduce){.lodge-collage-photo img{transition:none}}
+
+/* Interactive print-photo collage: pointer and touch dragging stays inside its stage. */
+.lodge-collage-stage{overflow:hidden;touch-action:pan-y}
+.lodge-collage-photo{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;will-change:left,top}
+.lodge-collage-photo img{pointer-events:none;user-select:none;-webkit-user-drag:none}
+.lodge-collage-photo.is-dragging{cursor:grabbing;box-shadow:0 24px 62px rgba(42,38,33,.24)}
+.lodge-collage-photo:focus-visible{outline:3px solid var(--color-natural-oak);outline-offset:-7px}
+.lodge-collage-photo.is-dragging img{transform:none}
+.lodge-collage-hint{text-align:center;color:var(--color-warm-graphite);font:400 12px/1.6 var(--sans);letter-spacing:.025em;margin:14px 0 0}
+@media(max-width:590px){.lodge-collage-hint{font-size:11px;margin-top:12px}}
+@media(prefers-reduced-motion:reduce){.lodge-collage-photo{will-change:auto}}
