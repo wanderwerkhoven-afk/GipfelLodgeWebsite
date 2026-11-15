@@ -444,3 +444,9 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 @media(prefers-reduced-motion:reduce){.review-dialog[open]{animation:none}}
 
 @media(prefers-reduced-motion:reduce){.review-open-btn{transition:none}}
+
+/* Compact review button on phones; desktop size unchanged. */
+@media(max-width:590px){
+  .review-card-action{min-height:32px;margin-bottom:15px}
+  .review-open-btn{min-height:32px;padding:7px 11px;font-size:10px;letter-spacing:.035em}
+}
