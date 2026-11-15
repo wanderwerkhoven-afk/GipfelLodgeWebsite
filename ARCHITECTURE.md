@@ -195,3 +195,6 @@ Every review card now has a persistent `Bekijk review` button positioned between
 
 ## Layered introductory image collage — 2026-11-15
 Static semantic 4-photo collage positioned between introductory lodge copy and the KPI band. Photo elements are ordinary figures with descriptive alt text, visual overlap controlled in CSS absolute layout and z-index; mobile repositioning uses breakpoint overrides. Uses existing remotely hosted image assets and no JS dependencies.
+
+## Interactive photo collage — 2026-11-15
+Existing four overlapping intro images are now movable within their container. A lightweight JS pointer controller translates mouse/touch gestures into bounded photo positions (percent coordinates), raises dragged photos via z-index, retains relative positioning through layout changes, and supports keyboard Arrow nudging. CSS confines collage to its stage and prevents scroll gestures only on the draggable photos. No storage/persistence or external dependency; reload restores default composition.
