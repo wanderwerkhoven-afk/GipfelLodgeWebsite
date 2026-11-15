@@ -278,3 +278,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Constrain moved image elements to collage stage, prevent native image drag, keep vertical scroll outside images and add keyboard arrow nudging.
 - [x] Preserve existing responsive collage look; use percentage placement after moving and clamp on viewport resize.
 - [ ] QA pointer/touch interactions on iOS Safari, and rotated image corners at stage edges.
+
+### Printed photo pickup animation — 2026-11-15
+- [x] On pointer/touch pick-up, collage photos lift by 5.5% and briefly wobble, then remain enlarged during dragging and return smoothly on release.
+- [x] Preserve each photo's starting tilt, including mobile overrides; respect reduced-motion setting.
+- [ ] Verify touch animation and image boundaries on iOS Safari.
