@@ -283,3 +283,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] On pointer/touch pick-up, collage photos lift by 5.5% and briefly wobble, then remain enlarged during dragging and return smoothly on release.
 - [x] Preserve each photo's starting tilt, including mobile overrides; respect reduced-motion setting.
 - [ ] Verify touch animation and image boundaries on iOS Safari.
+
+### Collage device-specific instructions — 2026-11-15
+- [x] Show desktop-specific mouse/keyboard hint on pointer-fine large screens and touch-oriented instruction on touch devices and narrow screens.
+- [x] Leave drag and pickup behavior unchanged.
