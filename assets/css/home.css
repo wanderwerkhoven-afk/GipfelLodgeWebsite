@@ -495,3 +495,37 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 .lodge-collage-hint{text-align:center;color:var(--color-warm-graphite);font:400 12px/1.6 var(--sans);letter-spacing:.025em;margin:14px 0 0}
 @media(max-width:590px){.lodge-collage-hint{font-size:11px;margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.lodge-collage-photo{will-change:auto}}
+
+/* Printed-photo pickup feedback: gentle lift and short wobble while dragging. */
+:root{
+  --collage-pickup-scale:1.055;
+  --collage-pickup-duration:520ms;
+}
+.lodge-collage-photo--left{--collage-photo-tilt:-2.5deg}
+.lodge-collage-photo--main{--collage-photo-tilt:0deg}
+.lodge-collage-photo--right{--collage-photo-tilt:2deg}
+.lodge-collage-photo--detail{--collage-photo-tilt:-1.8deg}
+@media(max-width:590px){
+  .lodge-collage-photo--left{--collage-photo-tilt:-3deg}
+  .lodge-collage-photo--right{--collage-photo-tilt:3deg}
+  .lodge-collage-photo--detail{--collage-photo-tilt:-2deg}
+}
+.lodge-collage-photo{
+  transition:transform 220ms cubic-bezier(.2,.75,.25,1),box-shadow 220ms ease;
+  transform-origin:50% 50%;
+}
+.lodge-collage-photo.is-dragging{
+  transform:rotate(var(--collage-photo-tilt)) scale(var(--collage-pickup-scale));
+  animation:collage-pickup-wiggle var(--collage-pickup-duration) ease-in-out both;
+}
+@keyframes collage-pickup-wiggle{
+  0%{transform:rotate(var(--collage-photo-tilt)) scale(1)}
+  28%{transform:rotate(calc(var(--collage-photo-tilt) - 1.5deg)) scale(var(--collage-pickup-scale))}
+  58%{transform:rotate(calc(var(--collage-photo-tilt) + 1.1deg)) scale(var(--collage-pickup-scale))}
+  78%{transform:rotate(calc(var(--collage-photo-tilt) - .5deg)) scale(var(--collage-pickup-scale))}
+  100%{transform:rotate(var(--collage-photo-tilt)) scale(var(--collage-pickup-scale))}
+}
+@media(prefers-reduced-motion:reduce){
+  .lodge-collage-photo{transition:none}
+  .lodge-collage-photo.is-dragging{animation:none;transform:rotate(var(--collage-photo-tilt))}
+}
