@@ -221,3 +221,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Replace opaque backdrop with animated frosted/blurred underlying website; keep title beneath photo and fade title/controls.
 - [x] Respect prefers-reduced-motion and guard duplicate opens.
 - [ ] Visually verify in iOS Safari, especially screenshot alignment, backdrop-filter and returning photo to grid.
+
+### Guest reviews section — 2026-11-15
+- [x] Added editorial reviews block directly beneath the 'Ontdek de lodge' photo gallery and ahead of contact/closing CTA.
+- [x] Responsive split layout with warm ivory and taupe, title, verified-review placeholder, and email-based review submission CTA.
+- [ ] Replace placeholder with authentic, permission-cleared guest quotes and sources before publishing star ratings or review counts.
+- [ ] Verify mobile and desktop visual layout.
