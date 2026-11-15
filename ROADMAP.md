@@ -248,3 +248,10 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Review cards explicitly show `Reviewplatform: Airbnb` only for Luisa and Christian (Villa for You attributes both to Airbnb).
 - [x] Peter, Timo and John labelled `Reviewplatform niet vastgesteld`; Trade Tracker Nederland is an affiliate referral channel and not confirmed review-hosting platform.
 - [ ] Add further original review-platform labels only after a platform source or booking/review ID confirms them.
+
+### Full 13 reviews from owner-provided screenshots — 2026-11-15
+- [x] Replace paraphrased five-card carousel with all 13 verbatim reviews transcribed from user-supplied Villa for You screenshots: Peter, Luisa, Timo, John, Christian, Tim, Chrystal, Damian, Sara, Sabrina, Dirk, Veerle and Philipp.
+- [x] Preserve original Dutch/German/English wording, scores, guest names, dates, and disclosed channels. Timo is the original platform placeholder rather than a guest-written quote.
+- [x] Reflect Airbnb as explicitly stated, and label Trade Tracker, Holidu and Fewobird/Bestfewo as listed channels (not automatically the primary review-hosting platform).
+- [x] Show long reviews without truncation, preserve carousel and source URL.
+- [ ] QA transcription against original guest data, including Sara's original phrasing and emoji on the Philipp/Damian cards; visual QA on iPhone and desktop.
