@@ -536,3 +536,13 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
  .collage-hint-desktop{display:none}
  .collage-hint-touch{display:inline}
 }
+
+/* Decorative mountain skyline connecting the final section to the footer. */
+.footer-mountain-edge{
+  width:100%;height:clamp(64px,10.5vw,150px);
+  overflow:hidden;color:var(--footer-background);
+  background:var(--color-limestone);line-height:0;margin:0;
+}
+.footer-mountain-edge svg{display:block;width:100%;height:100%}
+.footer-mountain-edge+.footer{margin-top:0}
+@media(max-width:590px){.footer-mountain-edge{height:clamp(70px,19vw,110px)}}
