@@ -4,15 +4,15 @@ Version 1.0 | Updated 2026-11-15
 ## 1. System boundary and verified current state
 New repo: `wanderwerkhoven-afk/GipfelLodgeWebsite`, branch `main`.
 Reference only: `wanderwerkhoven-afk/Gipfel-Lodge` (do not modify).
-Current executable implementation is **one static file**: `index.html`. HTML markup, inline CSS and inline JavaScript run entirely in the browser. GitHub Pages publishing has **not** been independently verified. No backend, admin, PMS, payment, authentication, database, email delivery or guest-data storage exists in this repo.
+Current executable implementation is **three static files**: `index.html`, `assets/css/home.css` and `assets/js/home.js`. HTML markup and externally linked CSS and JavaScript run entirely in the browser. GitHub Pages publishing has **not** been independently verified. No backend, admin, PMS, payment, authentication, database, email delivery or guest-data storage exists in this repo.
 
 ## 2. Current dependency graph
 ```text
 Browser
  └─ index.html
-     ├─ inline <style> (CSS tokens, layout, responsive rules)
+     ├─ assets/css/home.css (CSS tokens, layout, responsive rules)
      ├─ DOM: header, hero, lodge, gallery, contact, footer
-     ├─ inline <script> (hero navigation, mobile menu, year)
+     ├─ assets/js/home.js (hero navigation, mobile menu, year)
      ├─ Google Fonts (Inter, Cormorant Garamond)
      └─ https://gipfellodge.at/assets/images/... (logo/photos)
 ```
@@ -31,9 +31,10 @@ Interactions are local DOM state changes; no external data is written. The conta
       tokens.css              # Single source of truth for theme variables
       base.css                # Reset, typography, global layout
       components.css          # Header, nav, buttons, footer
-      home.css                # Home-only layout
+      home.css                # EXISTS: current tokens, base, components and home layout
     js/
-      main.js                 # Bootstrap and shared interactions
+      home.js                 # EXISTS: current carousel, mobile menu, footer year
+      main.js                 # PLANNED: bootstrap and shared interactions
       carousel.js             # Hero gallery controller
       navigation.js           # Mobile navigation controller
       i18n.js                 # Language switching (when designed)
@@ -46,9 +47,9 @@ Interactions are local DOM state changes; no external data is written. The conta
 Avoid introducing a build tool/framework until justified. For GitHub Pages, use relative paths compatible with the repository subpath `/GipfelLodgeWebsite/`. Do not put absolute `/assets/...` paths in preview builds unless a base path is configured.
 
 ## 4. Ownership and interfaces
-- **Design tokens:** `tokens.css` owns colors, fonts, spacing and breakpoints. Components consume tokens; avoid duplicating values.
-- **Navigation:** `navigation.js` owns open/closed state and accessibility attributes. Header markup owns menu links.
-- **Carousel:** `carousel.js` owns active slide index and button interactions. CSS owns transition appearance.
+- **Design tokens:** currently defined in `assets/css/home.css`; planned `tokens.css` will own colors, fonts, spacing and breakpoints. Components consume tokens; avoid duplicating values.
+- **Navigation:** currently handled in `assets/js/home.js`; planned `navigation.js` will own open/closed state and accessibility attributes. Header markup owns menu links.
+- **Carousel:** currently handled in `assets/js/home.js`; planned `carousel.js` will own active slide index and button interactions. CSS owns transition appearance.
 - **Content:** page templates own user-facing copy; later translation dictionaries own locale-specific text.
 - **Booking:** future adapter owns vendor-facing availability/booking calls. Never let presentation components fabricate availability or final prices.
 - **Sensitive operations:** future server/provider owns validation, payments, tokens and authorization; never put secrets in static assets.
@@ -101,3 +102,6 @@ Test results and deployment status must be recorded in ROADMAP.md or PR descript
 
 ## 10. Decisions still needed
 PMS/channel manager; production host; custom domain; language set; exact content and capacity; contact email; local image migration; analytics/cookie platform; legal/privacy copy. Track final choices in ROADMAP.md D-001 onward.
+
+## 11. Refactor record (2026-11-15)
+Extracted the single inline stylesheet to `assets/css/home.css` and the final inline script to `assets/js/home.js`; updated `index.html` to load both via relative URLs and `defer` for JS. No intended visual or functional changes. Browser/GitHub Pages deployment verification is still pending.
