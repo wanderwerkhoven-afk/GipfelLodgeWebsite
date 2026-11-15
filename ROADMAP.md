@@ -156,3 +156,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Added five central CSS color variables for charcoal, limestone, natural oak, travertine, and graphite.
 - [x] Wired existing semantic aliases and major section colors to the new palette.
 - [ ] Visual contrast and device QA; remaining decorative fixed color values can be consolidated in a later cleanup.
+
+### Light-first Alpine Luxury homepage — 2026-11-15
+- [x] Switch intro and closing sections to light ivory, KPI and gallery to warm taupe; retain dark topbar and footer.
+- [x] Add centralized section-level light color variables and dark KPI text for contrast.
+- [ ] Verify contrast and responsive visuals on actual desktop and mobile browsers.
