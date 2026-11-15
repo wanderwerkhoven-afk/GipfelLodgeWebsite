@@ -302,3 +302,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Replace black rendering of the original `devider-mountain.svg` with its alpha-mask shape filled by `--footer-background`, matching the actual footer exactly.
 - [x] Extend mountain edge to full viewport width and match the preceding section's ivory background on desktop and mobile.
 - [ ] Verify visual result on mobile Safari, including mask transparency and full-bleed alignment.
+
+### Mountain divider edge overscan — 2026-11-15
+- [x] Remove tiny light seams along both sides of original mountain divider with 8px horizontal alpha-mask overscan.
+- [ ] Verify on mobile Safari that silhouette now connects edge-to-edge with footer.
