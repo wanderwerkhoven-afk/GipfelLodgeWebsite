@@ -171,3 +171,6 @@ Woodridge reference mobile masthead replicated in structure: solo Gipfel Lodge e
 
 ## Gallery modal architecture — 2026-11-15
 Image grid remains in `index.html` and is now interactive through semantic button tiles. A single native HTML `<dialog>` serves all four gallery photos; the JS controller fills image `src`/`alt` and visible figcaption from each tile, invokes `showModal()`, supports close/backdrop/Escape and restores focus. CSS ensures object-fit contain in a fullscreen charcoal overlay. No external lightbox dependencies.
+
+## Animated gallery lightbox — 2026-11-15
+Single native dialog now stays transparent over a blurred website `::backdrop`. The clicked thumbnail's DOM rectangle is measured before `showModal()`, the fullscreen image target rectangle after opening; Web Animations API transforms the image from source rectangle into the centered viewer over 560ms. Closing reverses the measured transform over 400ms before `dialog.close()`, then restores focus. Caption and close control fade in. Reduced-motion users skip animation. Device QA pending.
