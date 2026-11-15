@@ -169,3 +169,14 @@ Current `.kpi-grid` CSS at end of `assets/css/home.css` overrides earlier KPI ru
 
 ## KPI content revision — 2026-11-15
 Current `index.html` KPI values supersede earlier entries: `135 m²` / `woonruimte`, `2 – 10` / `personen`, and `Sauna` / `privé`. CSS and JS unchanged.
+
+## Active theme palette — 2026-11-15 (supersedes initial token values)
+Source: `assets/css/home.css` `:root`. To retheme, change these five variables:
+| Variable | Value | Purpose |
+|---|---|---|
+| `--color-stone-charcoal` | `#383936` | Dark surfaces, topbar, KPI, footer |
+| `--color-limestone` | `#F2EFE8` | Page background |
+| `--color-natural-oak` | `#A88B6B` | Accent, buttons, gold-rule replacement |
+| `--color-travertine` | `#D7CABB` | Soft backgrounds and borders |
+| `--color-warm-graphite` | `#65615B` | Secondary text |
+Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palette variables. Some fixed translucent overlays and text colors remain as component-level values. The initial `:root` values table above is historical.
