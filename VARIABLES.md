@@ -201,3 +201,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Hero overlay theme tokens — 2026-11-15
 `assets/css/home.css` `:root` defines `--hero-overlay-color:56,57,54` (RGB Stone Charcoal), `--hero-overlay-left:0.50`, `--hero-overlay-middle:0.25`, `--hero-overlay-right:0.10`, and `--hero-overlay-bottom:0.20`. `.hero:after` uses these in two layered `linear-gradient()` values. The previous navy blue `#0d1c2a` shade is superseded. The CSS URL has a cache-busting version `?v=20261115-hero-charcoal`.
+
+## Editorial footer tokens — 2026-11-15
+In `assets/css/home.css`: `--footer-background:#302C2A`, `--footer-heading:var(--color-limestone)`, `--footer-body:#D5CFCA`, `--footer-accent:var(--color-natural-oak)`, `--footer-rule:rgba(242,239,232,.20)`. Footer selectors `.footer-shell`, `.footer-top`, `.footer-brand`, `.footer-columns`, `.footer-column`, `.footer-bottom` govern the new multi-column layout. Values apply to current HTML footer and supersede old single-line `.footer`. Existing `#year` ID preserved for dynamic year.
