@@ -108,3 +108,6 @@ Extracted the single inline stylesheet to `assets/css/home.css` and the final in
 
 ## Navigation implementation — 2026-11-15
 Current implementation is an anchored, animated popup: `index.html` defines `#menuToggle`, `#navigation`, `#menuClose` and `#menuBackdrop`; `assets/css/home.css` owns transitions, sizing, colors and mobile behavior; `assets/js/home.js` owns `setMenuOpen`, keyboard focus cycling, Escape and backdrop dismissal. Closed navigation is `inert` and `aria-hidden`; the trigger uses `aria-expanded`. Existing design tokens retained. Visual/browser verification pending.
+
+## Original topbar adaptation — 2026-11-15
+Header markup in `index.html` now mirrors the original repository's left nine-dot icon, center logo and right language/BOOK actions. Styling in `assets/css/home.css` is based on the legacy `css/site_css/components/global.css`, scoped to the new project and integrated with the custom floating navigation. `assets/js/home.js` owns menu and language popup state. Flag icons depend on external flag-icons CSS; logo remains hosted on `gipfellodge.at`. Language menu currently displays six choices but only Dutch is active; other languages are not interactive until translated. BOOK targets the contact section, not a real booking engine. GitHub Pages visual verification pending.
