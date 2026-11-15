@@ -141,3 +141,6 @@ Static KPI content in `index.html` updated to 135 m² living area, 2–10 person
 
 ## Light-first section design — 2026-11-15
 Section surfaces are configured through `--color-section-ivory`, `--color-section-taupe`, and `--color-section-text` in `assets/css/home.css`. Intro and closing use ivory; KPI band and gallery use taupe; topbar and footer retain charcoal. The hero stays photo-led with dark overlay. These rules override historical dark KPI/closing declarations.
+
+## Adaptive topbar behavior — 2026-11-15
+Header is fixed and transparent over the hero, switching to a solid white surface when the hero's bottom moves above the header's bottom edge. JS `updateTopbar()` in `assets/js/home.js` manages `.is-scrolled`; CSS controls transitions, text/icon contrast and reduced motion. Popup nav and language menu remain dark independently. Desktop and mobile QA pending.
