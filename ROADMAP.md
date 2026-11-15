@@ -235,3 +235,11 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [ ] Remaining 8 review entries require interactive source access; do not invent uninspected guest texts or origin platforms.
 - [ ] Confirm whether the public capacity should be 8 (Villa for You listing) or 10 (current website KPI).
 - [ ] Verify browser/mobile display and periodically verify source review counts.
+
+### Review provenance investigation — 2026-11-15
+- [x] Owner confirms actual Gipfel Lodge occupancy is **10 persons**; keep the website KPI at 2–10. Earlier 'confirm 8 vs 10' decision is resolved: 10 is the owner-confirmed property capacity. Major OTA listings currently cap bookable occupancy at 8; clarify their distribution configuration independently.
+- [x] Researched listings: Villa for You AT.5531.14 (5/5, 13), Airbnb https://www.airbnb.com/rooms/1579349146079892345 (5/5, 6–7 in differing snapshots), Vrbo https://www.vrbo.com/5720804ha (9.8/10, 7), Booking.com https://www.booking.com/hotel/at/tauernlodge-eben-e4.en-gb.html (no property guest-review score yet).
+- [x] Matched syndications: Villa for You John review aligns with Vrbo Derix (Aug 2026); Tim aligns with Giesen (Jun 2026). Vrbo flags 6/7 as 'from a partner site', with Michael A. verified on Vrbo. Do not sum visible review totals across platforms.
+- [ ] Obtain original booking source/channel ID and full 13-review export from Villa for You (MyVilla/channel manager) to determine provenances authoritatively.
+- [ ] Examine longer October review by Vahl (8/10, cleaning/management complaints) and reconcile against existing website's blanket five-star cards; Vrbo aggregates 9.8/10.
+- [ ] Review representations/permission around static 5/5 score and review excerpts if different channels diverge.
