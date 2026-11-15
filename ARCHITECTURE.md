@@ -174,3 +174,6 @@ Image grid remains in `index.html` and is now interactive through semantic butto
 
 ## Animated gallery lightbox — 2026-11-15
 Single native dialog now stays transparent over a blurred website `::backdrop`. The clicked thumbnail's DOM rectangle is measured before `showModal()`, the fullscreen image target rectangle after opening; Web Animations API transforms the image from source rectangle into the centered viewer over 560ms. Closing reverses the measured transform over 400ms before `dialog.close()`, then restores focus. Caption and close control fade in. Reduced-motion users skip animation. Device QA pending.
+
+## Review section architecture — 2026-11-15
+Static, responsive review section follows gallery and precedes the contact CTA. It is intentionally editorial placeholder content pending genuine, permission-cleared guest reviews. No star schema, fabricated quotes, external integrations, or dynamic storage. User CTA links to email. Design tokens kept in `assets/css/home.css`.
