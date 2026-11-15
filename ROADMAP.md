@@ -267,3 +267,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Keep five-line previews; open full original text in the existing accessible dialog even for shorter reviews.
 - [x] Remove obsolete overflow measurement/conditional visibility logic. HTML, CSS and JS assets cache-busted to `20261115-review-buttons`.
 - [ ] iOS Safari visual verification of alignment and modal.
+
+### Layered intro photo collage — 2026-11-15
+- [x] Insert 4-image overlapping photo composition between intro copy and KPI band using existing Gipfel Lodge photos.
+- [x] Responsive collage placement desktop/mobile, soft ivory frame, subtle shadow and reduced-motion support.
+- [ ] Visually QA layering/cropping on iPhone and desktop.
