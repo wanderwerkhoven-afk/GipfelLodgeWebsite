@@ -172,3 +172,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Set explicit transparent topbar background when `is-scrolled` is absent.
 - [x] Cache-bust CSS/JS in `index.html` to address stale mobile browser style caching.
 - [ ] Verify visually in iOS Safari including status-bar safe area.
+
+### Hero header white controls — 2026-11-15
+- [x] Hero overlay header uses white logo lettering, hamburger, globe and monochrome flag; BOOK is solid white with charcoal text.
+- [x] Preserve white background and dark controls after the hero; cache-bust CSS query to header3.
+- [ ] Verify iOS mobile contrast and scrolling state visually.
