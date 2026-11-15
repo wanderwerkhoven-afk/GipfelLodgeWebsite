@@ -150,3 +150,10 @@ Original source: legacy `Gipfel-Lodge/index.html` header and `css/site_css/compo
 | `.sr-only` | CSS | Visually hidden screen-reader status |
 | Responsive breakpoints `800px`, `590px`, `380px` | CSS | Grid/header/hero/menu sizing and safe-area adjustments |
 The static `.gallery` is a grid, not an arrow-navigable carousel. No swipe handler is attached to it.
+
+## KPI layout — 2026-11-15
+- `.kpi-band` (`index.html`, `assets/css/home.css`): full-width dark slate background enclosing KPI grid.
+- `.kpi-grid`: responsive CSS grid; 3 columns desktop, 2 at <=800px, 1 at <=330px.
+- `.kpi-item`: one metric with gold left border, serif `<strong>` value and sans-serif `<span>` label.
+- KPI content remains static in `index.html`; no JS variables or calculations. Values retained: 135 m², Tot 10, 4, 3, Privé, Alpen.
+- `.intro` now only contains introduction text above the KPI band.
