@@ -297,3 +297,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Locate `assets/icons/devider-mountain.svg` in the original `wanderwerkhoven-afk/Gipfel-Lodge` repository and copy unchanged into the new website.
 - [x] Replace provisional custom SVG path with original image and responsive full-width intrinsic aspect ratio.
 - [ ] QA original SVG rendering, background contrast and transition into footer on mobile/desktop.
+
+### Original footer silhouette colour/width correction — 2026-11-15
+- [x] Replace black rendering of the original `devider-mountain.svg` with its alpha-mask shape filled by `--footer-background`, matching the actual footer exactly.
+- [x] Extend mountain edge to full viewport width and match the preceding section's ivory background on desktop and mobile.
+- [ ] Verify visual result on mobile Safari, including mask transparency and full-bleed alignment.
