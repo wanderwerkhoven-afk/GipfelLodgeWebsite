@@ -105,3 +105,6 @@ PMS/channel manager; production host; custom domain; language set; exact content
 
 ## 11. Refactor record (2026-11-15)
 Extracted the single inline stylesheet to `assets/css/home.css` and the final inline script to `assets/js/home.js`; updated `index.html` to load both via relative URLs and `defer` for JS. No intended visual or functional changes. Browser/GitHub Pages deployment verification is still pending.
+
+## Navigation implementation — 2026-11-15
+Current implementation is an anchored, animated popup: `index.html` defines `#menuToggle`, `#navigation`, `#menuClose` and `#menuBackdrop`; `assets/css/home.css` owns transitions, sizing, colors and mobile behavior; `assets/js/home.js` owns `setMenuOpen`, keyboard focus cycling, Escape and backdrop dismissal. Closed navigation is `inert` and `aria-hidden`; the trigger uses `aria-expanded`. Existing design tokens retained. Visual/browser verification pending.
