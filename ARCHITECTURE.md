@@ -159,3 +159,6 @@ Logo asset is unchanged, with CSS filters switching mountain icon from white whi
 
 ## Hero overlay palette — 2026-11-15
 `assets/css/home.css` `.hero:after` now uses centralized RGB + opacity design tokens for a charcoal horizontal gradient and a subtle bottom gradient. Tokens are declared alongside the primary palette in `:root`. Overlay remains pointer-transparent; carousel and adaptive topbar behavior are unchanged. Mobile visual QA remains pending.
+
+## Footer composition — 2026-11-15
+`index.html` footer now uses a top masthead (logo, location, email), four semantic column groups with links to existing same-page anchors, and a bottom copyright/brand line. CSS breakpoints: 4-column desktop, 2-column up to 900px, 1-column below 350px. Footer has dedicated color tokens in `assets/css/home.css`; JavaScript's existing `#year` updater remains functional. No new pages/booking/social functionality claimed.
