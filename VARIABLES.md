@@ -163,3 +163,6 @@ The current `.kpi-grid` in `index.html` contains **five** static `.kpi-item` ent
 
 ## KPI sixth item — 2026-11-15
 The `.kpi-grid` now contains six `.kpi-item` elements. Sixth: `<strong>Privé</strong><span>sauna</span>` (bottom right). The earlier note that the sixth cell is empty is superseded. No JavaScript or CSS changes required.
+
+## KPI breakpoint correction — 2026-11-15
+Current `.kpi-grid` CSS at end of `assets/css/home.css` overrides earlier KPI rules: desktop `repeat(3,minmax(0,1fr))` with two rows; `@media(max-width:800px)` uses `repeat(2,minmax(0,1fr))` with three rows, maintained at 480px and 330px. Older notes about fixed 3-column mobile layout are superseded.
