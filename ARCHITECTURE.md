@@ -132,3 +132,6 @@ Sixth KPI added in `index.html`: private sauna, completing the fixed 3-column ×
 
 ## KPI responsive layout correction — 2026-11-15
 Current KPI presentation is 3 columns × 2 rows on desktop, 2 columns × 3 rows on screens <=800px. The sixth item remains private sauna. Earlier fixed-three-column-on-mobile notes are historical. Device QA pending.
+
+## KPI content revision — 2026-11-15
+Static KPI content in `index.html` updated to 135 m² living area, 2–10 persons, and Sauna / privé; no change to CSS responsive layout or JS.
