@@ -201,3 +201,6 @@ Existing four overlapping intro images are now movable within their container. A
 
 ## Collage pickup feedback — 2026-11-15
 Drag state `.is-dragging` already toggled by JS now triggers a short CSS keyframe wobble and subtle 1.055 scale of the whole printed photo; per-photo tilt custom property preserves its angle before/after drag. No JS changes. Reduced-motion users keep static photo positioning.
+
+## Collage help by input mode — 2026-11-15
+Device-specific instruction spans are controlled by CSS pointer capability and viewport queries; no JavaScript needed, and the existing `aria-describedby` on draggable photos still refers to the shared paragraph containing only the visible hint.
