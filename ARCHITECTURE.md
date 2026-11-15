@@ -198,3 +198,6 @@ Static semantic 4-photo collage positioned between introductory lodge copy and t
 
 ## Interactive photo collage — 2026-11-15
 Existing four overlapping intro images are now movable within their container. A lightweight JS pointer controller translates mouse/touch gestures into bounded photo positions (percent coordinates), raises dragged photos via z-index, retains relative positioning through layout changes, and supports keyboard Arrow nudging. CSS confines collage to its stage and prevents scroll gestures only on the draggable photos. No storage/persistence or external dependency; reload restores default composition.
+
+## Collage pickup feedback — 2026-11-15
+Drag state `.is-dragging` already toggled by JS now triggers a short CSS keyframe wobble and subtle 1.055 scale of the whole printed photo; per-photo tilt custom property preserves its angle before/after drag. No JS changes. Reduced-motion users keep static photo positioning.
