@@ -261,3 +261,6 @@ The source repo `wanderwerkhoven-afk/Gipfel-Lodge`, `assets/icons/devider-mounta
 
 ## Mountain silhouette zoom — 2026-11-16
 Footer mountain mask now uses `mask-size:104% 104%` / `-webkit-mask-size:104% 104%` and `mask-position:center bottom` instead of `inset:0 -8px`. Mask `inset:0` and its existing `--footer-background` fill stay unchanged. Cache version `20261116-mountain-zoom`.
+
+## Mountain footer join seam — 2026-11-16
+`assets/css/home.css` `.footer-mountain-edge::before` draws a 4px high `--footer-background` strip at the bottom of the mountain divider above the masked pseudo-element; `.footer-mountain-edge+.footer { margin-top:-1px }` overlaps the join. Preserves the 104% SVG mask zoom. Cache version `20261116-mountain-seam-fix`.
