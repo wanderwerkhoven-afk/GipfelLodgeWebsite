@@ -249,3 +249,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Mountain silhouette footer edge — 2026-11-15
 `.footer-mountain-edge` (decorative `aria-hidden` inline SVG) is inserted between `</main>` and `<footer>` in `index.html`. The dark skyline inherits `--footer-background`; CSS `height:clamp(64px,10.5vw,150px)` and mobile `clamp(70px,19vw,110px)`, background `var(--color-limestone)`. Stylesheet cache key `20261115-footer-mountains`. This is a newly constructed vector contour; not a previously verified image asset.
+
+## Original mountain footer divider — 2026-11-15
+The source repo `wanderwerkhoven-afk/Gipfel-Lodge`, `assets/icons/devider-mountain.svg` (viewBox 0 0 750 90, embedded image) has been copied unchanged into the same path in `GipfelLodgeWebsite`. `index.html` `.footer-mountain-edge > img` now references local original SVG; `assets/css/home.css` sets full-width aspect ratio 750/90. Cache key `20261115-original-mountain`. This supersedes the temporary authored inline mountain SVG from the prior commit.
