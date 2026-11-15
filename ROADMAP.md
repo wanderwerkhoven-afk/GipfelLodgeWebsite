@@ -181,3 +181,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### Language indicator — 2026-11-15
 - [x] Replace topbar selected-language flag with two-letter abbreviation `NL`, beside the globe icon.
 - [x] Keep national flags in the language dropdown; other languages remain unavailable until translated.
+
+### Adaptive logo color — 2026-11-15
+- [x] White mountain emblem and wordmark over hero; charcoal-colored emblem and text on the white scrolled header.
+- [x] CSS filter transition with reduced-motion support; asset version refreshed.
+- [ ] Verify appearance against source PNG transparency on mobile Safari.
