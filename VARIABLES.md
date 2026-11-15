@@ -183,3 +183,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Light-first section tokens — 2026-11-15
 `assets/css/home.css` now defines `--color-section-ivory:var(--color-limestone)`, `--color-section-taupe:#E8E0D5`, and `--color-section-text:var(--color-stone-charcoal)` in `:root`. These control light homepage surfaces: intro and closing ivory; KPI and gallery taupe; topbar and footer remain dark charcoal. The previous dark KPI styling is superseded.
+
+## Adaptive topbar — 2026-11-15
+`assets/css/home.css` `:root` defines `--color-topbar-solid:#FFFFFF`, `--color-topbar-solid-text:var(--color-stone-charcoal)`, `--topbar-transition-duration:320ms`. `.topbar` defaults to transparent over hero; `.topbar.is-scrolled` uses white background and charcoal foreground. `assets/js/home.js` `updateTopbar()` checks `hero.getBoundingClientRect().bottom <= topbar.getBoundingClientRect().bottom`, toggles `is-scrolled` on passive scroll and resize, and runs on initialization. `index.html` theme-color updated to limestone.
