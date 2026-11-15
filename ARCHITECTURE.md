@@ -144,3 +144,6 @@ Section surfaces are configured through `--color-section-ivory`, `--color-sectio
 
 ## Adaptive topbar behavior — 2026-11-15
 Header is fixed and transparent over the hero, switching to a solid white surface when the hero's bottom moves above the header's bottom edge. JS `updateTopbar()` in `assets/js/home.js` manages `.is-scrolled`; CSS controls transitions, text/icon contrast and reduced motion. Popup nav and language menu remain dark independently. Desktop and mobile QA pending.
+
+## Hero overlay header hotfix — 2026-11-15
+The fixed transparent topbar must overlap the hero rather than take layout space. Rules explicitly zero main/hero top offset, ensure transparency outside `.is-scrolled`, and retain a white surface once scrolled. `index.html` references versioned CSS/JS to mitigate Safari cached assets; iOS visual QA is still outstanding.
