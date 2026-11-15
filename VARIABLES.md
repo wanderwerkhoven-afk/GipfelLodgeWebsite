@@ -210,3 +210,6 @@ In `assets/css/home.css`: `--footer-background:#302C2A`, `--footer-heading:var(-
 
 ## Footer mobile masthead — 2026-11-15
 At `max-width:590px`, `.footer-top` is a two-column/2-row CSS grid (`minmax(64px,.42fr) minmax(0,1.58fr)`), footer emblem occupying the left column across both rows and `.footer-top-location`/`.footer-top-email` right-aligned on the right. `.footer-brand span` is hidden only on mobile. At `max-width:370px`, column and font sizes scale down. The main contact block remains full-width and four section groups remain 2×2. Stylesheet cache-bust `?v=20261115-footer-mobile-layout`.
+
+## Gallery lightbox — 2026-11-15
+`index.html` gallery cards are `<button class="photo gallery-trigger">` with image and title; native `<dialog id="galleryLightbox">` contains `#galleryLightboxImage`, `#galleryLightboxTitle` and `#galleryLightboxClose`. `assets/js/home.js` binds gallery triggers to `showModal()`, uses original image URL and title, handles close button/backdrop, and restores keyboard focus on close; Escape is native dialog behavior. `assets/css/home.css`: `.gallery-lightbox`, `.lightbox-figure`, `.lightbox-close` and `.gallery-trigger` style fullscreen display with original aspect ratio. Asset URLs versioned `?v=20261115-gallery-lightbox`.
