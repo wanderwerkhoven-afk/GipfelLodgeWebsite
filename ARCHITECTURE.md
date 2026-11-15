@@ -147,3 +147,6 @@ Header is fixed and transparent over the hero, switching to a solid white surfac
 
 ## Hero overlay header hotfix — 2026-11-15
 The fixed transparent topbar must overlap the hero rather than take layout space. Rules explicitly zero main/hero top offset, ensure transparency outside `.is-scrolled`, and retain a white surface once scrolled. `index.html` references versioned CSS/JS to mitigate Safari cached assets; iOS visual QA is still outstanding.
+
+## White hero header controls — 2026-11-15
+Hero state now forces white header lettering, navigation icon strokes, monochrome flag, and white BOOK surface via CSS variable `--color-topbar-hero-foreground`; scrolled white-header state is unchanged. CSS asset version in `index.html` is now header3.
