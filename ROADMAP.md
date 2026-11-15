@@ -287,3 +287,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### Collage device-specific instructions — 2026-11-15
 - [x] Show desktop-specific mouse/keyboard hint on pointer-fine large screens and touch-oriented instruction on touch devices and narrow screens.
 - [x] Leave drag and pickup behavior unchanged.
+
+### Mountain silhouette footer edge — 2026-11-15
+- [x] Add a decorative scalable alpine mountain silhouette immediately above the footer, coloured with the shared footer background token.
+- [x] Responsive desktop/mobile heights with a full-width inline SVG (no loading or network dependency).
+- [ ] Visually QA skyline contour and preceding section background on desktop/mobile.
