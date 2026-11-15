@@ -136,3 +136,17 @@ Original source: legacy `Gipfel-Lodge/index.html` header and `css/site_css/compo
 - `setMenuOpen(true)` now focuses `#navigation a` (first link), and keyboard Tab cycling uses only `#navigation a` elements.
 - The right-side `#menuToggle` (`.topbar-hamburger`) is the sole visible menu toggle/close control. Backdrop and Escape continue to dismiss the menu.
 - Removed obsolete `.topbar-dots` styles and older hamburger styles. Do not reintroduce duplicate close controls.
+
+## Swipe / responsive registry — 2026-11-15
+| Symbol | Source | Function / dependencies |
+|---|---|---|
+| `hero` | `assets/js/home.js`, `.hero` in HTML | Pointer event target for touch swipe; does not intercept vertical scrolling |
+| `slides` | `assets/js/home.js` | Array of `.slide` elements |
+| `slideStatus` / `#slideStatus` | JS / HTML | Live accessible slide position announcement |
+| `show(n)` | `assets/js/home.js` | Shared slide navigation for arrows and swipe; sets `.active` and `aria-hidden` |
+| `start` | `assets/js/home.js` | Pointer start coordinates and pointer ID; reset on up/cancel |
+| `dx`, `dy` | `assets/js/home.js` | Horizontal/vertical movement; 55px threshold and direction discrimination |
+| `.hero {touch-action:pan-y pinch-zoom}` | `assets/css/home.css` | Native vertical scroll and pinch zoom while enabling horizontal pointer gestures |
+| `.sr-only` | CSS | Visually hidden screen-reader status |
+| Responsive breakpoints `800px`, `590px`, `380px` | CSS | Grid/header/hero/menu sizing and safe-area adjustments |
+The static `.gallery` is a grid, not an arrow-navigable carousel. No swipe handler is attached to it.
