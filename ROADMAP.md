@@ -166,3 +166,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Transparent fixed topbar over hero; white topbar with charcoal controls once header passes hero bottom; reverts on scrolling up.
 - [x] Smooth CSS transition, passive scroll/resize update, reduced-motion fallback.
 - [ ] Visual QA of logo contrast and menu/BOOK button across desktop/mobile and browser scroll restoration.
+
+### Transparent header hotfix — 2026-11-15
+- [x] Explicitly keep `main`/hero flush with top of viewport, allowing fixed topbar to overlay hero.
+- [x] Set explicit transparent topbar background when `is-scrolled` is absent.
+- [x] Cache-bust CSS/JS in `index.html` to address stale mobile browser style caching.
+- [ ] Verify visually in iOS Safari including status-bar safe area.
