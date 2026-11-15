@@ -141,3 +141,6 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Fixed three-column/two-row layout on all viewport widths, with five occupied positions and an empty sixth position.
 - [ ] Verify actual property facts and price before public launch; values currently sourced solely from user-supplied design reference.
 - [ ] Check legibility on narrow iPhone widths.
+
+### KPI completion — 2026-11-15
+- [x] Added sixth KPI `Privé` / `sauna` in the bottom-right cell of the existing fixed 3×2 KPI grid.
