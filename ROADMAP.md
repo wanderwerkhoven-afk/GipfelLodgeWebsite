@@ -310,3 +310,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### Mountain silhouette scale refinement — 2026-11-16
 - [x] Replace fixed 8px horizontal mask overscan with a subtle 104% centered zoom of the original footer mountain SVG mask.
 - [ ] Confirm visual full-bleed coverage in mobile Safari.
+
+### Mountain footer seam correction — 2026-11-16
+- [x] Seal translucent bottom pixels of zoomed original SVG mask with a 4px footer-coloured strip and a 1px footer overlap, avoiding Safari hairline seams.
+- [ ] Confirm the pale horizontal line is gone on iOS Safari.
