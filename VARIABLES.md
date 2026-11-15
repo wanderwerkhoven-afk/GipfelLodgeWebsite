@@ -97,3 +97,15 @@ For each CSS token record value, usage and responsive overrides.
 For each endpoint record method, auth, validation, payload schema, response, error behavior and retention.
 For each configuration key record whether it is public or secret; **never write actual secrets**.
 Update/remove old entries in the same commit as code changes. Prefer searchable semantic names and single ownership.
+
+## Navigation symbols added — 2026-11-15
+| Identifier | Location | Type / responsibility | Dependencies |
+|---|---|---|---|
+| `menuToggle` | `index.html`, `assets/js/home.js` | Trigger button / `toggle` element | `setMenuOpen`, `aria-expanded`, `#navigation` |
+| `navigation` | `index.html` | Popup nav; hidden with `inert` and `aria-hidden` | `.nav.open`, `setMenuOpen` |
+| `menuClose` / `closeButton` | HTML / JS | Close button; first keyboard focus | `setMenuOpen(false)` |
+| `menuBackdrop` / `backdrop` | HTML / JS | Overlay and outside-click dismissal | `.menu-backdrop.open`, `setMenuOpen(false)` |
+| `setMenuOpen(open,{restoreFocus=false}={})` | `assets/js/home.js` | Single popup state manager; synchronizes classes, ARIA, inert, focus | trigger, close, overlay, link and keyboard handlers |
+| `.menu-anchor`, `.menu-icon`, `.menu-caption` | HTML/CSS | Positioning, animated hamburger, caption | `aria-expanded` on trigger |
+| `.nav-eyebrow`, `.nav-footnote` | HTML/CSS | Popup supporting text | `.nav` |
+Menu event graph: trigger → `setMenuOpen(true)` → `.nav.open` and backdrop → close/anchor/Escape → `setMenuOpen(false)`. `returnFocus` is currently an unused local JS variable, reserved for cleanup. Visual browser QA pending.
