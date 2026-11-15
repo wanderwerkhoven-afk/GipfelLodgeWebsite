@@ -153,3 +153,6 @@ Hero state now forces white header lettering, navigation icon strokes, monochrom
 
 ## Language indicator — 2026-11-15
 The header's language trigger now contains a globe plus `NL` abbreviation. Flag icons remain inside the language selection dropdown; non-NL translations are not yet implemented. CSS asset version updated to `20261115-language-code` to invalidate mobile cache.
+
+## Adaptive logo emblem — 2026-11-15
+Logo asset is unchanged, with CSS filters switching mountain icon from white while overlaying hero to charcoal when the fixed header is solid white. The existing `.is-scrolled` class from `home.js` drives the visual mode; no JavaScript changes required.
