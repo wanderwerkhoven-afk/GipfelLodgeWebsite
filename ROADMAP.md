@@ -10,7 +10,7 @@ Build a secure, accessible, multilingual, premium lodge-rental website for Gipfe
 - [x] Home includes header/mobile menu, two-image hero, carousel arrows, lodge intro, six USP tiles, four-image gallery, contact CTA, footer, responsive CSS.
 - [x] Initial styling references existing palette/fonts.
 - [ ] GitHub Pages publication enabled and independently verified (user reported activation issue; settings not confirmed).
-- [ ] Homepage rendered and tested on mobile, tablet, desktop.
+- [ ] Homepage rendered and tested on mobile, tablet, desktop after CSS/JS extraction.
 - [ ] Photos and logo migrated to local assets (currently loaded from gipfellodge.at).
 - [ ] Content/links reviewed (current contact email and capacity claims must be confirmed).
 - [ ] Security and accessibility audit completed.
@@ -28,7 +28,8 @@ Build a secure, accessible, multilingual, premium lodge-rental website for Gipfe
 ### Phase 1 — Homepage fidelity and design system [IN PROGRESS]
 - [x] First homepage scaffold.
 - [ ] Compare against legacy homepage section-by-section and agree what to preserve/change.
-- [ ] Move inline CSS to `assets/css/` and inline JS to `assets/js/` with unchanged behavior.
+- [x] Extract homepage CSS to `assets/css/home.css` and JavaScript to `assets/js/home.js` without intentional behavior changes (committed 2026-11-15).
+- [ ] Further split shared design tokens/components into dedicated modules if useful.
 - [ ] Create design tokens (colors, typography, spacing, breakpoints, components) and document them.
 - [ ] Move and optimize permitted original images to `assets/images/`; responsive srcset and image alt text.
 - [ ] Build consistent navigation, hero, image gallery, trust content, booking CTA, footer.
