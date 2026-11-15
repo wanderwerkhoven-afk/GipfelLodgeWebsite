@@ -177,3 +177,6 @@ Single native dialog now stays transparent over a blurred website `::backdrop`. 
 
 ## Review section architecture — 2026-11-15
 Static, responsive review section follows gallery and precedes the contact CTA. It is intentionally editorial placeholder content pending genuine, permission-cleared guest reviews. No star schema, fabricated quotes, external integrations, or dynamic storage. User CTA links to email. Design tokens kept in `assets/css/home.css`.
+
+## Source-attributed testimonial data — 2026-11-15
+Reviews are static HTML summaries of real guest feedback from the exact Villa for You listing `a6756`; no synthetic direct quotes. Expose attribution if provided by listing (Airbnb / Trade Tracker Nederland), and 'Platform niet vermeld' otherwise. `5.0/5` and `13` reflect the Dutch Villa for You listing as observed 2026-11-15; the English page indexes only 12, so the Dutch listing governs. Five named reviews have been inspected, remaining entries are linked on the source rather than inferred. Accessible horizontal carousel uses CSS scroll snap and two JS scroll buttons. Source score may become outdated without live integration. Listing caps occupancy at 8 while current website KPI advertises 2–10; resolve before launch.
