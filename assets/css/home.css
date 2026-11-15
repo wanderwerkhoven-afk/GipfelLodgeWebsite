@@ -103,3 +103,16 @@ body{min-width:0;overflow-x:clip}
 @media(max-width:590px){html{scroll-padding-top:70px}.topbar-inner{gap:8px}.topbar-center{max-width:calc(100% - 155px)}.topbar-logo{column-gap:8px}.logo-text-part{letter-spacing:.07em}.hero{height:100svh;min-height:0}.hero-content{padding-top:90px;padding-bottom:90px}.hero h1{font-size:clamp(48px,13vw,76px)}.hero p.lead{font-size:15px}.actions{gap:10px}.btn{padding:12px 15px;font-size:10px}.gallery{grid-template-rows:190px 155px 155px}.photo span{font-size:22px}.nav{max-height:calc(100dvh - 95px)} }
 @media(max-width:380px){.topbar-center{max-width:calc(100% - 142px)}.topbar .topbar-book{font-size:9px}.logo-text-part.left,.logo-text-part.right{font-size:.74rem}.topbar-logo img{height:29px}.hero h1{font-size:clamp(43px,12vw,60px)}}
 @media(prefers-reduced-motion:reduce){.hero{scroll-behavior:auto}}
+
+/* Lodge KPI band — reference-inspired editorial typography and left gold rules. */
+section.content{padding:0}
+.intro{padding:clamp(65px,8vw,110px) 0;grid-template-columns:minmax(0,1fr);gap:0}
+.intro>div:first-child{max-width:850px}
+.kpi-band{background:#344554;color:#fff;padding:clamp(48px,6vw,84px) 0}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(28px,5vw,85px);row-gap:clamp(45px,5vw,76px)}
+.kpi-item{min-width:0;padding:2px 0 2px clamp(16px,2vw,27px);border-left:2px solid #c6ab8e;display:flex;flex-direction:column;justify-content:center;gap:3px}
+.kpi-item strong{display:block;font:500 clamp(34px,3.8vw,56px)/1.06 var(--serif);color:#fff;letter-spacing:-.025em;overflow-wrap:normal}
+.kpi-item span{display:block;font:600 clamp(13px,1.35vw,18px)/1.45 var(--sans);color:#fff}
+@media(max-width:800px){.intro{padding:75px 0}.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:40px}.kpi-band{padding:55px 0}}
+@media(max-width:480px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:15px;row-gap:30px}.kpi-item{padding-left:13px;border-left-width:2px}.kpi-item strong{font-size:clamp(29px,8vw,39px)}.kpi-item span{font-size:12px}.kpi-band{padding:42px 0}}
+@media(max-width:330px){.kpi-grid{grid-template-columns:1fr}.kpi-item strong{font-size:38px}}
