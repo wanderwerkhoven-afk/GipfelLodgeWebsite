@@ -214,3 +214,10 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Accessible gallery triggers, close button, Escape key and backdrop click; focus returns to the triggering tile after closing.
 - [x] Keep original gallery layout and aspect ratio via `object-fit:contain` in viewer; CSS and JS cache-busted.
 - [ ] Verify mobile iOS Safari fullscreen image sizing and dialog behavior.
+
+### Animated gallery zoom and blurred backdrop — 2026-11-15
+- [x] Replace abrupt gallery modal opening with FLIP-style photo zoom from clicked gallery image to centered fullscreen viewer.
+- [x] Animate reverse zoom on close, including outside click, close button and Escape.
+- [x] Replace opaque backdrop with animated frosted/blurred underlying website; keep title beneath photo and fade title/controls.
+- [x] Respect prefers-reduced-motion and guard duplicate opens.
+- [ ] Visually verify in iOS Safari, especially screenshot alignment, backdrop-filter and returning photo to grid.
