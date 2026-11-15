@@ -160,3 +160,6 @@ The static `.gallery` is a grid, not an arrow-navigable carousel. No swipe handl
 
 ## KPI reference update — 2026-11-15
 The current `.kpi-grid` in `index.html` contains **five** static `.kpi-item` entries: `100 m²`/`woonruimte`, `55 m²`/`terras / balkon`, `115 m²`/`tuin`, `2 – 6`/`mensen`, `vanaf € 620`/`Prijs per chalet voor 2 personen`. CSS in `assets/css/home.css` overrides earlier responsive rules to maintain three columns and two rows at all widths; sixth slot is unoccupied. Previous 135m²/10 guest etc. registry entries are historical. Source figures are unverified reference copy, not PMS pricing.
+
+## KPI sixth item — 2026-11-15
+The `.kpi-grid` now contains six `.kpi-item` elements. Sixth: `<strong>Privé</strong><span>sauna</span>` (bottom right). The earlier note that the sixth cell is empty is superseded. No JavaScript or CSS changes required.
