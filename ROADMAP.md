@@ -306,3 +306,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### Mountain divider edge overscan — 2026-11-15
 - [x] Remove tiny light seams along both sides of original mountain divider with 8px horizontal alpha-mask overscan.
 - [ ] Verify on mobile Safari that silhouette now connects edge-to-edge with footer.
+
+### Mountain silhouette scale refinement — 2026-11-16
+- [x] Replace fixed 8px horizontal mask overscan with a subtle 104% centered zoom of the original footer mountain SVG mask.
+- [ ] Confirm visual full-bleed coverage in mobile Safari.
