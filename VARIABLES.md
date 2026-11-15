@@ -198,3 +198,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Adaptive logo color — 2026-11-15
 `assets/css/home.css` defines `--logo-light-filter:brightness(0) invert(1)` and `--logo-dark-filter:brightness(0) opacity(.78)`. `.topbar-logo img` uses light filter by default and dark filter when `.topbar.is-scrolled`; respects `--topbar-transition-duration` and reduced-motion. Logo wordmark text already switches by the topbar state. CSS URL now cache-busted `?v=20261115-logo-switch`.
+
+## Hero overlay theme tokens — 2026-11-15
+`assets/css/home.css` `:root` defines `--hero-overlay-color:56,57,54` (RGB Stone Charcoal), `--hero-overlay-left:0.50`, `--hero-overlay-middle:0.25`, `--hero-overlay-right:0.10`, and `--hero-overlay-bottom:0.20`. `.hero:after` uses these in two layered `linear-gradient()` values. The previous navy blue `#0d1c2a` shade is superseded. The CSS URL has a cache-busting version `?v=20261115-hero-charcoal`.
