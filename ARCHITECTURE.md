@@ -204,3 +204,6 @@ Drag state `.is-dragging` already toggled by JS now triggers a short CSS keyfram
 
 ## Collage help by input mode — 2026-11-15
 Device-specific instruction spans are controlled by CSS pointer capability and viewport queries; no JavaScript needed, and the existing `aria-describedby` on draggable photos still refers to the shared paragraph containing only the visible hint.
+
+## Footer transition skyline — 2026-11-15
+Responsive full-width inline SVG mountain silhouette sits directly before the shared footer. It uses the footer background CSS token as `currentColor` to create a continuous visual transition and is marked decorative for assistive technology. No JS or external image dependency.
