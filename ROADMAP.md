@@ -117,3 +117,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Language selector moved to the left, logo stays centered, BOOK and classic three-line hamburger on the right.
 - [x] Hamburger animates into X and floating nav anchors to the right edge of its trigger.
 - [ ] Verify narrow iPhone layout and GitHub Pages rendering.
+
+### Menu cleanup — 2026-11-15 [IMPLEMENTED, QA PENDING]
+- [x] Removed redundant white in-panel close button; the animated topbar hamburger is the only visible close control.
+- [x] Removed obsolete nine-dot and close-button styling and handlers; menu focus now moves to first link.
+- [ ] Confirm on iPhone Safari after Pages deploy/cache refresh.
