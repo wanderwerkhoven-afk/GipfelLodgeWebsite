@@ -234,3 +234,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Persistent review action — 2026-11-15
 `index.html` each `.review-card` contains `.review-preview` with 5-line-clamped `.review-original`, then `.review-card-action > .review-open-btn` (always visible), then `.review-card-footer`. `assets/css/home.css` makes preview flex to fill remaining card height and right-aligns action. `assets/js/home.js` binds `.review-open-btn` to the same full review modal and no longer measures text overflow. Earlier `review-show-more` notes superseded.
+
+## Intro photo collage — 2026-11-15
+`.lodge-collage` and `.lodge-collage-stage` introduced in `index.html` between `.intro` and `.kpi-band`; 4 figures use kitchen, livingroom, bedroom and terrace image URLs already used in gallery. `assets/css/home.css` tokens `--collage-overlap`, `--collage-shadow`, `--collage-frame` and styles `.lodge-collage-photo--left`, `--main`, `--right`, `--detail`; breakpoint 800/590 px. `--collage-overlap` reserved for subsequent spacing refinements. Cache-busting CSS `?v=20261115-intro-collage`.
