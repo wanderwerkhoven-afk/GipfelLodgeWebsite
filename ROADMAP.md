@@ -161,3 +161,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Switch intro and closing sections to light ivory, KPI and gallery to warm taupe; retain dark topbar and footer.
 - [x] Add centralized section-level light color variables and dark KPI text for contrast.
 - [ ] Verify contrast and responsive visuals on actual desktop and mobile browsers.
+
+### Adaptive topbar — 2026-11-15
+- [x] Transparent fixed topbar over hero; white topbar with charcoal controls once header passes hero bottom; reverts on scrolling up.
+- [x] Smooth CSS transition, passive scroll/resize update, reduced-motion fallback.
+- [ ] Visual QA of logo contrast and menu/BOOK button across desktop/mobile and browser scroll restoration.
