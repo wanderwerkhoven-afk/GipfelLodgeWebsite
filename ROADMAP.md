@@ -98,3 +98,9 @@ Every code change must record: purpose; files changed; selectors/IDs/functions/c
 
 ## 6. Definition of done
 A task is DONE only if committed, linked to the affected files/identifiers, tested at relevant viewport sizes, no known critical regressions, docs updated, and (where relevant) deployment verified. Documentation creation itself does not mean the planned features exist.
+
+### Navigation update — 2026-11-15 [IMPLEMENTED, QA PENDING]
+- [x] Floating animated menu anchored below its trigger on desktop/mobile, using slate/gold styling.
+- [x] Backdrop, staggered links, animated icon, close button, Escape, focus loop and inert closed state.
+- [ ] Verify visually in Safari and GitHub Pages after deployment.
+- Code: `index.html` (`#menuToggle`, `#navigation`, `#menuClose`, `#menuBackdrop`), `assets/css/home.css` (navigation selectors), `assets/js/home.js` (`setMenuOpen`).
