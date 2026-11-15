@@ -559,3 +559,28 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
 @media(max-width:590px){
   .footer-mountain-edge{height:auto;min-height:0;aspect-ratio:750 / 90}
 }
+
+/* Match the original Gipfel-Lodge mountain silhouette EXACTLY to the footer colour.
+   Its black pixels act as an alpha mask; the actual fill uses --footer-background. */
+.footer-mountain-edge{
+  position:relative;display:block;
+  width:100vw;max-width:none;
+  margin-left:calc(50% - 50vw);
+  aspect-ratio:750 / 90;height:auto;
+  background:var(--color-section-ivory);
+  overflow:hidden;line-height:0;
+}
+.footer-mountain-edge>img{display:none}
+.footer-mountain-edge::after{
+  content:"";position:absolute;inset:0;
+  display:block;background:var(--footer-background);
+  -webkit-mask-image:url("../../assets/icons/devider-mountain.svg");
+  mask-image:url("../../assets/icons/devider-mountain.svg");
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center bottom;mask-position:center bottom;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%;
+  mask-mode:alpha;
+}
+@media(max-width:590px){
+  .footer-mountain-edge{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:750 / 90;height:auto}
+}
