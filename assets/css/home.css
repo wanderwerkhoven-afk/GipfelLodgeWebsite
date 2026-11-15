@@ -585,15 +585,13 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   .footer-mountain-edge{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:750 / 90;height:auto}
 }
 
-/* The source SVG embeds a raster silhouette with tiny transparent edge pixels.
-   Overscan the mask horizontally to ensure the foothills reach both viewport edges. */
-.footer-mountain-edge{
-  width:100%;margin-left:0;max-width:100%;
-}
+/* Slightly zoom the original mountain silhouette instead of extending the mask by pixels. */
+.footer-mountain-edge{width:100%;max-width:100%;margin-left:0}
 .footer-mountain-edge::after{
-  inset:0 -8px 0 -8px;
-  -webkit-mask-size:100% 100%;mask-size:100% 100%;
+  inset:0;
+  -webkit-mask-size:104% 104%;
+  mask-size:104% 104%;
+  -webkit-mask-position:center bottom;
+  mask-position:center bottom;
 }
-@media(max-width:590px){
-  .footer-mountain-edge{width:100%;margin-left:0;max-width:100%}
-}
+@media(max-width:590px){.footer-mountain-edge{width:100%;max-width:100%;margin-left:0}}
