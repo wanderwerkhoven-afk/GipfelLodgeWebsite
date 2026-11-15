@@ -177,3 +177,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Hero overlay header uses white logo lettering, hamburger, globe and monochrome flag; BOOK is solid white with charcoal text.
 - [x] Preserve white background and dark controls after the hero; cache-bust CSS query to header3.
 - [ ] Verify iOS mobile contrast and scrolling state visually.
+
+### Language indicator — 2026-11-15
+- [x] Replace topbar selected-language flag with two-letter abbreviation `NL`, beside the globe icon.
+- [x] Keep national flags in the language dropdown; other languages remain unavailable until translated.
