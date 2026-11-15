@@ -109,3 +109,17 @@ Update/remove old entries in the same commit as code changes. Prefer searchable 
 | `.menu-anchor`, `.menu-icon`, `.menu-caption` | HTML/CSS | Positioning, animated hamburger, caption | `aria-expanded` on trigger |
 | `.nav-eyebrow`, `.nav-footnote` | HTML/CSS | Popup supporting text | `.nav` |
 Menu event graph: trigger → `setMenuOpen(true)` → `.nav.open` and backdrop → close/anchor/Escape → `setMenuOpen(false)`. `returnFocus` is currently an unused local JS variable, reserved for cleanup. Visual browser QA pending.
+
+## Original-style topbar symbols — 2026-11-15
+| Symbol | Location | Purpose / dependencies |
+|---|---|---|
+| `.topbar`, `.topbar-inner` | `index.html`, `assets/css/home.css` | Fixed header, 88px desktop / 70px mobile, layout frame |
+| `.topbar-dots`, `#menuToggle` | HTML/CSS/JS | Gold nine-dot SVG opens anchored `#navigation` via `setMenuOpen` |
+| `.topbar-center`, `.topbar-logo`, `.logo-text-part` | HTML/CSS | Centered logo; stacked mobile wordmark |
+| `.topbar-actions`, `.topbar-book` | HTML/CSS | Right language + BOOK CTA; BOOK links to `#contact` |
+| `.lang-dropdown`, `.lang-toggle`, `#languageToggle` | HTML/CSS/JS | Language popover trigger |
+| `.lang-menu`, `#languageMenu`, `.lang-link` | HTML/CSS/JS | Visual language menu; other translations marked unavailable |
+| `languageToggle`, `languageMenu`, `languageDropdown` | `assets/js/home.js` | Cached DOM references for language popup |
+| `setLanguageOpen(open)` | `assets/js/home.js` | Updates language popup open class, `aria-expanded`, `aria-hidden`, `inert` |
+| `.fi`, `.fi-nl`, `.fi-de`, `.fi-gb`, `.fi-fr`, `.fi-it`, `.fi-pl` | HTML/external flag-icons CSS | Flag icons; CDN dependency |
+Original source: legacy `Gipfel-Lodge/index.html` header and `css/site_css/components/global.css` header rules. Existing navigation is still custom animated popup, not the legacy drawer.
