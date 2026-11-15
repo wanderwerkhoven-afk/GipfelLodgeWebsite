@@ -173,4 +173,15 @@ body>.topbar:not(.is-scrolled){background-color:transparent;border-bottom-color:
 body>.topbar.is-scrolled{background-color:var(--color-topbar-solid)}
 /* Keep navigation icons visible against both the image and white surface. */
 body>.topbar:not(.is-scrolled) .lang-toggle{color:#fff}
-body>.topbar:not(.is-scrolled) .hamburger-lines span{background:var(--color-natural-oak)}
+body>.topbar:not(.is-scrolled) .hamburger-lines span{background:#fff}
+
+/* Hero topbar: all branding and controls white, while the sticky state stays charcoal on white. */
+:root{--color-topbar-hero-foreground:#FFFFFF}
+body>.topbar:not(.is-scrolled) .logo-text-part,
+body>.topbar:not(.is-scrolled) .topbar-hamburger,
+body>.topbar:not(.is-scrolled) .lang-toggle{color:var(--color-topbar-hero-foreground)}
+body>.topbar:not(.is-scrolled) .topbar-hamburger .hamburger-lines span{background:var(--color-topbar-hero-foreground)}
+body>.topbar:not(.is-scrolled) .topbar-book{background:var(--color-topbar-hero-foreground);color:var(--color-stone-charcoal)}
+body>.topbar:not(.is-scrolled) .topbar-book:hover{background:var(--color-limestone)}
+body>.topbar:not(.is-scrolled) .active-flag-container .fi{filter:grayscale(1) brightness(0) invert(1)}
+body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
