@@ -162,3 +162,6 @@ Logo asset is unchanged, with CSS filters switching mountain icon from white whi
 
 ## Footer composition — 2026-11-15
 `index.html` footer now uses a top masthead (logo, location, email), four semantic column groups with links to existing same-page anchors, and a bottom copyright/brand line. CSS breakpoints: 4-column desktop, 2-column up to 900px, 1-column below 350px. Footer has dedicated color tokens in `assets/css/home.css`; JavaScript's existing `#year` updater remains functional. No new pages/booking/social functionality claimed.
+
+## Footer grouping — 2026-11-15
+Footer navigation hierarchy follows the reference: contact/location plus four categories (Gipfel Lodge, De lodge, Eben im Pongau, Service). Desktop displays five columns; mobile displays contact full width then a 2×2 category layout. Functional links target existing anchors or email. Destination-category entries remain non-interactive until corresponding content exists. Previous four-column footer notes are historical.
