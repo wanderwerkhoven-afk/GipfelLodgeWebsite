@@ -207,3 +207,6 @@ Device-specific instruction spans are controlled by CSS pointer capability and v
 
 ## Footer transition skyline — 2026-11-15
 Responsive full-width inline SVG mountain silhouette sits directly before the shared footer. It uses the footer background CSS token as `currentColor` to create a continuous visual transition and is marked decorative for assistive technology. No JS or external image dependency.
+
+## Original mountain footer divider asset — 2026-11-15
+The footer transition now uses the original SVG asset imported from the historical `Gipfel-Lodge` repo (`assets/icons/devider-mountain.svg`), not a hand-constructed path. A local copy lives in the editable website repository to avoid cross-repository serving. Rendered by the existing decorative wrapper, with intrinsic 750:90 ratio and no JS.
