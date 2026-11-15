@@ -189,3 +189,6 @@ Static carousel now holds all 13 original review texts (in original language, no
 
 ## Reviews: progressive disclosure — 2026-11-15
 Guest cards now display 5-line clamped original reviews with a conditional `…meer tonen` positioned at the bottom-right of line five. Native modal contains full (not summarized or translated) text, name, date, 5/5 rating and stated platform. JS measures overflow per card and binds modal actions. Cards without overflow don't show a button. User preference for reduced animation respected by modal CSS. Verify mobile rendering where exact inline alignment can vary across fonts.
+
+## Review action redesign — 2026-11-15
+Every review card now has a persistent `Bekijk review` button positioned between a maximum-five-line excerpt and the author/date/platform footer; short cards also support opening the full review. Accessible dialog logic remains unchanged except selector updated. The prior overlay-at-end-of-fifth-line interaction and overflow checks were removed.
