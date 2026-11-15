@@ -135,3 +135,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Replace old feature grid with full-width dark slate KPI band, large serif values, white labels and slim gold left borders, matching supplied design reference.
 - [x] Keep existing six KPI values; responsive 3-column desktop, 2-column mobile, 1-column ultra-narrow fallback.
 - [ ] Verify typography and spacing on iPhone/desktop GitHub Pages.
+
+### KPI reference correction — 2026-11-15 [IMPLEMENTED, QA PENDING]
+- [x] KPI values and labels changed to match supplied reference: 100 m² living, 55 m² terrace/balcony, 115 m² garden, 2–6 people, from €620 for two guests.
+- [x] Fixed three-column/two-row layout on all viewport widths, with five occupied positions and an empty sixth position.
+- [ ] Verify actual property facts and price before public launch; values currently sourced solely from user-supplied design reference.
+- [ ] Check legibility on narrow iPhone widths.
