@@ -123,3 +123,6 @@ The existing hero in `index.html` is an arrow-driven image carousel. `assets/js/
 
 ## KPI section presentation — 2026-11-15
 The intro section `#lodge` contains an editorial intro followed by a full-width `.kpi-band` and `.kpi-grid`. Each `.kpi-item` holds static value/label text; presentation lives in `assets/css/home.css` with responsive 3/2/1-column grid breakpoints. No JavaScript. Existing KPI facts preserved; the user-supplied image is a styling reference, not a source for new property facts. Visual QA pending.
+
+## KPI reference match — 2026-11-15
+`index.html` now renders five KPI entries from the supplied visual reference in a 3-column × 2-row `.kpi-grid`; the final cell is intentionally empty. `assets/css/home.css` contains responsive typography adjustments while preserving the 3-column geometry on mobile. Source values and the 'from €620' price are unverified and must be confirmed before publication; this is static presentation, not live pricing.
