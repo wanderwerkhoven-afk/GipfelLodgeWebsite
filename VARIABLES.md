@@ -192,3 +192,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Hero header white-foreground token — 2026-11-15
 `--color-topbar-hero-foreground:#FFFFFF` controls text/icon contrast in `body>.topbar:not(.is-scrolled)`. Logo lettering, language icon, hamburger strokes, and BOOK background use it. Flag is monochromatically filtered white in hero state; returns to full color when scrolled. Existing white-topbar state remains charcoal controls. Cache-busted CSS to `?v=20261115-header3`.
+
+## Language indicator — 2026-11-15
+`index.html`: `.active-language-code` currently shows static `NL` in `#languageToggle` instead of `.active-flag-container`. The dropdown still uses `.fi fi-*` flags for each language. `assets/css/home.css` controls abbreviation styles; code inherits adaptive topbar foreground. No language-switching logic was added.
