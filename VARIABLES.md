@@ -255,3 +255,6 @@ The source repo `wanderwerkhoven-afk/Gipfel-Lodge`, `assets/icons/devider-mounta
 
 ## Mountain divider colour correction — 2026-11-15
 `assets/css/home.css` `.footer-mountain-edge::after` uses CSS `mask-image` / `-webkit-mask-image` on the local `../../assets/icons/devider-mountain.svg`, with solid `background:var(--footer-background)` instead of rendering the original SVG's black pixels. `.footer-mountain-edge` uses `width:100vw` and `margin-left:calc(50% - 50vw)` for full-bleed width; the area above the peaks uses `var(--color-section-ivory)`. The old `<img>` is hidden but retained in markup. CSS cache bust key: `20261115-mountain-color-width`.
+
+## Mountain divider edge overscan — 2026-11-15
+`.footer-mountain-edge::after { inset:0 -8px 0 -8px; }` expands the original SVG mask by 8 pixels horizontally within its clipped container, compensating for faint transparent pixels at the source image edges. Wrapper now uses `width:100%` to avoid subpixel viewport-offset issues. Cache version `20261115-mountain-edge-overscan`.
