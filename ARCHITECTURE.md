@@ -213,3 +213,6 @@ The footer transition now uses the original SVG asset imported from the historic
 
 ## Full-width colour-matched mountain edge — 2026-11-15
 The original source SVG remains unchanged and is applied as an alpha mask to an absolutely positioned pseudo-element filled with the footer CSS colour token. This prevents the original black pigment appearing above the dark-taupe footer. The containing decorative block extends to viewport width and uses the preceding closing section's ivory background. Includes WebKit mask property for Safari; mobile Safari visual verification remains outstanding.
+
+## Footer silhouette full-width seam fix — 2026-11-15
+The original source SVG can show narrow transparent edge strips after CSS masking. The mask pseudo-element overscans 8px left/right and is clipped by the full-width wrapper; the wrapper no longer uses a calculated negative viewport margin. Footer colour remains sourced from `--footer-background`.
