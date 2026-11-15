@@ -144,3 +144,7 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 
 ### KPI completion — 2026-11-15
 - [x] Added sixth KPI `Privé` / `sauna` in the bottom-right cell of the existing fixed 3×2 KPI grid.
+
+### KPI responsive correction — 2026-11-15
+- [x] Desktop KPI layout 3 columns × 2 rows; <=800px layout 2 columns × 3 rows, including small phones.
+- [ ] Verify actual responsive appearance on devices.
