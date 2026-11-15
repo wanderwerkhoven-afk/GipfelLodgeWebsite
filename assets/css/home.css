@@ -595,3 +595,16 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   mask-position:center bottom;
 }
 @media(max-width:590px){.footer-mountain-edge{width:100%;max-width:100%;margin-left:0}}
+
+/* Seal the transparent last SVG pixels and Safari subpixel seam at the footer join.
+   The original 104% mountain mask/zoom remains untouched. */
+.footer-mountain-edge::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:4px;
+  z-index:2;
+  background:var(--footer-background);
+  pointer-events:none;
+}
+.footer-mountain-edge+.footer{position:relative;margin-top:-1px}
