@@ -231,3 +231,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Review preview and modal — 2026-11-15
 `assets/css/home.css` custom property `--review-preview-lines:5` sets line clamp. `.review-preview`, `.review-original`, `.review-show-more`, `.review-dialog` styles position the expand link at end of line five over a subtle gradient in the card's taupe surface. `index.html` contains native `<dialog id="reviewDialog">`, metadata slots, quote and close button. `assets/js/home.js` `updateReviewPreviews()` detects overflow by comparing `scrollHeight` and `clientHeight` (on load/fonts ready/resize); opens complete original content and metadata via `showModal()`, backdrop/close/Escape and restores focus. Cache-busted CSS and JS version `20261115-review-expand`.
+
+## Persistent review action — 2026-11-15
+`index.html` each `.review-card` contains `.review-preview` with 5-line-clamped `.review-original`, then `.review-card-action > .review-open-btn` (always visible), then `.review-card-footer`. `assets/css/home.css` makes preview flex to fill remaining card height and right-aligns action. `assets/js/home.js` binds `.review-open-btn` to the same full review modal and no longer measures text overflow. Earlier `review-show-more` notes superseded.
