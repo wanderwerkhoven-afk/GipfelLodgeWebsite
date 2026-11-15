@@ -240,3 +240,6 @@ Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb
 
 ## Draggable photo collage — 2026-11-15
 `index.html` `.lodge-collage-stage` now contains 4 keyboard-focusable `.lodge-collage-photo` elements, each with `draggable=false` images and an instruction caption `#collageInstructions`. `assets/js/home.js` installs pointerdown/move/up/cancel and lostpointercapture handlers, uses pointer capture, calculates movement inside the collage, writes percentage left/top offsets, and increments z-index to bring the active photo forward. Keyboard Arrow keys move the focused photo 12px. `assets/css/home.css` uses `touch-action:none`, grab/grabbing cursors, non-selectable images, hidden stage overflow, and a focus outline. Assets are versioned with `?v=20261115-collage-drag`. Drag arrangement is local transient state and is reset on reload.
+
+## Collage pickup motion — 2026-11-15
+`assets/css/home.css` `--collage-pickup-scale:1.055`, `--collage-pickup-duration:520ms`, per-photo `--collage-photo-tilt` and `@keyframes collage-pickup-wiggle` drive a short 520ms lift/wobble on `.lodge-collage-photo.is-dragging`; release restores original transform using a 220ms CSS transition. Reduces motion for `prefers-reduced-motion:reduce`. CSS cache version `20261115-collage-pickup`.
