@@ -272,3 +272,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Insert 4-image overlapping photo composition between intro copy and KPI band using existing Gipfel Lodge photos.
 - [x] Responsive collage placement desktop/mobile, soft ivory frame, subtle shadow and reduced-motion support.
 - [ ] Visually QA layering/cropping on iPhone and desktop.
+
+### Draggable layered collage — 2026-11-15
+- [x] Make the four introductory printed-photo collage images pointer/touch draggable and bring selected image to the front.
+- [x] Constrain moved image elements to collage stage, prevent native image drag, keep vertical scroll outside images and add keyboard arrow nudging.
+- [x] Preserve existing responsive collage look; use percentage placement after moving and clamp on viewport resize.
+- [ ] QA pointer/touch interactions on iOS Safari, and rotated image corners at stage edges.
