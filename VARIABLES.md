@@ -180,3 +180,6 @@ Source: `assets/css/home.css` `:root`. To retheme, change these five variables:
 | `--color-travertine` | `#D7CABB` | Soft backgrounds and borders |
 | `--color-warm-graphite` | `#65615B` | Secondary text |
 Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palette variables. Some fixed translucent overlays and text colors remain as component-level values. The initial `:root` values table above is historical.
+
+## Light-first section tokens — 2026-11-15
+`assets/css/home.css` now defines `--color-section-ivory:var(--color-limestone)`, `--color-section-taupe:#E8E0D5`, and `--color-section-text:var(--color-stone-charcoal)` in `:root`. These control light homepage surfaces: intro and closing ivory; KPI and gallery taupe; topbar and footer remain dark charcoal. The previous dark KPI styling is superseded.
