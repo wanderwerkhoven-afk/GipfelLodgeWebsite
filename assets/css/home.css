@@ -152,3 +152,16 @@ body,section.content,.intro{background:var(--color-section-ivory);color:var(--co
 .closing{background:var(--color-section-ivory);color:var(--color-section-text)}
 .closing p{color:var(--color-warm-graphite)}
 .footer{background:var(--color-stone-charcoal);color:var(--color-limestone)}
+
+/* Adaptive header: transparent over hero, warm-white once hero has passed. */
+:root{--color-topbar-solid:#FFFFFF;--color-topbar-solid-text:var(--color-stone-charcoal);--topbar-transition-duration:320ms}
+.topbar{background:transparent;border-bottom-color:transparent;transition:background-color var(--topbar-transition-duration) ease,border-color var(--topbar-transition-duration) ease,box-shadow var(--topbar-transition-duration) ease;color:#fff}
+.topbar.is-scrolled{background:var(--color-topbar-solid);color:var(--color-topbar-solid-text);border-bottom-color:rgba(56,57,54,.10);box-shadow:0 6px 22px rgba(56,57,54,.06)}
+.topbar.is-scrolled .logo-text-part{color:var(--color-stone-charcoal)}
+.topbar.is-scrolled .lang-toggle{color:var(--color-stone-charcoal)}
+.topbar.is-scrolled .topbar-hamburger{color:var(--color-stone-charcoal)}
+.topbar.is-scrolled .hamburger-lines span{background:var(--color-stone-charcoal)}
+.topbar.is-scrolled .topbar-book{background:var(--color-stone-charcoal);color:#fff}
+.topbar.is-scrolled .topbar-book:hover{background:var(--color-natural-oak);color:var(--color-stone-charcoal)}
+.topbar.is-scrolled .nav,.topbar.is-scrolled .lang-menu{color:#fff}
+@media(prefers-reduced-motion:reduce){.topbar{transition:none}}
