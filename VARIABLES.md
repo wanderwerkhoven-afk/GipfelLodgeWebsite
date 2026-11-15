@@ -216,3 +216,6 @@ At `max-width:590px`, `.footer-top` is a two-column/2-row CSS grid (`minmax(64px
 
 ## Gallery motion and backdrop tokens — 2026-11-15
 `assets/css/home.css` tokens: `--lightbox-backdrop-blur:16px`, `--lightbox-backdrop-tint:rgba(22,21,20,.34)`, `--lightbox-zoom-duration:560ms`. `.gallery-lightbox::backdrop` uses animated backdrop-filter for frosted page, not an opaque color. `assets/js/home.js` helpers `galleryTransform(fromRect,toRect)`, `animateGalleryImage(frames,duration)`, `openGallery(trigger)`, `closeGallery()` implement source-to-modal FLIP transform and reverse zoom; `galleryOpening`/`galleryClosing` guard repeated action, `prefers-reduced-motion` disables motion. CSS and JS URLs `?v=20261115-gallery-zoom`.
+
+## Guest reviews section — 2026-11-15
+`index.html`: `<section class="reviews-section" id="reviews">` placed after lightbox/gallery and before `.closing`. Semantic headings and CTA `mailto:info@gipfellodge.at?subject=Mijn%20ervaring%20bij%20Gipfel%20Lodge`. `assets/css/home.css` `:root` contains `--reviews-background`, `--reviews-card-background`, `--reviews-text`, `--reviews-muted`, `--reviews-accent`; corresponding selectors `.reviews-layout`, `.reviews-intro`, `.reviews-panel`, `.reviews-panel-bottom` define responsive styling. No fabricated testimonials/ratings or API integration. CSS version `?v=20261115-reviews`.
