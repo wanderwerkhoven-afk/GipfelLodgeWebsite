@@ -178,6 +178,63 @@ reviewDialog?.addEventListener('click',event=>{
 });
 reviewDialog?.addEventListener('close',()=>reviewOpener?.focus({preventScroll:true}));
 
+// Interactive overlapping photo collage — keep every photo within the visible stage.
+const collageStage=document.querySelector('.lodge-collage-stage');
+if(collageStage){
+  const photos=[...collageStage.querySelectorAll('.lodge-collage-photo')];
+  let topLayer=10;
+  let activeDrag=null;
+  const clamp=(value,min,max)=>Math.max(min,Math.min(value,max));
+  function placePhoto(photo,x,y){
+    const maxX=Math.max(0,collageStage.clientWidth-photo.offsetWidth);
+    const maxY=Math.max(0,collageStage.clientHeight-photo.offsetHeight);
+    photo.style.left=(clamp(x,0,maxX)/Math.max(collageStage.clientWidth,1)*100)+'%';
+    photo.style.top=(clamp(y,0,maxY)/Math.max(collageStage.clientHeight,1)*100)+'%';
+    photo.style.right='auto';
+    photo.style.bottom='auto';
+  }
+  photos.forEach(photo=>{
+    photo.addEventListener('dragstart',event=>event.preventDefault());
+    photo.addEventListener('pointerdown',event=>{
+      if(activeDrag||(event.pointerType==='mouse'&&event.button!==0))return;
+      // Freeze the CSS-based starting placement into percentages only when interacted with.
+      const x=photo.offsetLeft,y=photo.offsetTop;
+      placePhoto(photo,x,y);
+      photo.style.zIndex=String(++topLayer);
+      activeDrag={photo,id:event.pointerId,startX:event.clientX,startY:event.clientY,left:x,top:y};
+      photo.classList.add('is-dragging');
+      photo.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    photo.addEventListener('pointermove',event=>{
+      if(!activeDrag||activeDrag.photo!==photo||activeDrag.id!==event.pointerId)return;
+      placePhoto(photo,activeDrag.left+event.clientX-activeDrag.startX,activeDrag.top+event.clientY-activeDrag.startY);
+    });
+    const finish=event=>{
+      if(!activeDrag||activeDrag.photo!==photo||activeDrag.id!==event.pointerId)return;
+      photo.classList.remove('is-dragging');
+      activeDrag=null;
+      if(photo.hasPointerCapture(event.pointerId))photo.releasePointerCapture(event.pointerId);
+    };
+    photo.addEventListener('pointerup',finish);
+    photo.addEventListener('pointercancel',finish);
+    photo.addEventListener('lostpointercapture',finish);
+    photo.addEventListener('keydown',event=>{
+      const delta={ArrowLeft:[-12,0],ArrowRight:[12,0],ArrowUp:[0,-12],ArrowDown:[0,12]}[event.key];
+      if(!delta)return;
+      event.preventDefault();
+      photo.style.zIndex=String(++topLayer);
+      placePhoto(photo,photo.offsetLeft+delta[0],photo.offsetTop+delta[1]);
+    });
+  });
+  window.addEventListener('resize',()=>{
+    photos.forEach(photo=>{
+      if(!photo.style.left)return;
+      placePhoto(photo,photo.offsetLeft,photo.offsetTop);
+    });
+  },{passive:true});
+}
+
 const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 const backdrop=document.getElementById('menuBackdrop');
