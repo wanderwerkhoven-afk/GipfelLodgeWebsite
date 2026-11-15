@@ -126,3 +126,6 @@ The intro section `#lodge` contains an editorial intro followed by a full-width 
 
 ## KPI reference match — 2026-11-15
 `index.html` now renders five KPI entries from the supplied visual reference in a 3-column × 2-row `.kpi-grid`; the final cell is intentionally empty. `assets/css/home.css` contains responsive typography adjustments while preserving the 3-column geometry on mobile. Source values and the 'from €620' price are unverified and must be confirmed before publication; this is static presentation, not live pricing.
+
+## KPI sixth item — 2026-11-15
+Sixth KPI added in `index.html`: private sauna, completing the fixed 3-column × 2-row grid. Existing CSS unchanged. Prior documentation describing five entries is historical.
