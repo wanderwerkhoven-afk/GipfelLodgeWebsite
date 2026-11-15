@@ -122,3 +122,11 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Removed redundant white in-panel close button; the animated topbar hamburger is the only visible close control.
 - [x] Removed obsolete nine-dot and close-button styling and handlers; menu focus now moves to first link.
 - [ ] Confirm on iPhone Safari after Pages deploy/cache refresh.
+
+### Responsive + swipe baseline — 2026-11-15 [IMPLEMENTED, DEVICE QA PENDING]
+- [x] Add pointer-based horizontal swipe to the existing hero carousel while retaining arrow controls.
+- [x] Preserve native vertical scrolling via `touch-action: pan-y pinch-zoom`; ignore vertical/short gestures and interactive targets.
+- [x] Add live slide status and inactive slide ARIA state.
+- [x] Add mobile viewport, safe-area, overflow, header, menu-height and small-screen layout refinements.
+- [ ] Verify on physical iPhone Safari, Android Chrome, tablet and desktop; check swipe direction, vertical scroll, menu, overflow and arrow controls.
+- [ ] Apply same shared interaction pattern to future arrow-driven galleries when they are implemented; current static four-photo gallery is not a carousel.
