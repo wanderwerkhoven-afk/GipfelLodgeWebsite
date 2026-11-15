@@ -216,3 +216,6 @@ The original source SVG remains unchanged and is applied as an alpha mask to an 
 
 ## Footer silhouette full-width seam fix — 2026-11-15
 The original source SVG can show narrow transparent edge strips after CSS masking. The mask pseudo-element overscans 8px left/right and is clipped by the full-width wrapper; the wrapper no longer uses a calculated negative viewport margin. Footer colour remains sourced from `--footer-background`.
+
+## Mountain zoom refinement — 2026-11-16
+Original SVG remains unchanged. Full width is achieved by centering its CSS mask at 104% scaling in both axes; the previous fixed horizontal pixel overscan is removed.
