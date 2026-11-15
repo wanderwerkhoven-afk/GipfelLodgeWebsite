@@ -185,3 +185,7 @@ body>.topbar:not(.is-scrolled) .topbar-book{background:var(--color-topbar-hero-f
 body>.topbar:not(.is-scrolled) .topbar-book:hover{background:var(--color-limestone)}
 body>.topbar:not(.is-scrolled) .active-flag-container .fi{filter:grayscale(1) brightness(0) invert(1)}
 body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
+
+/* Current language is shown as a two-letter code; flags are retained in the menu. */
+.active-language-code{display:inline-block;min-width:2ch;font:600 12px/1 var(--sans);letter-spacing:.08em;color:inherit;text-align:center}
+@media(max-width:590px){.active-language-code{font-size:11px}.lang-toggle{gap:7px}}
