@@ -147,6 +147,49 @@ function scrollReview(direction){
 document.getElementById('reviewsPrev')?.addEventListener('click',()=>scrollReview(-1));
 document.getElementById('reviewsNext')?.addEventListener('click',()=>scrollReview(1));
 
+// Clamp long reviews to five lines; native modal preserves the entire original text.
+const reviewDialog=document.getElementById('reviewDialog');
+const reviewDialogClose=document.getElementById('reviewDialogClose');
+const reviewDialogName=document.getElementById('reviewDialogName');
+const reviewDialogMeta=document.getElementById('reviewDialogMeta');
+const reviewDialogPlatform=document.getElementById('reviewDialogPlatform');
+const reviewDialogQuote=document.getElementById('reviewDialogQuote');
+let reviewOpener=null;
+function updateReviewPreviews(){
+  document.querySelectorAll('.review-preview').forEach(preview=>{
+    const quote=preview.querySelector('.review-original');
+    if(!quote)return;
+    // Compare to the un-clamped line box; an extra pixel avoids fractional-rounding false positives.
+    preview.classList.toggle('has-overflow',quote.scrollHeight>quote.clientHeight+1);
+  });
+}
+document.querySelectorAll('.review-show-more').forEach(button=>{
+  button.addEventListener('click',()=>{
+    if(!reviewDialog||!reviewDialogName||!reviewDialogQuote)return;
+    const card=button.closest('.review-card');
+    if(!card)return;
+    reviewOpener=button;
+    const footer=card.querySelector('.review-card-footer');
+    reviewDialogName.textContent=footer?.querySelector('strong')?.textContent||'Gast';
+    reviewDialogMeta.textContent=footer?.querySelector('span')?.textContent||'';
+    reviewDialogPlatform.textContent=footer?.querySelector('small')?.textContent||'';
+    reviewDialogQuote.textContent=card.querySelector('.review-original')?.textContent||'';
+    reviewDialogQuote.lang=card.lang||'nl';
+    reviewDialog.showModal();
+    reviewDialog.scrollTop=0;
+    reviewDialogClose?.focus({preventScroll:true});
+  });
+});
+reviewDialogClose?.addEventListener('click',()=>reviewDialog?.close());
+reviewDialog?.addEventListener('click',event=>{
+  if(event.target===reviewDialog)reviewDialog.close();
+});
+reviewDialog?.addEventListener('close',()=>reviewOpener?.focus({preventScroll:true}));
+window.addEventListener('resize',updateReviewPreviews,{passive:true});
+window.addEventListener('load',updateReviewPreviews,{once:true});
+document.fonts?.ready?.then(updateReviewPreviews);
+updateReviewPreviews();
+
 const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 const backdrop=document.getElementById('menuBackdrop');
