@@ -130,3 +130,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Add mobile viewport, safe-area, overflow, header, menu-height and small-screen layout refinements.
 - [ ] Verify on physical iPhone Safari, Android Chrome, tablet and desktop; check swipe direction, vertical scroll, menu, overflow and arrow controls.
 - [ ] Apply same shared interaction pattern to future arrow-driven galleries when they are implemented; current static four-photo gallery is not a carousel.
+
+### KPI styling — 2026-11-15 [IMPLEMENTED, VISUAL QA PENDING]
+- [x] Replace old feature grid with full-width dark slate KPI band, large serif values, white labels and slim gold left borders, matching supplied design reference.
+- [x] Keep existing six KPI values; responsive 3-column desktop, 2-column mobile, 1-column ultra-narrow fallback.
+- [ ] Verify typography and spacing on iPhone/desktop GitHub Pages.
