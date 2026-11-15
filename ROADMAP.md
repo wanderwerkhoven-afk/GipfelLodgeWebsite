@@ -227,3 +227,11 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Responsive split layout with warm ivory and taupe, title, verified-review placeholder, and email-based review submission CTA.
 - [ ] Replace placeholder with authentic, permission-cleared guest quotes and sources before publishing star ratings or review counts.
 - [ ] Verify mobile and desktop visual layout.
+
+### Source-attributed Villa for You reviews — 2026-11-15
+- [x] Replace placeholder with 5 source-grounded review summaries (Peter, Luisa, John, Christian, Timo) and transparent attribution of known source channels.
+- [x] Display Villa for You headline score 5.0/5 across 13 reviews (as viewed 2026-11-15); offer direct link to all reviews on Villa for You.
+- [x] Horizontal swipeable review cards with previous/next controls, responsive design and reduced motion.
+- [ ] Remaining 8 review entries require interactive source access; do not invent uninspected guest texts or origin platforms.
+- [ ] Confirm whether the public capacity should be 8 (Villa for You listing) or 10 (current website KPI).
+- [ ] Verify browser/mobile display and periodically verify source review counts.
