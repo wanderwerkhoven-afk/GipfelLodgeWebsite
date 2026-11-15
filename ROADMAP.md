@@ -261,3 +261,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Display `…meer tonen` aligned with the end of the fifth line only when text overflows, and open an accessible native modal with the complete original guest review, author, date, stars and sourced platform.
 - [x] Backdrop closes dialog, Escape works, and focus returns to the clicked control; short reviews have no expand control.
 - [ ] Visually test inline ellipsis alignment, overflow detection and native dialog behavior on iOS Safari and desktop.
+
+### Persistent 'Bekijk review' control — 2026-11-15
+- [x] Replaced all 13 inline `…meer tonen` buttons with a fixed right-aligned `Bekijk review` button immediately above each reviewer metadata line.
+- [x] Keep five-line previews; open full original text in the existing accessible dialog even for shorter reviews.
+- [x] Remove obsolete overflow measurement/conditional visibility logic. HTML, CSS and JS assets cache-busted to `20261115-review-buttons`.
+- [ ] iOS Safari visual verification of alignment and modal.
