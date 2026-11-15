@@ -219,3 +219,6 @@ The original source SVG can show narrow transparent edge strips after CSS maskin
 
 ## Mountain zoom refinement — 2026-11-16
 Original SVG remains unchanged. Full width is achieved by centering its CSS mask at 104% scaling in both axes; the previous fixed horizontal pixel overscan is removed.
+
+## Mountain/footer anti-seam patch — 2026-11-16
+A footer-coloured 4px foreground strip and 1px footer overlap cover SVG transparency/subpixel lines at the divider-footer boundary without replacing the underlying original SVG or changing its scale.
