@@ -186,3 +186,6 @@ Legacy semantic aliases `--ink`, `--gold`, `--sand`, `--wood` now point to palet
 
 ## Adaptive topbar — 2026-11-15
 `assets/css/home.css` `:root` defines `--color-topbar-solid:#FFFFFF`, `--color-topbar-solid-text:var(--color-stone-charcoal)`, `--topbar-transition-duration:320ms`. `.topbar` defaults to transparent over hero; `.topbar.is-scrolled` uses white background and charcoal foreground. `assets/js/home.js` `updateTopbar()` checks `hero.getBoundingClientRect().bottom <= topbar.getBoundingClientRect().bottom`, toggles `is-scrolled` on passive scroll and resize, and runs on initialization. `index.html` theme-color updated to limestone.
+
+## Transparent header hotfix — 2026-11-15
+`assets/css/home.css` adds `body>main{padding-top:0;margin-top:0}`, `main>.hero{margin-top:0}`, and explicit `body>.topbar:not(.is-scrolled){background-color:transparent}`. `index.html` now loads versioned stylesheet and script query strings (`?v=20261115-header2`) to invalidate earlier cached assets. Adaptive variables remain `--color-topbar-solid`, `--color-topbar-solid-text`, `--topbar-transition-duration`.
