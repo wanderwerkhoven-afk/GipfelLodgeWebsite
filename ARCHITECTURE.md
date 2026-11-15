@@ -150,3 +150,6 @@ The fixed transparent topbar must overlap the hero rather than take layout space
 
 ## White hero header controls — 2026-11-15
 Hero state now forces white header lettering, navigation icon strokes, monochrome flag, and white BOOK surface via CSS variable `--color-topbar-hero-foreground`; scrolled white-header state is unchanged. CSS asset version in `index.html` is now header3.
+
+## Language indicator — 2026-11-15
+The header's language trigger now contains a globe plus `NL` abbreviation. Flag icons remain inside the language selection dropdown; non-NL translations are not yet implemented. CSS asset version updated to `20261115-language-code` to invalidate mobile cache.
