@@ -123,3 +123,10 @@ Menu event graph: trigger → `setMenuOpen(true)` → `.nav.open` and backdrop �
 | `setLanguageOpen(open)` | `assets/js/home.js` | Updates language popup open class, `aria-expanded`, `aria-hidden`, `inert` |
 | `.fi`, `.fi-nl`, `.fi-de`, `.fi-gb`, `.fi-fr`, `.fi-it`, `.fi-pl` | HTML/external flag-icons CSS | Flag icons; CDN dependency |
 Original source: legacy `Gipfel-Lodge/index.html` header and `css/site_css/components/global.css` header rules. Existing navigation is still custom animated popup, not the legacy drawer.
+
+## Header rearrangement — 2026-11-15
+- `.topbar-language` (HTML/CSS): left-side language selector container; contains `#languageToggle` and `#languageMenu`.
+- `.topbar-actions` (HTML/CSS): right-side BOOK link and `.menu-anchor` trigger.
+- `.topbar-hamburger`, `.hamburger-lines` (HTML/CSS): classic three-line menu trigger; uses `#menuToggle` and `aria-expanded` to animate to X.
+- `.topbar .nav` (CSS): anchored to right of hamburger with `transform-origin: top right`; JavaScript `setMenuOpen` remains unchanged.
+- `.topbar-language .lang-menu` (CSS): language popup aligns left under selector.
