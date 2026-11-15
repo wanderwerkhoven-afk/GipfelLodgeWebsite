@@ -225,3 +225,6 @@ At `max-width:590px`, `.footer-top` is a two-column/2-row CSS grid (`minmax(64px
 
 ## Review platform attribution standard — 2026-11-15
 Static `index.html` `.review-card-footer small` displays `Reviewplatform: Airbnb` for Luisa and Christian only, supported by Villa for You source pages in NL/DE. Peter, Timo and John display `Reviewplatform niet vastgesteld`. Villa for You listing states 'via Trade Tracker Nederland' for John but this is not treated as a review platform. Never infer review origin from republication on Vrbo or an affiliate referral.
+
+## Full 13 guest testimonials — 2026-11-15
+`index.html` `#reviewsCards` now contains 13 `.review-card` elements with complete original-language quotations transcribed from owner-uploaded screenshots (Peter, Luisa, Timo, John, Christian, Tim, Chrystal, Damian, Sara, Sabrina, Dirk, Veerle, Philipp). `.review-original` is a `<blockquote>` with `lang` inherited from each article. For Timo, `.review-no-text` marks the original 'received without further explanation' platform placeholder. `.review-card-footer` reports guest and source channel when stated; Trade Tracker, Holidu, Fewobird/Bestfewo are labelled as *vermeld kanaal*. CSS supports untruncated wrapping and flexible card heights. CSS cache version `20261115-reviews-full13`. The 5.0/5 aggregate remains a static Villa for You snapshot.
