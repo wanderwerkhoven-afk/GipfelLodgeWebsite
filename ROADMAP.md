@@ -243,3 +243,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [ ] Obtain original booking source/channel ID and full 13-review export from Villa for You (MyVilla/channel manager) to determine provenances authoritatively.
 - [ ] Examine longer October review by Vahl (8/10, cleaning/management complaints) and reconcile against existing website's blanket five-star cards; Vrbo aggregates 9.8/10.
 - [ ] Review representations/permission around static 5/5 score and review excerpts if different channels diverge.
+
+### Review origin labels confirmed-only — 2026-11-15
+- [x] Review cards explicitly show `Reviewplatform: Airbnb` only for Luisa and Christian (Villa for You attributes both to Airbnb).
+- [x] Peter, Timo and John labelled `Reviewplatform niet vastgesteld`; Trade Tracker Nederland is an affiliate referral channel and not confirmed review-hosting platform.
+- [ ] Add further original review-platform labels only after a platform source or booking/review ID confirms them.
