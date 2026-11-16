@@ -356,3 +356,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Apply consistently to the topbar BOOK, hero CTAs, navigation CTA, contact CTA, and review action buttons.
 - [x] Keep focus-visible buttons un-clipped so their keyboard focus outline is preserved.
 - [ ] Visually check fine curvature in iOS Safari and desktop Chrome/Safari.
+
+### Desktop page scale — 2026-11-16
+- [x] Apply 80% layout-aware CSS zoom to the entire website on desktop with a fine pointer and viewport >= 1024px; keep tablet/touch/mobile at 100%.
+- [x] Keep full-width sections, fixed topbar and footer in the same layout flow rather than using transform:scale.
+- [ ] Visually QA the 80% desktop rendering in Chrome/Edge, including fullscreen header, photo collage, footer and review dialogs; responsive touch behavior unchanged.
