@@ -1055,9 +1055,29 @@ a.btn:focus-visible,
    assets/images/textures/footer-barnwood-vertical.png.
    To restore wood, remove footer-navy-preview from the HTML wrapper. */
 .footer-wood-region.footer-navy-preview{
-  background-color:#20303D;
+  background-color:var(--footer-active-color);
   background-image:none;
 }
 .footer-wood-region.footer-navy-preview .footer{
   background:transparent;
+}
+
+/* Shared footer/topbar color. This single token drives the navy preview surface
+   and all three controls of the white, scrolled (second) topbar. */
+:root{--footer-active-color:#20303D}
+.topbar.is-scrolled .topbar-book{
+  background:var(--footer-active-color);
+  color:#fff;
+}
+.topbar.is-scrolled .topbar-book:hover{
+  background:var(--footer-active-color);
+  color:#fff;
+  filter:brightness(1.12);
+}
+.topbar.is-scrolled .topbar-hamburger,
+.topbar.is-scrolled .lang-toggle{
+  color:var(--footer-active-color);
+}
+.topbar.is-scrolled .hamburger-lines span{
+  background:var(--footer-active-color);
 }
