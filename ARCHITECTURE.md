@@ -246,3 +246,6 @@ All principal buttons share a reusable inline SVG objectBoundingBox clipPath (`#
 
 ## Desktop-only 80% presentation scale — 2026-11-16
 For the new website a root-level CSS zoom is activated only for desktop viewports >= 1024px with a fine pointer. This reduces every component and vertical spacing proportionally while preserving the browser's layout flow; the mobile layout is unaffected. Exact viewport behavior should be visually tested in current desktop browsers; no JavaScript changes.
+
+## Fixed desktop design measurements — 2026-11-16
+Instead of runtime CSS zoom, desktop-specific selectors now directly specify smaller dimensions in the stylesheet. This respects normal browser layout and viewport width, and leaves mobile declarations unchanged. The earlier root zoom mechanism and associated custom property were removed. Final-value desktop overrides preserve 1px borders and necessary touch targets. Visual regression testing remains open.
