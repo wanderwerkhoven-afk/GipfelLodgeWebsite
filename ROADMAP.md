@@ -345,3 +345,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Add server-readable Open Graph metadata directly in the static page `<head>`: `og:type`, `og:locale`, site name, title, description, canonical preview URL and absolute image URL, JPEG MIME type and image alternative text.
 - [x] Add Twitter/X large-image card metadata. Source image is local `assets/images/Foto-collage-woning/outside-building-winter.jpg` (108,721 bytes).
 - [ ] Verify live WhatsApp/LinkedIn/Facebook preview after GitHub Pages deployment and scraper cache refresh. Change canonical and Open Graph URL to custom domain once that domain hosts this site.
+
+### Faceted action buttons inspired by BOOK — 2026-11-16
+- [x] Apply the existing topbar BOOK hexagonal/faceted silhouette to hero, closing, navigation and review action buttons for consistent alpine styling.
+- [x] Keep primary natural-oak fill, softer secondary hero treatment, compact mobile review action and reduced-motion transitions.
+- [ ] Visually review desktop and mobile buttons, secondary contrast and focus treatment before final design approval.
