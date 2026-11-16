@@ -1081,3 +1081,23 @@ a.btn:focus-visible,
 .footer-wood-region .footer-top-email{
   text-shadow:0 1px 2px rgba(17,10,7,.40);
 }
+
+/* Footer wood visibility fix: scale the vertical planks to the full shared surface.
+   "cover" zoomed into a tiny fragment on tall mobile footers, hiding the grain. */
+.footer-wood-region{
+  background-color:#49362d;
+  background-image:
+    linear-gradient(180deg,rgba(35,24,18,.14),rgba(35,24,18,.24)),
+    var(--footer-wood);
+  background-size:100% 100%,100% 100%;
+  background-position:center top,center top;
+  background-repeat:no-repeat,no-repeat;
+}
+.footer-wood-region .footer{
+  background:transparent;
+  text-shadow:0 1px 3px rgba(17,12,9,.4);
+}
+.footer-wood-region .footer-mountain-edge::before{
+  background-color:var(--color-section-ivory);
+}
+/* The mountain and footer use exactly the same underlying image, not separate tiles. */
