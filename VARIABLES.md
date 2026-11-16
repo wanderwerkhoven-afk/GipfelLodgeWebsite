@@ -279,3 +279,6 @@ Manifest URL: `site_manifest/favicon_website/site.webmanifest` (linked in `index
 
 ## Open Graph and social sharing — 2026-11-16
 `index.html` publishes OG metadata and `twitter:card=summary_large_image` for WhatsApp/Facebook/LinkedIn/X social previews. Canonical and `og:url`: `https://wanderwerkhoven-afk.github.io/GipfelLodgeWebsite/`. Absolute `og:image` and `twitter:image`: `https://wanderwerkhoven-afk.github.io/GipfelLodgeWebsite/assets/images/Foto-collage-woning/outside-building-winter.jpg` (local JPEG). Static crawlers receive the tags without JS. Update all absolute social URLs and canonical once the production custom domain is activated. Do not substitute `gipfellodge.at` without verifying actual active domain/hosting.
+
+## Faceted button system — 2026-11-16
+Global `--button-facet:11%` and `--button-transition:200ms ease` defined in `assets/css/home.css`. `a.btn`, `.review-open-btn` and `.nav .book` share a six-point beveled-end silhouette inspired by `.topbar-book`. Primary actions are natural oak (`--color-natural-oak`), secondary hero actions are light translucent, review actions use compact natural oak buttons. Phone breakpoint `590px` reduces padding. The topbar's original BOOK button remains unchanged. CSS cache key `20261116-faceted-buttons`.
