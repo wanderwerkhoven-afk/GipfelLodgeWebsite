@@ -1139,3 +1139,10 @@ a.btn:focus-visible,
   .review-card .review-preview>.review-original{font-size:20px;line-height:1.35}
   .review-card-action{margin-bottom:13px;min-height:32px}
 }
+
+/* Subtly rounded photo mosaic; clip images, captions and hover zoom together. */
+.gallery-section .gallery--mosaic > .photo.gallery-trigger{
+  border-radius:8px;
+  overflow:hidden;
+  isolation:isolate;
+}
