@@ -62,8 +62,6 @@ function startCarousel(){
   carouselTimer=window.setInterval(()=>show(index+1),carouselInterval);
 }
 function goToSlide(next){show(next);startCarousel();}
-document.getElementById('prev')?.addEventListener('click',()=>goToSlide(index-1));
-document.getElementById('next')?.addEventListener('click',()=>goToSlide(index+1));
 // Autoplay continues even when the cursor rests over the hero on initial load.
 document.addEventListener('visibilitychange',()=>document.hidden?stopCarousel():startCarousel());
 show(0);
