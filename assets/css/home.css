@@ -608,3 +608,12 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
   pointer-events:none;
 }
 .footer-mountain-edge+.footer{position:relative;margin-top:-1px}
+
+/* Consistent SVG iconography instead of platform-dependent emoji symbols. */
+.external-link-icon{display:inline-block;vertical-align:-.16em;flex:none;margin-left:5px;stroke:currentColor}
+.reviews-score-stars,.review-card-stars,.review-dialog-stars{
+  display:block;width:115px;height:21px;font-size:0;line-height:0;letter-spacing:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23A88B6B' d='m12 2.5 2.94 6.03 6.66.97-4.82 4.7 1.14 6.64L12 17.7l-5.92 3.14 1.14-6.64L2.4 9.5l6.66-.97L12 2.5Z'/%3E%3C/svg%3E");
+  background-size:23px 21px;background-repeat:repeat-x;
+}
+.review-dialog-source{display:inline-flex;align-items:center;gap:2px}
