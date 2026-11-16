@@ -319,3 +319,11 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Replace the Villa for You external-link arrow character with a consistent inline SVG external-link icon in both links.
 - [x] Replace star characters with an SVG star pattern and metadata flag emojis with readable country labels.
 - [ ] Audit remaining decorative symbols before future page additions. Do not alter guest-authored review wording when it contains original emoji.
+
+### Asset migration from Gipfel-Lodge — 2026-11-16
+- [x] Inventory all image and vector assets in `wanderwerkhoven-afk/Gipfel-Lodge`: 591 image/SVG files, 321,489,709 bytes.
+- [x] Copy all 590 missing image/SVG files without overwriting the one existing mountain SVG. Preserve their directory paths, including assets, beheer, site_manifest and siteground_upload.
+- [x] Verify 591 images in destination tree and same aggregate bytes; import GitHub Actions run succeeded.
+- [x] Repoint all 12 current hosted Gipfel Lodge photo/logo references in `index.html` to the matching local `assets/` paths.
+- [x] Retain the image-import GitHub Action only as a manual workflow_dispatch for future explicit synchronization.
+- [ ] Visually verify image loads and site deployment in Safari and desktop browsers.
