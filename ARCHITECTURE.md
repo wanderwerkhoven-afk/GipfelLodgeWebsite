@@ -222,3 +222,6 @@ Original SVG remains unchanged. Full width is achieved by centering its CSS mask
 
 ## Mountain/footer anti-seam patch — 2026-11-16
 A footer-coloured 4px foreground strip and 1px footer overlap cover SVG transparency/subpixel lines at the divider-footer boundary without replacing the underlying original SVG or changing its scale.
+
+## Decorative SVG icon policy — 2026-11-16
+For future site UI, use SVG icons or plain text labels rather than emoji. The reviews section now uses inline SVG for external links, an SVG background pattern for five-star ratings, and country text labels. The original written review content remains unedited, including author-supplied symbols.
