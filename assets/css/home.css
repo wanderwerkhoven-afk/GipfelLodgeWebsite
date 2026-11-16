@@ -1068,9 +1068,8 @@ a.btn:focus-visible,
   background:transparent;
 }
 
-/* Shared footer/topbar color. This single token drives the navy preview surface
-   and all three controls of the white, scrolled (second) topbar. */
-:root{--footer-active-color:#20303D}
+/* Footer-derived color token also styles all three controls in the scrolled topbar. */
+:root{--footer-active-color:var(--footer-background)}
 .topbar.is-scrolled .topbar-book{
   background:var(--footer-active-color);
   color:#fff;
