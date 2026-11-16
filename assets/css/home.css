@@ -688,3 +688,23 @@ a.btn:focus-visible,.review-open-btn:focus-visible,.nav .book:focus-visible{
   a.btn,.review-open-btn,.nav .book{transition:none}
   a.btn:hover,.review-open-btn:hover,.nav .book:hover{transform:none}
 }
+
+/* Micro-rounded hexagon: the six corners remain sharp at a glance, but follow
+   short quadratic curves (~1–2px at button sizes). clip-path:polygon() cannot
+   produce rounded corners, so use one reusable SVG objectBoundingBox clip. */
+.button-shape-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.topbar .topbar-book,
+a.btn,
+.review-open-btn,
+.nav .book{
+  -webkit-clip-path:url("#gipfelRoundedHex");
+  clip-path:url("#gipfelRoundedHex");
+}
+.topbar .topbar-book:focus-visible,
+a.btn:focus-visible,
+.review-open-btn:focus-visible,
+.nav .book:focus-visible{
+  -webkit-clip-path:none;
+  clip-path:none;
+  border-radius:3px;
+}
