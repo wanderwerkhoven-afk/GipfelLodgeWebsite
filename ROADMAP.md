@@ -314,3 +314,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 ### Mountain footer seam correction — 2026-11-16
 - [x] Seal translucent bottom pixels of zoomed original SVG mask with a 4px footer-coloured strip and a 1px footer overlap, avoiding Safari hairline seams.
 - [ ] Confirm the pale horizontal line is gone on iOS Safari.
+
+### SVG-only decorative review icons — 2026-11-16
+- [x] Replace the Villa for You external-link arrow character with a consistent inline SVG external-link icon in both links.
+- [x] Replace star characters with an SVG star pattern and metadata flag emojis with readable country labels.
+- [ ] Audit remaining decorative symbols before future page additions. Do not alter guest-authored review wording when it contains original emoji.
