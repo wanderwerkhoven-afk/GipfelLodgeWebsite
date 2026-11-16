@@ -886,3 +886,36 @@ a.btn:focus-visible,
   .hero .hero-content .lead{max-width:36ch;line-height:1.6}
   .hero .hero-content .actions{gap:10px}
 }
+
+/* Slow, subtle Ken Burns zoom during each 5-second hero image interval. */
+@keyframes hero-photo-zoom{
+  from{transform:scale(1)}
+  to{transform:scale(1.045)}
+}
+.hero .slide img{transform:scale(1);transform-origin:center center}
+.hero .slide.active img{animation:hero-photo-zoom 5s linear both}
+.hero-dots{
+  position:absolute;bottom:clamp(28px,4vh,48px);left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;justify-content:center;gap:6px;z-index:4;
+}
+.hero-dot{
+  appearance:none;background:transparent;border:0;padding:12px 5px;
+  display:grid;place-items:center;min-width:24px;min-height:32px;cursor:pointer;
+}
+.hero-dot::after{
+  content:"";display:block;width:7px;height:7px;border-radius:50%;
+  background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.8);
+  transition:background-color .3s ease,transform .3s ease,box-shadow .3s ease;
+}
+.hero-dot:hover::after,.hero-dot.is-active::after{
+  background:#fff;transform:scale(1.25);box-shadow:0 0 0 2px rgba(255,255,255,.16);
+}
+.hero-dot:focus-visible{outline:2px solid white;outline-offset:1px;border-radius:3px}
+@media(max-width:590px){
+  .hero-dots{bottom:max(24px,env(safe-area-inset-bottom));gap:4px}
+  .hero-controls{bottom:max(60px,calc(env(safe-area-inset-bottom) + 48px))}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .slide.active img{animation:none}
+  .hero-dot::after{transition:none}
+}
