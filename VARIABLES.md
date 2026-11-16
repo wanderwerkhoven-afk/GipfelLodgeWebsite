@@ -273,3 +273,6 @@ Source `wanderwerkhoven-afk/Gipfel-Lodge` main and target `wanderwerkhoven-afk/G
 
 ## Repository asset pruning — 2026-11-16
 The earlier 591-image import inventory is historical: after explicit cleanup both `Gipfel-Lodge` and `GipfelLodgeWebsite` contain 195 image/SVG files (107,081,289 bytes). The duplicated folders `beheer/`, `siteground_upload/` and `site_manifest/favicon_admin/` are no longer tracked; the site's main assets live under `assets/images/`, `assets/icons/`, plus public website favicons at `site_manifest/favicon_website/`. The temporary import workflow was deleted rather than leaving a path to accidentally restore the redundant images. Do not reintroduce retired copies without explicit approval.
+
+## Public site manifest — 2026-11-16
+Manifest URL: `site_manifest/favicon_website/site.webmanifest` (linked in `index.html`). `start_url` is `../../index.html` and `scope` is `../../` relative to the manifest directory to work both under the GitHub Pages project path and at a future domain root. `display:standalone`, `lang:nl`, `theme_color` and `background_color` = `#F2EFE8`; icons: existing 192×192 and 512×512 PNG in the same directory, declared `any maskable`. Head links local .ico, .svg, 96px favicon, 180px Apple Touch icon. Do not use retired `favicon_admin/` assets. No PWA offline cache/service worker implied.
