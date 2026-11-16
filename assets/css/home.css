@@ -537,77 +537,15 @@ body>.topbar:not(.is-scrolled) .active-flag-container{box-shadow:none}
  .collage-hint-touch{display:inline}
 }
 
-/* Decorative mountain skyline connecting the final section to the footer. */
+/* Mountain divider uses only the current transparent PNG; the shared wood/navy
+   surface and inverse alpha mask are defined further below. */
 .footer-mountain-edge{
-  width:100%;height:clamp(64px,10.5vw,150px);
-  overflow:hidden;color:var(--footer-background);
-  background:var(--color-limestone);line-height:0;margin:0;
+  position:relative;
+  width:100%;
+  line-height:0;
+  overflow:hidden;
 }
-.footer-mountain-edge svg{display:block;width:100%;height:100%}
-.footer-mountain-edge+.footer{margin-top:0}
-@media(max-width:590px){.footer-mountain-edge{height:clamp(70px,19vw,110px)}}
-
-/* Original mountain footer divider from Gipfel-Lodge/assets/icons/devider-mountain.svg. */
-.footer-mountain-edge{
-  display:flex;align-items:flex-end;justify-content:center;
-  height:auto;aspect-ratio:750 / 90;min-height:0;max-height:none;
-  overflow:hidden;background:var(--color-limestone);color:inherit;line-height:0;
-}
-.footer-mountain-edge img{
-  display:block;width:100%;height:100%;object-fit:fill;
-}
-@media(max-width:590px){
-  .footer-mountain-edge{height:auto;min-height:0;aspect-ratio:750 / 90}
-}
-
-/* Match the original Gipfel-Lodge mountain silhouette EXACTLY to the footer colour.
-   Its black pixels act as an alpha mask; the actual fill uses --footer-background. */
-.footer-mountain-edge{
-  position:relative;display:block;
-  width:100vw;max-width:none;
-  margin-left:calc(50% - 50vw);
-  aspect-ratio:750 / 90;height:auto;
-  background:var(--color-section-ivory);
-  overflow:hidden;line-height:0;
-}
-.footer-mountain-edge>img{display:none}
-.footer-mountain-edge::after{
-  content:"";position:absolute;inset:0;
-  display:block;background:var(--footer-background);
-  -webkit-mask-image:url("../../assets/icons/devider-mountain.svg");
-  mask-image:url("../../assets/icons/devider-mountain.svg");
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-position:center bottom;mask-position:center bottom;
-  -webkit-mask-size:100% 100%;mask-size:100% 100%;
-  mask-mode:alpha;
-}
-@media(max-width:590px){
-  .footer-mountain-edge{width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:750 / 90;height:auto}
-}
-
-/* Slightly zoom the original mountain silhouette instead of extending the mask by pixels. */
-.footer-mountain-edge{width:100%;max-width:100%;margin-left:0}
-.footer-mountain-edge::after{
-  inset:0;
-  -webkit-mask-size:104% 104%;
-  mask-size:104% 104%;
-  -webkit-mask-position:center bottom;
-  mask-position:center bottom;
-}
-@media(max-width:590px){.footer-mountain-edge{width:100%;max-width:100%;margin-left:0}}
-
-/* Seal the transparent last SVG pixels and Safari subpixel seam at the footer join.
-   The original 104% mountain mask/zoom remains untouched. */
-.footer-mountain-edge::before{
-  content:"";
-  position:absolute;
-  left:0;right:0;bottom:0;
-  height:4px;
-  z-index:2;
-  background:var(--footer-background);
-  pointer-events:none;
-}
-.footer-mountain-edge+.footer{position:relative;margin-top:-1px}
+.footer-mountain-edge+.footer{position:relative;margin-top:0}
 
 /* Consistent SVG iconography instead of platform-dependent emoji symbols. */
 .external-link-icon{display:inline-block;vertical-align:-.16em;flex:none;margin-left:5px;stroke:currentColor}
