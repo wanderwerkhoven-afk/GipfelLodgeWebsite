@@ -1145,3 +1145,41 @@ a.btn:focus-visible,
   overflow:hidden;
   isolation:isolate;
 }
+
+/* Mobile Facilities: compact, legible cards without overflowing long titles. */
+.facilities-highlights .facility-card strong{
+  white-space:normal;
+  overflow-wrap:break-word;
+  max-width:100%;
+}
+@media(max-width:560px){
+  .facilities-highlights{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    align-items:stretch;
+  }
+  .facilities-highlights .facility-card{
+    box-sizing:border-box;
+    min-width:0;
+    min-height:126px;
+    padding:15px 13px 16px;
+    background:#ebe6dc;
+    border-radius:6px;
+  }
+  .facilities-highlights .facility-card svg{
+    width:23px;height:23px;margin-bottom:12px;
+  }
+  .facilities-highlights .facility-card strong{
+    font-size:clamp(19px,5.4vw,23px);
+    line-height:1.12;
+    white-space:normal;
+    overflow-wrap:break-word;
+    hyphens:auto;
+    max-width:100%;
+  }
+  .facilities-highlights .facility-card span{
+    font-size:11px;
+    line-height:1.4;
+    margin-top:7px;
+  }
+}
