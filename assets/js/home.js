@@ -24,10 +24,32 @@ const heroDots=slides.map((slide,i)=>{
   dotsContainer?.appendChild(dot);
   return dot;
 });
+const exitTimers=new Map();
 function show(n){
   if(!slides.length)return;
-  index=(n+slides.length)%slides.length;
-  slides.forEach((slide,i)=>{slide.classList.toggle('active',i===index);slide.setAttribute('aria-hidden',String(i!==index));});
+  const next=(n+slides.length)%slides.length;
+  const outgoing=slides[index];
+  const incoming=slides[next];
+  // Keep the outgoing image's zoom running until opacity reaches zero.
+  if(outgoing!==incoming){
+    outgoing.classList.add('is-exiting');
+    if(exitTimers.has(outgoing))window.clearTimeout(exitTimers.get(outgoing));
+    exitTimers.set(outgoing,window.setTimeout(()=>{
+      outgoing.classList.remove('is-exiting');
+      exitTimers.delete(outgoing);
+    },1250));
+  }
+  // An early manual switch can revisit a slide before its old fade finishes.
+  if(exitTimers.has(incoming)){
+    window.clearTimeout(exitTimers.get(incoming));
+    exitTimers.delete(incoming);
+  }
+  incoming.classList.remove('is-exiting');
+  index=next;
+  slides.forEach((slide,i)=>{
+    slide.classList.toggle('active',i===index);
+    slide.setAttribute('aria-hidden',String(i!==index));
+  });
   heroDots.forEach((dot,i)=>{dot.classList.toggle('is-active',i===index);dot.setAttribute('aria-current',i===index?'true':'false');});
   if(slideStatus)slideStatus.textContent=`Afbeelding ${index+1} van ${slides.length}`;
 }
