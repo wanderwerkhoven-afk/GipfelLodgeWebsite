@@ -327,3 +327,10 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Repoint all 12 current hosted Gipfel Lodge photo/logo references in `index.html` to the matching local `assets/` paths.
 - [x] Retain the image-import GitHub Action only as a manual workflow_dispatch for future explicit synchronization.
 - [ ] Visually verify image loads and site deployment in Safari and desktop browsers.
+
+### Repository cleanup: retire beheer, admin and SiteGround export — 2026-11-16
+- [x] Removed entire `beheer/` and `siteground_upload/` duplicate image trees and `site_manifest/favicon_admin/` from the new website repository.
+- [x] Removed the one-time image import GitHub Actions workflow so it cannot repopulate retired directories.
+- [x] Cleaned retired admin/CRM source and SiteGround export files from the historical `Gipfel-Lodge` repository (public website sources and common assets retained).
+- [x] Verified both repositories contain 195 remaining image and SVG files, 107,081,289 bytes each, with no retired folder paths.
+- [ ] Confirm website deployment visually after repository cleanup.
