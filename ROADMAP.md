@@ -367,3 +367,10 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Encode desktop 80% sizing as explicit CSS dimension overrides for typography, layout spacing, section heights and controls; responsive mobile sizing stays unchanged.
 - [x] Ensure final CSS declarations (including resets) determine the desktop values; minimum interactive control sizes remain usable.
 - [ ] Visually QA desktop at multiple widths and confirm no unexpected horizontal scrolling.
+
+### Desktop layout aligned with gipfellodge.nl reference — 2026-11-16
+- [x] Rework desktop homepage spacing and width toward the reference site's broader editorial proportions and more prominent photography, while retaining the established visual design and content.
+- [x] Arrange introductory text and existing draggable collage in a balanced two-column visual row on desktop; KPI band remains directly below, unchanged in content.
+- [x] Increase usable image/gallery area and refine hero, section, review and footer spacing with explicit CSS pixel/clamp values, without root zoom or scale variables.
+- [x] Remove the earlier generated desktop override block with invalid stray comment fragments; check CSS brace balance and introduction DOM wrappers.
+- [ ] Visually QA desktop at 1024, 1280, 1440 and 1920px plus iPhone/tablet; refine based on screenshots.
