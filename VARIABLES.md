@@ -288,3 +288,6 @@ The inline `<svg class="button-shape-defs">` near the start of `<body>` defines 
 
 ## Desktop scaling — 2026-11-16
 `assets/css/home.css` contains `--desktop-site-zoom:0.8`. `@media (min-width:1024px) and (pointer:fine) { html { zoom:var(--desktop-site-zoom) } }` applies the smaller scale to the complete desktop layout, including typography, buttons, imagery and spacing. Touch devices and narrower viewports remain at 100%. CSS cache version `20261116-desktop-80`. CSS `zoom` changes layout scale; no transform wrapper is used.
+
+## Desktop dimensions baked in — 2026-11-16
+Supersedes the earlier `--desktop-site-zoom:0.8` setting. That variable and the `html { zoom: ... }` rule were deleted. `assets/css/home.css` now ends with fixed numeric desktop CSS overrides under `@media(min-width:1024px) and (pointer:fine)`, with pixel/rem/em typography and spacing values directly scaled around 80%. No CSS zoom or shared scale variable remains. Standard small/mobile CSS definitions were left untouched. The versioned stylesheet is `20261116-desktop-fixed80`.
