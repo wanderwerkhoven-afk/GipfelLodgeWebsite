@@ -20,7 +20,7 @@ function show(n){
   slides.forEach((slide,i)=>{slide.classList.toggle('active',i===index);slide.setAttribute('aria-hidden',String(i!==index));});
   if(slideStatus)slideStatus.textContent=`Afbeelding ${index+1} van ${slides.length}`;
 }
-const carouselInterval=6000;
+const carouselInterval=3500;
 let carouselTimer=null;
 function stopCarousel(){if(carouselTimer!==null){window.clearInterval(carouselTimer);carouselTimer=null;}}
 function startCarousel(){
