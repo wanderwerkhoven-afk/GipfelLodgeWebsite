@@ -1,0 +1,68 @@
+/* Cinematic Gipfel Lodge splash. Wood strips assemble vertically before the logo appears. */
+#splash-screen{
+  position:fixed;inset:0;z-index:99999;overflow:hidden;
+  display:grid;place-items:center;background:#251b15;color:#e3c181;
+  isolation:isolate;opacity:1;visibility:visible;
+  transition:opacity .8s ease,visibility .8s ease;
+}
+#splash-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+html.skip-daily-splash #splash-screen{display:none!important}
+html.splash-playing{overflow:hidden}
+.splash-wood-stripes{position:absolute;inset:0;overflow:hidden;z-index:0}
+.splash-wood-stripes .splash-stripe{
+  position:absolute;top:0;bottom:0;
+  left:calc(var(--i) * 100% / 12);width:calc(100% / 12 + 1px);
+  background-image:url("../images/textures/footer-barnwood-vertical.png");
+  background-size:1200% 100%;background-repeat:no-repeat;
+  background-position:var(--pos) center;
+  transform:translate3d(0,var(--from),0);
+  will-change:transform;
+  animation:splash-wood-arrive var(--duration) cubic-bezier(.18,.83,.22,1) var(--delay) both;
+}
+@keyframes splash-wood-arrive{
+  from{transform:translate3d(0,var(--from),0)}
+  to{transform:translate3d(0,0,0)}
+}
+#splash-screen .splash-wood-veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(145deg,rgba(21,14,10,.34),rgba(21,14,10,.48));
+  pointer-events:none;
+}
+#splash-screen .splash-logo-container{
+  position:relative;z-index:2;width:min(74vw,350px);max-width:350px;
+  color:#e3c181;filter:drop-shadow(0 3px 15px rgba(0,0,0,.36));
+}
+#splash-screen .gipfel-logo-svg{display:block;width:100%;height:auto;overflow:visible}
+#splash-screen .gipfel-logo-svg .line{
+  fill:none;stroke:currentColor;stroke-width:4;stroke-linejoin:round;stroke-linecap:round;
+  stroke-dasharray:1000;stroke-dashoffset:1000;
+  animation:splash-draw-line 1.15s cubic-bezier(.4,0,.2,1) both;
+}
+#splash-screen .gipfel-logo-svg .mountain-1{animation-delay:2.55s}
+#splash-screen .gipfel-logo-svg .mountain-2{animation-delay:2.85s}
+#splash-screen .gipfel-logo-svg .stars path,
+#splash-screen .gipfel-logo-svg .stars text{
+  opacity:0;transform:scale(1.6);transform-origin:center;
+  animation:splash-star-in .42s cubic-bezier(.2,.85,.2,1) both;
+}
+#splash-screen .gipfel-logo-svg .stars path:nth-child(1){animation-delay:3.85s}
+#splash-screen .gipfel-logo-svg .stars path:nth-child(2){animation-delay:4.01s}
+#splash-screen .gipfel-logo-svg .stars path:nth-child(3){animation-delay:4.17s}
+#splash-screen .gipfel-logo-svg .stars path:nth-child(4){animation-delay:4.33s}
+#splash-screen .gipfel-logo-svg .stars text{animation-delay:4.49s}
+#splash-screen .gipfel-logo-svg>.text{
+  opacity:0;filter:blur(8px);
+  animation:splash-logo-focus .7s ease-out 4.65s both;
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+}
+@keyframes splash-draw-line{to{stroke-dashoffset:0}}
+@keyframes splash-star-in{to{opacity:1;transform:scale(1)}}
+@keyframes splash-logo-focus{to{opacity:1;filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){
+  #splash-screen{display:none!important}
+  .splash-wood-stripes .splash-stripe,
+  #splash-screen .gipfel-logo-svg .line,
+  #splash-screen .gipfel-logo-svg .stars path,
+  #splash-screen .gipfel-logo-svg .stars text,
+  #splash-screen .gipfel-logo-svg>.text{animation:none!important}
+}
