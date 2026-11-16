@@ -240,3 +240,6 @@ The static site delivers Open Graph + Twitter/X metadata from `index.html` `<hea
 
 ## Consistent alpine CTA language — 2026-11-16
 The design system unifies principal calls-to-action using CSS clip-path faceted hexagonal shapes matching the established topbar BOOK design: hero actions, reviews, mobile navigation CTA, and closing contact CTA. These remain standard semantic anchors/buttons with working actions and reduced-motion support; no JS changes. Focus-visible style disables clipping to allow a readable outline. Footer/text links and carousel arrow controls intentionally retain their separate styling.
+
+## Reusable rounded hexagonal CTA shape — 2026-11-16
+All principal buttons share a reusable inline SVG objectBoundingBox clipPath (`#gipfelRoundedHex`) with tiny quadratic transitions at polygon vertices. This supports responsive widths/heights while retaining the established BOOK button silhouette; no JS or external assets. Existing polygon clips remain fallback styles if URL clipping is not supported. Focus-visible removes clipping so focus rings are not cut off.
