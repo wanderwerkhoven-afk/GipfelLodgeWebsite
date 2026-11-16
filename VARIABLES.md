@@ -276,3 +276,6 @@ The earlier 591-image import inventory is historical: after explicit cleanup bot
 
 ## Public site manifest — 2026-11-16
 Manifest URL: `site_manifest/favicon_website/site.webmanifest` (linked in `index.html`). `start_url` is `../../index.html` and `scope` is `../../` relative to the manifest directory to work both under the GitHub Pages project path and at a future domain root. `display:standalone`, `lang:nl`, `theme_color` and `background_color` = `#F2EFE8`; icons: existing 192×192 and 512×512 PNG in the same directory, declared `any maskable`. Head links local .ico, .svg, 96px favicon, 180px Apple Touch icon. Do not use retired `favicon_admin/` assets. No PWA offline cache/service worker implied.
+
+## Open Graph and social sharing — 2026-11-16
+`index.html` publishes OG metadata and `twitter:card=summary_large_image` for WhatsApp/Facebook/LinkedIn/X social previews. Canonical and `og:url`: `https://wanderwerkhoven-afk.github.io/GipfelLodgeWebsite/`. Absolute `og:image` and `twitter:image`: `https://wanderwerkhoven-afk.github.io/GipfelLodgeWebsite/assets/images/Foto-collage-woning/outside-building-winter.jpg` (local JPEG). Static crawlers receive the tags without JS. Update all absolute social URLs and canonical once the production custom domain is activated. Do not substitute `gipfellodge.at` without verifying actual active domain/hosting.
