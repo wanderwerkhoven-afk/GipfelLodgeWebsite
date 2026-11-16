@@ -231,3 +231,6 @@ All 591 old image/icon assets have been copied into the new website repository w
 
 ## Simplified repository structure — 2026-11-16
 The new website repository now stores a single source of truth for public images/icons at `assets/`, plus `site_manifest/favicon_website/`. Legacy admin/backend-generated exports and SiteGround mirror trees are not included. The old `Gipfel-Lodge` repository likewise had admin HTML/CSS/JS, CRM tests, obsolete export scripts, and mirrored directories removed; its public pages, core assets, and remaining shared dependencies persist. Before cleanup there were 591 duplicate-containing assets; after cleanup exactly 195 remain per repository. The interim image-import workflow has been removed.
+
+## Favicons and web app manifest — 2026-11-16
+The public `site_manifest/favicon_website/` assets are linked via relative paths from the document head; added `site.webmanifest` uses relative document scope/start URL so GitHub Pages subdirectory hosting is supported. iOS receives `apple-touch-icon` and optional home-screen app labels, compatible browsers receive web app icon declarations and standalone presentation. This is install metadata only: no offline service worker or notification pipeline was added.
