@@ -708,3 +708,11 @@ a.btn:focus-visible,
   clip-path:none;
   border-radius:3px;
 }
+
+/* Desktop presentation scale: match the visual density of browser zoom at 80%.
+   Root zoom participates in layout (unlike transform:scale), so fixed header,
+   sections and footer keep filling the viewport. Touch/mobile remains 100%. */
+:root{--desktop-site-zoom:0.8}
+@media (min-width:1024px) and (pointer:fine){
+  html{zoom:var(--desktop-site-zoom)}
+}
