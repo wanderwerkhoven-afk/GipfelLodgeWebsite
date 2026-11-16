@@ -282,3 +282,6 @@ Manifest URL: `site_manifest/favicon_website/site.webmanifest` (linked in `index
 
 ## Faceted button system — 2026-11-16
 Global `--button-facet:11%` and `--button-transition:200ms ease` defined in `assets/css/home.css`. `a.btn`, `.review-open-btn` and `.nav .book` share a six-point beveled-end silhouette inspired by `.topbar-book`. Primary actions are natural oak (`--color-natural-oak`), secondary hero actions are light translucent, review actions use compact natural oak buttons. Phone breakpoint `590px` reduces padding. The topbar's original BOOK button remains unchanged. CSS cache key `20261116-faceted-buttons`.
+
+## Rounded faceted CTA corners — 2026-11-16
+The inline `<svg class="button-shape-defs">` near the start of `<body>` defines `#gipfelRoundedHex` as a normalized (objectBoundingBox) path with tiny quadratic-curve turns at all six hexagonal corners. CSS applies `clip-path:url("#gipfelRoundedHex")` to `.topbar .topbar-book`, `a.btn`, `.review-open-btn` and `.nav .book` to replace the polygon's mathematically sharp points. Relative curve sizes are approximately 1–2 px at normal button dimensions. On `:focus-visible` clipping is removed to preserve keyboard outline. CSS version `20261116-rounded-hex`.
