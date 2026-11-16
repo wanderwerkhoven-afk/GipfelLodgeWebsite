@@ -350,3 +350,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Apply the existing topbar BOOK hexagonal/faceted silhouette to hero, closing, navigation and review action buttons for consistent alpine styling.
 - [x] Keep primary natural-oak fill, softer secondary hero treatment, compact mobile review action and reduced-motion transitions.
 - [ ] Visually review desktop and mobile buttons, secondary contrast and focus treatment before final design approval.
+
+### Micro-rounded faceted button corners — 2026-11-16
+- [x] Add a reusable objectBoundingBox SVG clip path with very subtly rounded hexagonal vertices.
+- [x] Apply consistently to the topbar BOOK, hero CTAs, navigation CTA, contact CTA, and review action buttons.
+- [x] Keep focus-visible buttons un-clipped so their keyboard focus outline is preserved.
+- [ ] Visually check fine curvature in iOS Safari and desktop Chrome/Safari.
