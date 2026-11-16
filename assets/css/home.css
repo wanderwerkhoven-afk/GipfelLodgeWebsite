@@ -839,3 +839,25 @@ a.btn:focus-visible,
 .facilities-list li::before{content:"";position:absolute;left:0;top:25px;width:6px;height:6px;border:1px solid var(--wood);transform:rotate(45deg)}
 @media(max-width:800px){.facilities-layout{grid-template-columns:1fr;gap:26px}.facilities-section{padding:70px 0}.facilities-heading p{max-width:620px}}
 @media(max-width:560px){.facilities-list{grid-template-columns:1fr}.facilities-list li{padding-top:13px;padding-bottom:13px}.facilities-list li::before{top:22px}}
+
+/* Six-image editorial mosaic matching the visual composition of gipfellodge.nl. */
+.gallery-section .gallery--mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,clamp(155px,16vw,220px));gap:12px}
+.gallery-section .gallery--mosaic>.photo{grid-column:auto;grid-row:auto;min-width:0;min-height:0;height:100%}
+.gallery-section .gallery--mosaic>.photo:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery-section .gallery--mosaic>.photo:nth-child(2){grid-column:span 2}
+.gallery-section .gallery--mosaic>.photo:nth-child(5),
+.gallery-section .gallery--mosaic>.photo:nth-child(6){grid-column:span 2}
+.gallery-section .gallery--mosaic .gallery-trigger{position:relative;overflow:hidden}
+.gallery-section .gallery--mosaic .gallery-trigger img{display:block;width:100%;height:100%;object-fit:cover}
+.gallery-section .gallery--mosaic .gallery-trigger span{z-index:1;pointer-events:none}
+@media(max-width:800px){
+ .gallery-section .gallery--mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:260px 200px 180px 200px;gap:10px}
+ .gallery-section .gallery--mosaic>.photo:nth-child(1){grid-column:span 2;grid-row:span 1}
+ .gallery-section .gallery--mosaic>.photo:nth-child(2){grid-column:span 2;grid-row:span 1}
+ .gallery-section .gallery--mosaic>.photo:nth-child(5),
+ .gallery-section .gallery--mosaic>.photo:nth-child(6){grid-column:span 1}
+}
+@media(max-width:480px){
+ .gallery-section .gallery--mosaic{grid-template-rows:210px 165px 155px 155px;gap:8px}
+ .gallery-section .gallery--mosaic .gallery-trigger span{font-size:19px;padding:22px 12px 11px}
+}
