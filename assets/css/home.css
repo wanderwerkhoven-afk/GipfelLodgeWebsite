@@ -881,7 +881,7 @@ a.btn:focus-visible,
 }
 .hero .hero-content .actions{margin-top:clamp(25px,3vw,42px);gap:16px}
 .hero .hero-content .actions .btn{
-  border-radius:999px;
+  border-radius:0;
   min-width:190px;
   justify-content:center;
   padding:15px 27px;
@@ -930,9 +930,9 @@ a.btn:focus-visible,
     margin:24px auto 0;
   }
   .hero .hero-content .actions .btn{
-    -webkit-clip-path:none;
-    clip-path:none;
-    border-radius:999px;
+    -webkit-clip-path:url("#gipfelRoundedHex");
+    clip-path:url("#gipfelRoundedHex");
+    border-radius:0;
     min-width:0;
     max-width:100%;
     flex:0 1 auto;
@@ -1086,4 +1086,17 @@ a.btn:focus-visible,
 }
 .topbar.is-scrolled .hamburger-lines span{
   background:var(--footer-active-color);
+}
+
+/* Hero CTAs share the exact micro-rounded hexagonal outline of the topbar BOOK.
+   Keep this shape on desktop and mobile, overriding the former pill treatment. */
+.hero .hero-content .actions .btn{
+  -webkit-clip-path:url("#gipfelRoundedHex");
+  clip-path:url("#gipfelRoundedHex");
+  border-radius:0;
+}
+.hero .hero-content .actions .btn:focus-visible{
+  -webkit-clip-path:none;
+  clip-path:none;
+  border-radius:3px;
 }
