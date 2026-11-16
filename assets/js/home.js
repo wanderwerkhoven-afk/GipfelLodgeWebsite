@@ -25,18 +25,14 @@ let carouselTimer=null;
 function stopCarousel(){if(carouselTimer!==null){window.clearInterval(carouselTimer);carouselTimer=null;}}
 function startCarousel(){
   stopCarousel();
-  if(slides.length<2||document.hidden||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(slides.length<2||document.hidden)return;
   carouselTimer=window.setInterval(()=>show(index+1),carouselInterval);
 }
 function goToSlide(next){show(next);startCarousel();}
 document.getElementById('prev')?.addEventListener('click',()=>goToSlide(index-1));
 document.getElementById('next')?.addEventListener('click',()=>goToSlide(index+1));
-hero?.addEventListener('mouseenter',stopCarousel);
-hero?.addEventListener('mouseleave',startCarousel);
-hero?.addEventListener('focusin',stopCarousel);
-hero?.addEventListener('focusout',event=>{if(!hero.contains(event.relatedTarget))startCarousel();});
+// Autoplay continues even when the cursor rests over the hero on initial load.
 document.addEventListener('visibilitychange',()=>document.hidden?stopCarousel():startCarousel());
-window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change',startCarousel);
 show(0);
 startCarousel();
 
