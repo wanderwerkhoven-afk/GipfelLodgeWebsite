@@ -1039,10 +1039,12 @@ a.btn:focus-visible,
   position:relative;
   isolation:isolate;
   background-color:var(--footer-background);
-  background-image:linear-gradient(rgba(35,24,18,.52),rgba(35,24,18,.64)),var(--footer-wood);
-  background-repeat:no-repeat;
-  background-size:100% 100%,cover;
-  background-position:center center;
+  /* Display the complete width of every vertical plank. The previous 'cover'
+     crop showed only a narrow wood strip on portrait screens. */
+  background-image:linear-gradient(rgba(33,23,17,.18),rgba(33,23,17,.30)),var(--footer-wood);
+  background-repeat:no-repeat,no-repeat;
+  background-size:100% 100%,100% 100%;
+  background-position:center top,center top;
 }
 .footer-wood-region .footer{
   background:transparent;
@@ -1070,3 +1072,12 @@ a.btn:focus-visible,
   pointer-events:none;
 }
 .footer-wood-region .footer-mountain-edge+.footer{margin-top:0}
+
+/* Preserve contrast without obscuring visible grain and knots. */
+.footer-wood-region .footer-column a,
+.footer-wood-region .footer-column p,
+.footer-wood-region .footer-bottom,
+.footer-wood-region .footer-top-location,
+.footer-wood-region .footer-top-email{
+  text-shadow:0 1px 2px rgba(17,10,7,.40);
+}
