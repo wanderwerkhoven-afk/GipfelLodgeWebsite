@@ -234,3 +234,6 @@ The new website repository now stores a single source of truth for public images
 
 ## Favicons and web app manifest — 2026-11-16
 The public `site_manifest/favicon_website/` assets are linked via relative paths from the document head; added `site.webmanifest` uses relative document scope/start URL so GitHub Pages subdirectory hosting is supported. iOS receives `apple-touch-icon` and optional home-screen app labels, compatible browsers receive web app icon declarations and standalone presentation. This is install metadata only: no offline service worker or notification pipeline was added.
+
+## Social preview metadata — 2026-11-16
+The static site delivers Open Graph + Twitter/X metadata from `index.html` `<head>` (not client-side injected), enabling web scrapers to read title, description and absolute JPEG image. URLs are currently tied to the active GitHub Pages project path and must be updated on a future custom-domain cutover. The image is served from the local image library. Social platforms may cache previews; live visual appearance needs external validation.
