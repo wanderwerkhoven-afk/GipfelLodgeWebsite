@@ -249,3 +249,6 @@ For the new website a root-level CSS zoom is activated only for desktop viewport
 
 ## Fixed desktop design measurements — 2026-11-16
 Instead of runtime CSS zoom, desktop-specific selectors now directly specify smaller dimensions in the stylesheet. This respects normal browser layout and viewport width, and leaves mobile declarations unchanged. The earlier root zoom mechanism and associated custom property were removed. Final-value desktop overrides preserve 1px borders and necessary touch targets. Visual regression testing remains open.
+
+## Desktop layout composition referencing current Gipfel Lodge website — 2026-11-16
+The homepage's content keeps the same semantic sections and all existing interactions. A new `.intro-visual-row` contains `.intro` and `.lodge-collage`, laid out as a two-column editorial text/photo feature only on fine-pointer desktop (>=1024px). KPI band remains a normal full-width sibling, and gallery/reviews preserve their existing JS and DOM. Explicit CSS desktop rules set section widths, grid columns and spacing, and replace the previously generated 80%-sizing override CSS (which contained corrupt comment fragments). No changes to review content, image libraries, click/drag controls, manifest, SEO or social metadata.
