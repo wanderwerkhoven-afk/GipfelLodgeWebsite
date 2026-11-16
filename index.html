@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="assets/css/home.css?v=20261117-facilities-mobile-fit">
+<link rel="stylesheet" href="assets/css/home.css?v=20261117-facilities-mobile-fit2">
 <link rel="preload" as="image" href="assets/images/textures/footer-barnwood-vertical.png">
 <link rel="stylesheet" href="assets/css/splash.css?v=20261116-vertical-wood">
 <script>
@@ -46,6 +46,35 @@
   }catch(error){if(reduced)document.documentElement.classList.add('skip-daily-splash')}
 })();
 </script>
+<!-- Critical mobile Facilities layout: applied immediately, independent of cached home.css. -->
+<style>
+@media(max-width:560px){
+  #facilities .facilities-content{width:100%;min-width:0}
+  #facilities .facilities-highlights{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;align-items:stretch;width:100%;padding:0;margin:0;
+  }
+  #facilities .facilities-highlights > .facility-card{
+    box-sizing:border-box;display:flex;flex-direction:column;align-items:flex-start;
+    justify-content:flex-start;min-width:0;min-height:130px;height:auto;
+    padding:16px 12px;background:#ebe6dc;border-radius:6px;
+    overflow:hidden;
+  }
+  #facilities .facilities-highlights > .facility-card svg{
+    flex:none;width:23px;height:23px;margin:0 0 13px;
+  }
+  #facilities .facilities-highlights > .facility-card strong{
+    display:block;max-width:100%;font-size:clamp(18px,4.9vw,21px);
+    line-height:1.15;white-space:normal;overflow-wrap:anywhere;
+    word-break:normal;hyphens:auto;
+  }
+  #facilities .facilities-highlights > .facility-card span{
+    display:block;font-size:11px;line-height:1.4;margin-top:7px;
+    overflow-wrap:break-word;
+  }
+  #facilities .facilities-more{margin-top:16px}
+}
+</style>
 </head>
 <body>
 <div id="splash-screen" role="status" aria-label="Gipfel Lodge wordt geopend">
