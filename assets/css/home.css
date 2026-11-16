@@ -777,3 +777,54 @@ a.btn:focus-visible,
   .intro-visual-row{width:min(92%,950px);margin:auto}
   .intro-visual-row>.intro,.intro-visual-row>.lodge-collage{width:100%}
 }
+
+/* KPI and photo collage swap: KPIs sit alongside the introduction, two by three;
+   the original draggable collage follows as a full-width photographic feature. */
+.intro-visual-row>.kpi-band{min-width:0}
+.intro-visual-row>.kpi-band .kpi-grid{width:100%;max-width:none;margin:0}
+.intro-visual-row>.kpi-band .kpi-item{min-width:0}
+@media(min-width:1024px) and (pointer:fine){
+  .intro-visual-row{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:clamp(48px,5vw,85px);
+    padding:95px 0 72px;
+  }
+  .intro-visual-row>.intro{width:100%;min-width:0;margin:0;padding:0}
+  .intro-visual-row>.kpi-band{
+    background:var(--color-section-taupe);
+    padding:36px 32px;
+    align-self:stretch;
+    display:flex;align-items:center;
+  }
+  .intro-visual-row .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:repeat(3,auto);
+    column-gap:18px;
+    row-gap:38px;
+  }
+  .intro-visual-row .kpi-item{padding-left:14px}
+  .intro-visual-row .kpi-item strong{font-size:clamp(28px,2.4vw,39px)}
+  .intro-visual-row .kpi-item span{font-size:11px;line-height:1.4}
+  .content>.lodge-collage{
+    width:min(90%,1220px);
+    margin:0 auto;
+    padding:0 0 100px;
+  }
+  .content>.lodge-collage .lodge-collage-stage{
+    height:clamp(450px,46vw,650px);
+  }
+}
+@media(min-width:801px) and (max-width:1023px){
+  .intro-visual-row>.kpi-band{margin-bottom:70px}
+  .intro-visual-row>.kpi-band .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .content>.lodge-collage{width:min(92%,950px);margin:auto}
+}
+@media(max-width:800px){
+  .intro-visual-row>.kpi-band{margin-bottom:48px}
+  .intro-visual-row>.kpi-band .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto)}
+  .content>.lodge-collage{width:min(92%,1320px);margin:auto}
+}
+@media(max-width:330px){
+  .intro-visual-row>.kpi-band .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
