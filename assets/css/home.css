@@ -919,3 +919,36 @@ a.btn:focus-visible,
   .hero .slide.active img{animation:none}
   .hero-dot::after{transition:none}
 }
+
+/* Reference-inspired centered hero typography and three-button composition. */
+.hero .hero-content h1{margin:0 0 8px;font-weight:400}
+.hero .hero-subtitle{
+  font:400 clamp(32px,4.1vw,57px)/1.12 var(--serif);
+  margin:0 0 clamp(22px,3vw,38px);
+  color:#fff;
+  text-shadow:0 2px 15px rgba(0,0,0,.16);
+}
+.hero .hero-content p.lead{
+  max-width:750px;
+  font-size:clamp(15px,1.3vw,20px);
+  font-weight:400;
+  line-height:1.7;
+  margin:0 auto;
+}
+.hero .hero-content .actions{margin-top:clamp(25px,3vw,42px);gap:16px}
+.hero .hero-content .actions .btn{
+  border-radius:999px;
+  min-width:190px;
+  justify-content:center;
+  padding:15px 27px;
+}
+.hero .actions .hero-explore{background:#fff;border-color:#fff;color:#293640}
+.hero .actions .hero-availability{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.85);color:#fff}
+.hero .actions .hero-book{background:#cfae69;border-color:#cfae69;color:#fff}
+.hero .actions .btn:hover{filter:brightness(1.06)}
+@media(max-width:590px){
+  .hero .hero-subtitle{font-size:clamp(29px,8vw,42px);margin-bottom:20px}
+  .hero .hero-content p.lead{font-size:14px;line-height:1.6;max-width:35ch}
+  .hero .hero-content .actions{gap:8px;margin-top:25px;max-width:350px}
+  .hero .hero-content .actions .btn{min-width:0;padding:12px 17px;font-size:9px}
+}
