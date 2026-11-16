@@ -1,0 +1,25 @@
+{
+  "name": "Gipfel Lodge | Luxe vakantiehuis in Oostenrijk",
+  "short_name": "Gipfel Lodge",
+  "description": "Ontdek Gipfel Lodge: luxe vakantiehuis met privé sauna in Eben im Pongau, Oostenrijk.",
+  "lang": "nl",
+  "start_url": "../../index.html",
+  "scope": "../../",
+  "display": "standalone",
+  "background_color": "#F2EFE8",
+  "theme_color": "#F2EFE8",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
