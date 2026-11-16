@@ -1110,3 +1110,16 @@ a.btn:focus-visible,
   overflow:hidden;
 }
 .footer-wood-region .footer-mountain-edge+.footer{margin-top:-1px}
+
+/* TEMPORARY NAVY COMPARISON — from Gipfel-Lodge:
+   css/site_css/base/variables.css --color-primary: #20303D.
+   Wood version remains preserved in .footer-wood-region and the original
+   assets/images/textures/footer-barnwood-vertical.png.
+   To restore wood, remove footer-navy-preview from the HTML wrapper. */
+.footer-wood-region.footer-navy-preview{
+  background-color:#20303D;
+  background-image:none;
+}
+.footer-wood-region.footer-navy-preview .footer{
+  background:transparent;
+}
