@@ -1100,3 +1100,42 @@ a.btn:focus-visible,
   clip-path:none;
   border-radius:3px;
 }
+
+/* Facilities: six key amenities at a glance, with accessible native disclosure. */
+.facilities-content{min-width:0}
+.facilities-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.facility-card{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;min-width:0;min-height:145px;padding:20px 18px;background:var(--color-limestone);color:var(--color-section-text)}
+.facility-card svg{width:25px;height:25px;flex:none;color:var(--wood);margin-bottom:17px}
+.facility-card strong{font:400 clamp(25px,2.2vw,33px)/1.1 var(--serif);white-space:nowrap}
+.facility-card span{font:500 12px/1.45 var(--sans);margin-top:5px}
+.facilities-more{margin-top:18px}
+.facilities-more summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--color-travertine);border-bottom:1px solid var(--color-travertine);font:600 12px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--color-section-text);cursor:pointer;list-style:none}
+.facilities-more summary::-webkit-details-marker{display:none}
+.facilities-more summary:focus-visible{outline:2px solid var(--wood);outline-offset:4px}
+.facilities-more-icon{width:11px;height:11px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .2s ease}
+.facilities-more[open] .facilities-more-icon{transform:translateY(3px) rotate(225deg)}
+.facilities-more .facilities-list{margin-top:8px}
+@media(max-width:800px){.facilities-highlights{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){
+  .facilities-section{padding:62px 0}
+  .facilities-highlights{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .facility-card{min-height:133px;padding:16px}
+  .facility-card svg{width:23px;height:23px;margin-bottom:14px}
+  .facility-card strong{font-size:27px}
+  .facility-card span{font-size:11px}
+  .facilities-more{margin-top:14px}
+}
+/* Review carousel: editorial cards size to their previews, not to a fixed
+   empty column; preserve the full original reviews in the modal. */
+.reviews-cards{align-items:flex-start}
+.review-card{height:auto;min-height:0;padding:24px;flex-shrink:0}
+.review-card .review-preview{margin:18px 0 14px;flex:0 0 auto}
+.review-card .review-preview>.review-original{font-size:clamp(20px,1.8vw,24px);line-height:1.36}
+.review-card-action{margin:0 0 14px;min-height:32px;justify-content:flex-start}
+.review-card-footer{margin-top:0;padding-top:14px}
+@media(max-width:590px){
+  .review-card{min-height:0;padding:21px}
+  .review-card .review-preview{margin:16px 0 12px}
+  .review-card .review-preview>.review-original{font-size:20px;line-height:1.35}
+  .review-card-action{margin-bottom:13px;min-height:32px}
+}
