@@ -33,8 +33,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="assets/css/home.css?v=20261116-wood-footer-restored">
+<link rel="preload" as="image" href="assets/images/textures/footer-barnwood-vertical.png">
+<link rel="stylesheet" href="assets/css/splash.css?v=20261116-vertical-wood">
+<script>
+(function(){
+  var key='gipfel-splash-last-shown',now=new Date();
+  var day=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try{
+    if(reduced||localStorage.getItem(key)===day){document.documentElement.classList.add('skip-daily-splash');return}
+    localStorage.setItem(key,day);
+  }catch(error){if(reduced)document.documentElement.classList.add('skip-daily-splash')}
+})();
+</script>
 </head>
 <body>
+<div id="splash-screen" role="status" aria-label="Gipfel Lodge wordt geopend">
+  <div class="splash-wood-stripes" aria-hidden="true">
+    <span class="splash-stripe" style="--i:0;--pos:0.00000%;--from:-112vh;--delay:0ms;--duration:1300ms"></span>
+    <span class="splash-stripe" style="--i:1;--pos:9.09091%;--from:115vh;--delay:180ms;--duration:1530ms"></span>
+    <span class="splash-stripe" style="--i:2;--pos:18.18182%;--from:-125vh;--delay:90ms;--duration:1720ms"></span>
+    <span class="splash-stripe" style="--i:3;--pos:27.27273%;--from:108vh;--delay:450ms;--duration:1420ms"></span>
+    <span class="splash-stripe" style="--i:4;--pos:36.36364%;--from:-119vh;--delay:270ms;--duration:1620ms"></span>
+    <span class="splash-stripe" style="--i:5;--pos:45.45455%;--from:119vh;--delay:40ms;--duration:1900ms"></span>
+    <span class="splash-stripe" style="--i:6;--pos:54.54545%;--from:-114vh;--delay:360ms;--duration:1540ms"></span>
+    <span class="splash-stripe" style="--i:7;--pos:63.63636%;--from:118vh;--delay:120ms;--duration:1750ms"></span>
+    <span class="splash-stripe" style="--i:8;--pos:72.72727%;--from:-122vh;--delay:500ms;--duration:1370ms"></span>
+    <span class="splash-stripe" style="--i:9;--pos:81.81818%;--from:108vh;--delay:310ms;--duration:1700ms"></span>
+    <span class="splash-stripe" style="--i:10;--pos:90.90909%;--from:-115vh;--delay:220ms;--duration:1800ms"></span>
+    <span class="splash-stripe" style="--i:11;--pos:100.00000%;--from:121vh;--delay:420ms;--duration:1550ms"></span>
+  </div>
+  <div class="splash-wood-veil" aria-hidden="true"></div>
+  <div class="splash-logo-container" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="gipfel-logo-svg">
+      <path class="line mountain-1" d="M 65 210 L 160 50 L 220 145"/>
+      <path class="line mountain-2" d="M 180 145 L 240 50 L 335 210"/>
+      <g class="stars">
+        <path d="M 155 180 l 3.5 10 h 10.5 l -8.5 6 l 3.5 10 l -9 -7 l -9 7 l 3.5 -10 l -8.5 -6 h 10.5 z" fill="currentColor"/>
+        <path d="M 185 180 l 3.5 10 h 10.5 l -8.5 6 l 3.5 10 l -9 -7 l -9 7 l 3.5 -10 l -8.5 -6 h 10.5 z" fill="currentColor"/>
+        <path d="M 215 180 l 3.5 10 h 10.5 l -8.5 6 l 3.5 10 l -9 -7 l -9 7 l 3.5 -10 l -8.5 -6 h 10.5 z" fill="currentColor"/>
+        <path d="M 245 180 l 3.5 10 h 10.5 l -8.5 6 l 3.5 10 l -9 -7 l -9 7 l 3.5 -10 l -8.5 -6 h 10.5 z" fill="currentColor"/>
+        <text x="265" y="190" font-size="28" class="text" style="fill:currentColor">s</text>
+      </g>
+      <text x="65" y="270" text-anchor="start" font-size="41" font-weight="700" letter-spacing="1" textLength="270" lengthAdjust="spacing" class="text" style="text-transform:uppercase;fill:currentColor">Gipfel Lodge</text>
+    </svg>
+  </div>
+</div>
 <!-- Subtly rounded hexagonal corners, shared by all faceted calls-to-action. -->
 <svg class="button-shape-defs" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -283,4 +327,5 @@
 </footer>
 </div>
 <script src="assets/js/home.js?v=20261116-hero-no-arrows" defer></script>
+<script src="assets/js/splash.js?v=20261116-vertical-wood" defer></script>
 </body></html>
