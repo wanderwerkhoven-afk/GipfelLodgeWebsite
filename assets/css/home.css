@@ -1057,16 +1057,17 @@ a.btn:focus-visible,
   position:absolute;inset:0;
   width:100%;height:100%;z-index:1;
   background:var(--color-section-ivory);
-  -webkit-mask-image:linear-gradient(#000 0 0),url("../../assets/icons/devider-mountain.svg");
+  -webkit-mask-image:linear-gradient(#000 0 0),url("../images/dividers/footer-mountain-silhouette.png");
   -webkit-mask-repeat:no-repeat,no-repeat;
   -webkit-mask-position:center,center bottom;
-  -webkit-mask-size:100% 100%,104% 104%;
+  -webkit-mask-size:100% 100%,100% 100%;
   -webkit-mask-composite:xor;
-  mask-image:linear-gradient(#000 0 0),url("../../assets/icons/devider-mountain.svg");
+  mask-image:linear-gradient(#000 0 0),url("../images/dividers/footer-mountain-silhouette.png");
   mask-repeat:no-repeat,no-repeat;
   mask-position:center,center bottom;
-  mask-size:100% 100%,104% 104%;
+  mask-size:100% 100%,100% 100%;
   mask-composite:exclude;
+  mask-mode:alpha;
   pointer-events:none;
 }
 .footer-wood-region .footer-mountain-edge+.footer{margin-top:0}
@@ -1099,3 +1100,13 @@ a.btn:focus-visible,
   background-color:var(--color-section-ivory);
 }
 /* The mountain and footer use exactly the same underlying image, not separate tiles. */
+
+/* New trim-transparent divider: exact source ratio, zero extra bottom gap. */
+.footer-wood-region .footer-mountain-edge{
+  aspect-ratio:2172 / 245;
+  height:auto;
+  min-height:0;
+  margin:0;
+  overflow:hidden;
+}
+.footer-wood-region .footer-mountain-edge+.footer{margin-top:-1px}
