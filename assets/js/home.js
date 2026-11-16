@@ -20,9 +20,25 @@ function show(n){
   slides.forEach((slide,i)=>{slide.classList.toggle('active',i===index);slide.setAttribute('aria-hidden',String(i!==index));});
   if(slideStatus)slideStatus.textContent=`Afbeelding ${index+1} van ${slides.length}`;
 }
-document.getElementById('prev')?.addEventListener('click',()=>show(index-1));
-document.getElementById('next')?.addEventListener('click',()=>show(index+1));
+const carouselInterval=6000;
+let carouselTimer=null;
+function stopCarousel(){if(carouselTimer!==null){window.clearInterval(carouselTimer);carouselTimer=null;}}
+function startCarousel(){
+  stopCarousel();
+  if(slides.length<2||document.hidden||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  carouselTimer=window.setInterval(()=>show(index+1),carouselInterval);
+}
+function goToSlide(next){show(next);startCarousel();}
+document.getElementById('prev')?.addEventListener('click',()=>goToSlide(index-1));
+document.getElementById('next')?.addEventListener('click',()=>goToSlide(index+1));
+hero?.addEventListener('mouseenter',stopCarousel);
+hero?.addEventListener('mouseleave',startCarousel);
+hero?.addEventListener('focusin',stopCarousel);
+hero?.addEventListener('focusout',event=>{if(!hero.contains(event.relatedTarget))startCarousel();});
+document.addEventListener('visibilitychange',()=>document.hidden?stopCarousel():startCarousel());
+window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change',startCarousel);
 show(0);
+startCarousel();
 
 // Native pointer gestures: horizontal swipes change slides; vertical page scrolling stays native.
 if(hero&&slides.length>1){
@@ -38,7 +54,7 @@ if(hero&&slides.length>1){
     const dy=event.clientY-start.y;
     start=null;
     if(Math.abs(dx)<55||Math.abs(dx)<Math.abs(dy)*1.35)return;
-    show(index+(dx<0?1:-1));
+    goToSlide(index+(dx<0?1:-1));
   },{passive:true});
   hero.addEventListener('pointercancel',()=>{start=null;},{passive:true});
   hero.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse')start=null;},{passive:true});
