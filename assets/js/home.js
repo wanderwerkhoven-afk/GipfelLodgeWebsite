@@ -14,10 +14,21 @@ updateTopbar();
 const slides=[...document.querySelectorAll('.slide')];
 const slideStatus=document.getElementById('slideStatus');
 let index=0;
+const dotsContainer=hero?.querySelector('.hero-dots');
+const heroDots=slides.map((slide,i)=>{
+  const dot=document.createElement('button');
+  dot.type='button';
+  dot.className='hero-dot';
+  dot.setAttribute('aria-label',`Toon foto ${i+1} van ${slides.length}`);
+  dot.addEventListener('click',()=>goToSlide(i));
+  dotsContainer?.appendChild(dot);
+  return dot;
+});
 function show(n){
   if(!slides.length)return;
   index=(n+slides.length)%slides.length;
   slides.forEach((slide,i)=>{slide.classList.toggle('active',i===index);slide.setAttribute('aria-hidden',String(i!==index));});
+  heroDots.forEach((dot,i)=>{dot.classList.toggle('is-active',i===index);dot.setAttribute('aria-current',i===index?'true':'false');});
   if(slideStatus)slideStatus.textContent=`Afbeelding ${index+1} van ${slides.length}`;
 }
 const carouselInterval=5000;
