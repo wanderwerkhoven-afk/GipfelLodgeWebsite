@@ -264,3 +264,6 @@ Footer mountain mask now uses `mask-size:104% 104%` / `-webkit-mask-size:104% 10
 
 ## Mountain footer join seam — 2026-11-16
 `assets/css/home.css` `.footer-mountain-edge::before` draws a 4px high `--footer-background` strip at the bottom of the mountain divider above the masked pseudo-element; `.footer-mountain-edge+.footer { margin-top:-1px }` overlaps the join. Preserves the 104% SVG mask zoom. Cache version `20261116-mountain-seam-fix`.
+
+## Review icons — 2026-11-16
+Decorative reviews UI avoids emoji: `.external-link-icon` is an inline 24x24 SVG line icon; `.reviews-score-stars`, `.review-card-stars`, `.review-dialog-stars` use a five-repeat SVG background pattern instead of the literal star characters. Author-country emoji flags were changed into plain country names while preserving reviewer metadata. Original guest-authored text remains untouched (including any emoji in original submissions). CSS cache bust `20261116-svg-icons`.
