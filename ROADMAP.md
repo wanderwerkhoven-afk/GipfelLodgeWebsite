@@ -334,3 +334,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Cleaned retired admin/CRM source and SiteGround export files from the historical `Gipfel-Lodge` repository (public website sources and common assets retained).
 - [x] Verified both repositories contain 195 remaining image and SVG files, 107,081,289 bytes each, with no retired folder paths.
 - [ ] Confirm website deployment visually after repository cleanup.
+
+### Website manifest and device icons — 2026-11-16
+- [x] Integrate original website icons from `site_manifest/favicon_website/` into the page head (ICO, SVG, 96×96 PNG, Apple Touch icon).
+- [x] Add `site_manifest/favicon_website/site.webmanifest` for installable site shortcuts, 192×192/512×512 icons, brand name and standalone display.
+- [x] Use relative `../../index.html` start URL and `../../` scope so GitHub Pages subpath `/GipfelLodgeWebsite/` works without hardcoded domain; keep theme and background aligned with `#F2EFE8`.
+- [ ] Verify Android and iOS icon appearance, manifest parsing and browser installation behavior on real devices. No offline service worker is configured.
