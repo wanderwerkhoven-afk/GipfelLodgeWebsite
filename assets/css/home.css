@@ -1032,3 +1032,41 @@ a.btn:focus-visible,
 }
 .footer-mountain-edge::before{background:var(--footer-background)}
 .footer-column h3,.footer-brand span,.footer-top-location,.footer-top-email{color:var(--footer-heading)}
+
+/* True uninterrupted wood grain across both the mountain silhouette and footer.
+   A single parent paints the photo; the mountain cutout only hides the ivory sky. */
+.footer-wood-region{
+  position:relative;
+  isolation:isolate;
+  background-color:var(--footer-background);
+  background-image:linear-gradient(rgba(35,24,18,.52),rgba(35,24,18,.64)),var(--footer-wood);
+  background-repeat:no-repeat;
+  background-size:100% 100%,cover;
+  background-position:center center;
+}
+.footer-wood-region .footer{
+  background:transparent;
+  color:var(--footer-body);
+}
+.footer-wood-region .footer-mountain-edge{
+  background:transparent;
+}
+.footer-wood-region .footer-mountain-edge::after{content:none;display:none}
+.footer-wood-region .footer-mountain-edge::before{
+  content:"";
+  position:absolute;inset:0;
+  width:100%;height:100%;z-index:1;
+  background:var(--color-section-ivory);
+  -webkit-mask-image:linear-gradient(#000 0 0),url("../../assets/icons/devider-mountain.svg");
+  -webkit-mask-repeat:no-repeat,no-repeat;
+  -webkit-mask-position:center,center bottom;
+  -webkit-mask-size:100% 100%,104% 104%;
+  -webkit-mask-composite:xor;
+  mask-image:linear-gradient(#000 0 0),url("../../assets/icons/devider-mountain.svg");
+  mask-repeat:no-repeat,no-repeat;
+  mask-position:center,center bottom;
+  mask-size:100% 100%,104% 104%;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+.footer-wood-region .footer-mountain-edge+.footer{margin-top:0}
