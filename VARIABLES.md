@@ -267,3 +267,6 @@ Footer mountain mask now uses `mask-size:104% 104%` / `-webkit-mask-size:104% 10
 
 ## Review icons — 2026-11-16
 Decorative reviews UI avoids emoji: `.external-link-icon` is an inline 24x24 SVG line icon; `.reviews-score-stars`, `.review-card-stars`, `.review-dialog-stars` use a five-repeat SVG background pattern instead of the literal star characters. Author-country emoji flags were changed into plain country names while preserving reviewer metadata. Original guest-authored text remains untouched (including any emoji in original submissions). CSS cache bust `20261116-svg-icons`.
+
+## Complete historical image library imported — 2026-11-16
+Source `wanderwerkhoven-afk/Gipfel-Lodge` main and target `wanderwerkhoven-afk/GipfelLodgeWebsite` main now contain the same 591 assets with extensions JPEG/PNG/WebP/GIF/SVG/AVIF/BMP/ICO/TIFF (total 321,489,709 bytes). The source layout is preserved across `assets/`, `beheer/assets/`, `beheer/site_manifest/`, `site_manifest/` and `siteground_upload/`; existing SVG `assets/icons/devider-mountain.svg` was skipped. A one-time import workflow `.github/workflows/import-gipfel-images.yml` succeeded and is now manual-only (`workflow_dispatch`). `index.html` replaced 12 absolute image references from `https://gipfellodge.at/assets/` with local `assets/` references. Stylesheet cache marker `20261116-local-assets`.
