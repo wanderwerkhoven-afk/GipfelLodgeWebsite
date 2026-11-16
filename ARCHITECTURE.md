@@ -243,3 +243,6 @@ The design system unifies principal calls-to-action using CSS clip-path faceted 
 
 ## Reusable rounded hexagonal CTA shape — 2026-11-16
 All principal buttons share a reusable inline SVG objectBoundingBox clipPath (`#gipfelRoundedHex`) with tiny quadratic transitions at polygon vertices. This supports responsive widths/heights while retaining the established BOOK button silhouette; no JS or external assets. Existing polygon clips remain fallback styles if URL clipping is not supported. Focus-visible removes clipping so focus rings are not cut off.
+
+## Desktop-only 80% presentation scale — 2026-11-16
+For the new website a root-level CSS zoom is activated only for desktop viewports >= 1024px with a fine pointer. This reduces every component and vertical spacing proportionally while preserving the browser's layout flow; the mobile layout is unaffected. Exact viewport behavior should be visually tested in current desktop browsers; no JavaScript changes.
