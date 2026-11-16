@@ -340,3 +340,8 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Add `site_manifest/favicon_website/site.webmanifest` for installable site shortcuts, 192×192/512×512 icons, brand name and standalone display.
 - [x] Use relative `../../index.html` start URL and `../../` scope so GitHub Pages subpath `/GipfelLodgeWebsite/` works without hardcoded domain; keep theme and background aligned with `#F2EFE8`.
 - [ ] Verify Android and iOS icon appearance, manifest parsing and browser installation behavior on real devices. No offline service worker is configured.
+
+### Social link previews — 2026-11-16
+- [x] Add server-readable Open Graph metadata directly in the static page `<head>`: `og:type`, `og:locale`, site name, title, description, canonical preview URL and absolute image URL, JPEG MIME type and image alternative text.
+- [x] Add Twitter/X large-image card metadata. Source image is local `assets/images/Foto-collage-woning/outside-building-winter.jpg` (108,721 bytes).
+- [ ] Verify live WhatsApp/LinkedIn/Facebook preview after GitHub Pages deployment and scraper cache refresh. Change canonical and Open Graph URL to custom domain once that domain hosts this site.
