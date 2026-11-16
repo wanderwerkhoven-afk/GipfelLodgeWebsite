@@ -225,3 +225,6 @@ A footer-coloured 4px foreground strip and 1px footer overlap cover SVG transpar
 
 ## Decorative SVG icon policy — 2026-11-16
 For future site UI, use SVG icons or plain text labels rather than emoji. The reviews section now uses inline SVG for external links, an SVG background pattern for five-star ratings, and country text labels. The original written review content remains unedited, including author-supplied symbols.
+
+## Image assets repository migration — 2026-11-16
+All 591 old image/icon assets have been copied into the new website repository without modifying source or existing destination assets. Their original case-sensitive paths and formats were retained, including deployment duplicates in `siteground_upload` and administrative copies in `beheer`. Local asset references now power the current page images and logo instead of the legacy hosted domain. GitHub Actions `.github/workflows/import-gipfel-images.yml` remains available as a manually triggered missing-assets import and does not overwrite files. Current image library is 321.5 MB and may affect future clone/deployment weight; defer pruning until explicitly approved.
