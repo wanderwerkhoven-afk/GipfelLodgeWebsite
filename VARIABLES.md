@@ -285,3 +285,6 @@ Global `--button-facet:11%` and `--button-transition:200ms ease` defined in `ass
 
 ## Rounded faceted CTA corners — 2026-11-16
 The inline `<svg class="button-shape-defs">` near the start of `<body>` defines `#gipfelRoundedHex` as a normalized (objectBoundingBox) path with tiny quadratic-curve turns at all six hexagonal corners. CSS applies `clip-path:url("#gipfelRoundedHex")` to `.topbar .topbar-book`, `a.btn`, `.review-open-btn` and `.nav .book` to replace the polygon's mathematically sharp points. Relative curve sizes are approximately 1–2 px at normal button dimensions. On `:focus-visible` clipping is removed to preserve keyboard outline. CSS version `20261116-rounded-hex`.
+
+## Desktop scaling — 2026-11-16
+`assets/css/home.css` contains `--desktop-site-zoom:0.8`. `@media (min-width:1024px) and (pointer:fine) { html { zoom:var(--desktop-site-zoom) } }` applies the smaller scale to the complete desktop layout, including typography, buttons, imagery and spacing. Touch devices and narrower viewports remain at 100%. CSS cache version `20261116-desktop-80`. CSS `zoom` changes layout scale; no transform wrapper is used.
