@@ -361,3 +361,9 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Apply 80% layout-aware CSS zoom to the entire website on desktop with a fine pointer and viewport >= 1024px; keep tablet/touch/mobile at 100%.
 - [x] Keep full-width sections, fixed topbar and footer in the same layout flow rather than using transform:scale.
 - [ ] Visually QA the 80% desktop rendering in Chrome/Edge, including fullscreen header, photo collage, footer and review dialogs; responsive touch behavior unchanged.
+
+### Desktop 80% baked into fixed CSS values — 2026-11-16
+- [x] Remove `--desktop-site-zoom` and root `zoom` entirely.
+- [x] Encode desktop 80% sizing as explicit CSS dimension overrides for typography, layout spacing, section heights and controls; responsive mobile sizing stays unchanged.
+- [x] Ensure final CSS declarations (including resets) determine the desktop values; minimum interactive control sizes remain usable.
+- [ ] Visually QA desktop at multiple widths and confirm no unexpected horizontal scrolling.
