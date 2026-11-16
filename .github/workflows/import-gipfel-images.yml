@@ -1,9 +1,5 @@
 name: One-time image assets import
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/import-gipfel-images.yml
   workflow_dispatch:
 permissions:
   contents: write
