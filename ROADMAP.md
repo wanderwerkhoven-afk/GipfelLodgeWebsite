@@ -374,3 +374,10 @@ A task is DONE only if committed, linked to the affected files/identifiers, test
 - [x] Increase usable image/gallery area and refine hero, section, review and footer spacing with explicit CSS pixel/clamp values, without root zoom or scale variables.
 - [x] Remove the earlier generated desktop override block with invalid stray comment fragments; check CSS brace balance and introduction DOM wrappers.
 - [ ] Visually QA desktop at 1024, 1280, 1440 and 1920px plus iPhone/tablet; refine based on screenshots.
+
+### Swap introductory KPI and collage positions — 2026-11-16
+- [x] Place the six KPIs beside the introduction in a two-column/three-row layout on desktop.
+- [x] Move the original four-image draggable collage below the text/KPI row at full content width, preserving photo dragging, pickup wobble and guidance.
+- [x] Keep mobile/tablet KPI arrangement two by three and retain existing photo carousel, reviews and footer.
+- [x] Verify HTML section nesting, all six KPI cards and four draggable photo elements, and balanced CSS braces.
+- [ ] Confirm visual spacing and collage behavior on desktop/iPhone in a browser.
