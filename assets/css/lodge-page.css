@@ -206,30 +206,43 @@
   .lodge-photo-dialog-close,.lodge-photo-dialog-nav{transition:none}
 }
 
-/* Uniform full-size carousel: every image occupies the same largest available
-   stage area instead of shrinking according to the original photo ratio. */
+/* Constant 2:3 portrait frame for the carousel. No cropping: show the
+   complete original photo, with dark letterboxing if its ratio differs.
+   This avoids enlarging wide images to a blurry fullscreen crop. */
 .lodge-photo-dialog-stage figure{
-  align-self:stretch;
-  justify-content:flex-start;
-  min-width:0;
-  min-height:0;
+  align-self:center;
+  justify-self:center;
+  width:min(100%, calc((100dvh - 190px) * 2 / 3));
   height:100%;
+  min-height:0;
+  min-width:0;
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
 }
 .lodge-photo-dialog-stage .lodge-photo-dialog-image{
   display:block;
-  flex:1 1 auto;
   width:100%;
-  height:0;
+  height:auto;
+  flex:0 1 auto;
+  aspect-ratio:2 / 3;
+  max-width:100%;
+  max-height:calc(100dvh - 190px);
   min-height:0;
-  max-width:none;
-  max-height:none;
-  object-fit:cover;
+  object-fit:contain;
   object-position:center;
+  background:#211b16;
   border-radius:5px;
 }
 .lodge-photo-dialog-stage .lodge-photo-dialog-caption{
   flex:0 0 auto;
   min-height:30px;
   max-width:100%;
+}
+@media(max-width:650px){
+  .lodge-photo-dialog-stage figure{width:min(100%, calc((100dvh - 165px) * 2 / 3));gap:10px}
+  .lodge-photo-dialog-stage .lodge-photo-dialog-image{max-height:calc(100dvh - 165px)}
 }
