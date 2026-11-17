@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="assets/css/home.css?v=20261117-structured-navigation">
-<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261117-wood-masonry">
+<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261117-carousel">
 <title>Der Gipfel Lodge | Gipfel Lodge</title>
 </head>
 <body class="lodge-detail-page">
@@ -119,7 +119,17 @@
 <div class="lodge-floorplan-facts"><p>Gipfel Lodge · Ruimteoverzicht</p><strong>135 <small>m²</small></strong><div><span>Slaapkamers</span><b>4</b></div><div><span>Badkamers</span><b>3</b></div><div><span>Geschikt voor</span><b>2–10 personen</b></div></div>
 </div></section>
 <section class="lodge-end-cta"><div class="wrap"><span class="lodge-eyebrow">Ervaar Gipfel Lodge</span><h2>Uw verblijf<br><em>begint hier.</em></h2><p>Ontdek de rust, het comfort en de vrijheid van een bijzonder verblijf in de Alpen.</p><a class="lodge-outline-cta" href="index.html#contact">Beschikbaarheid aanvragen <svg class="lodge-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
-<dialog class="lodge-photo-dialog" id="lodgePhotoDialog" aria-label="Vergrote lodgefoto"><button class="lodge-photo-dialog-close" type="button" aria-label="Sluit foto"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button><figure><img alt=""><figcaption></figcaption></figure></dialog>
+<dialog class="lodge-photo-dialog" id="lodgePhotoDialog" aria-label="Fotogalerij van Gipfel Lodge">
+<div class="lodge-photo-dialog-shell">
+  <header class="lodge-photo-dialog-top"><span>Gipfel Lodge · Fotogalerij</span><span class="lodge-photo-dialog-counter" aria-live="polite">1 / 24</span><button class="lodge-photo-dialog-close" type="button" aria-label="Sluit fotogalerij"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19"/></svg></button></header>
+  <div class="lodge-photo-dialog-stage">
+    <button class="lodge-photo-dialog-nav lodge-photo-dialog-prev" type="button" aria-label="Vorige foto"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg></button>
+    <figure><img class="lodge-photo-dialog-image" alt=""><figcaption class="lodge-photo-dialog-caption"></figcaption></figure>
+    <button class="lodge-photo-dialog-nav lodge-photo-dialog-next" type="button" aria-label="Volgende foto"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <p class="lodge-photo-dialog-hint">Veeg of gebruik de pijlen om meer foto's te bekijken</p>
+</div>
+</dialog>
 </main>
 <div class="footer-wood-region">
 <div class="footer-mountain-edge" aria-hidden="true"></div>
@@ -195,4 +205,5 @@ dialog.addEventListener('click',event=>{if(event.target===dialog)close()});
 dialog.addEventListener('close',()=>{photo.removeAttribute('src');previous?.focus({preventScroll:true})});
 })();
 </script>
+<script src="assets/js/lodge-gallery.js?v=20261117-carousel" defer></script>
 </body></html>
