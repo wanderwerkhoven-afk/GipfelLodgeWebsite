@@ -154,3 +154,46 @@
   .lodge-wood-collage .lodge-gallery-mosaic .lodge-photo-button{height:calc(var(--photo-height,260px) * .64)}
   .lodge-wood-collage .lodge-gallery-mosaic .lodge-photo-button span{font-size:15px}
 }
+
+/* Fullscreen gallery carousel: single coherent viewer for all 24 lodge images. */
+.lodge-photo-dialog{
+  position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;
+  margin:0;padding:0;border:0;background:rgba(23,18,14,.97);color:#f5f0e9;
+  overflow:hidden;
+}
+.lodge-photo-dialog::backdrop{background:rgba(14,12,10,.88)}
+.lodge-photo-dialog-shell{display:flex;flex-direction:column;width:100%;height:100%;min-height:0}
+.lodge-photo-dialog-top{display:flex;align-items:center;gap:20px;flex:none;
+  padding:clamp(16px,2.6vw,30px) clamp(18px,4vw,58px);
+  font:600 11px/1.4 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+}
+.lodge-photo-dialog-counter{margin-left:auto;white-space:nowrap;color:#dbc39e;font-variant-numeric:tabular-nums}
+.lodge-photo-dialog-close,.lodge-photo-dialog-nav{
+  display:grid;place-items:center;flex:none;cursor:pointer;
+  border:1px solid rgba(232,215,187,.34);background:rgba(35,27,21,.4);color:#fff;
+  border-radius:4px;transition:background .18s ease;
+}
+.lodge-photo-dialog-close:hover,.lodge-photo-dialog-nav:hover{background:rgba(177,147,105,.35)}
+.lodge-photo-dialog-close{height:42px;width:42px;position:static}
+.lodge-photo-dialog-stage{flex:1;min-height:0;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;
+  align-items:center;gap:clamp(5px,2vw,24px);padding:0 clamp(14px,3vw,48px)}
+.lodge-photo-dialog-nav{height:50px;width:50px;justify-self:center;position:static}
+.lodge-photo-dialog figure{min-width:0;min-height:0;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:15px;margin:0}
+.lodge-photo-dialog figure img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100% - 50px);
+  min-height:0;object-fit:contain;border-radius:5px}
+.lodge-photo-dialog figcaption{flex:none;text-align:center;font:400 clamp(22px,2.4vw,33px)/1.2 var(--serif);padding:0 8px}
+.lodge-photo-dialog-hint{flex:none;text-align:center;margin:0;padding:15px 20px 26px;
+  font:400 11px/1.5 var(--sans);letter-spacing:.07em;color:#cdbb9e}
+@media(max-width:650px){
+  .lodge-photo-dialog-top{padding:16px 15px;gap:12px;font-size:10px}
+  .lodge-photo-dialog-close{width:38px;height:38px}
+  .lodge-photo-dialog-stage{grid-template-columns:37px minmax(0,1fr) 37px;gap:2px;padding:0 7px}
+  .lodge-photo-dialog-nav{width:36px;height:45px;border-color:rgba(232,215,187,.18)}
+  .lodge-photo-dialog-nav svg{width:20px;height:20px}
+  .lodge-photo-dialog figcaption{font-size:24px}
+  .lodge-photo-dialog-hint{padding:10px 12px max(20px,env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){
+  .lodge-photo-dialog-close,.lodge-photo-dialog-nav{transition:none}
+}
