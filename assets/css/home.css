@@ -1183,3 +1183,61 @@ a.btn:focus-visible,
     margin-top:7px;
   }
 }
+
+/* Full site navigation: seven top-level items and accessible native submenus.
+   Unpublished pages are labels, never dead-end links. */
+.topbar .nav.nav-structured{
+  width:min(430px,calc(100vw - 24px));
+  max-height:min(760px,calc(100dvh - 100px));
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:none;
+  padding:30px 29px 26px;
+  gap:0;
+}
+.nav.nav-structured::-webkit-scrollbar{display:none}
+.nav.nav-structured .nav-eyebrow{display:block;margin-bottom:12px}
+.nav-menu-items{display:flex;flex-direction:column;gap:0}
+.nav-structured .nav-group{border-bottom:1px solid rgba(232,210,173,.16)}
+.nav-structured .nav-group:last-child{border-bottom:0}
+.nav-structured .nav-group summary{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 0;list-style:none;cursor:pointer;
+}
+.nav-structured .nav-group summary::-webkit-details-marker{display:none}
+.nav-structured .nav-group summary:focus-visible,
+.nav-structured .nav-group a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.nav-structured .nav-primary-link,
+.nav-structured .nav-primary-label{
+  display:block;min-width:0;font:500 clamp(22px,2.2vw,27px)/1.17 var(--serif);
+  color:#f9f6f0;text-decoration:none;letter-spacing:0;text-transform:none;
+}
+.nav-structured .nav-group-single{padding:11px 0}
+.nav-structured .nav-expand-icon{
+  flex:none;width:9px;height:9px;border-right:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);transform:rotate(45deg) translateY(-2px);
+  transition:transform .2s ease;
+}
+.nav-structured details[open] .nav-expand-icon{transform:rotate(225deg) translateY(-1px)}
+.nav-structured .nav-submenu{margin:0 0 13px;padding:0 0 0 17px;list-style:none}
+.nav-structured .nav-submenu li{margin:0;padding:0}
+.nav-structured .nav-submenu a,
+.nav-structured .nav-future{
+  display:block;padding:7px 0;font:400 13px/1.45 var(--sans);
+  color:#e1dfd9;letter-spacing:0;
+}
+.nav-structured .nav-future{color:#aeb2b1;opacity:.8;cursor:default}
+.nav-structured .nav-footnote{margin-top:16px;padding-top:17px}
+@media(max-width:590px){
+  .topbar .nav.nav-structured{
+    width:min(390px,calc(100vw - 20px));
+    max-height:calc(100dvh - 88px);
+    padding:22px 22px 26px;
+  }
+  .nav-structured .nav-primary-link,
+  .nav-structured .nav-primary-label{font-size:24px}
+  .nav-structured .nav-group summary{padding:10px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav-structured .nav-expand-icon{transition:none}
+}
