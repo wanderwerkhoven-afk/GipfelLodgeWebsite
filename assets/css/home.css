@@ -1034,9 +1034,11 @@ a.btn:focus-visible,
   background-image:
     linear-gradient(rgba(31,22,16,.62),rgba(31,22,16,.70)),
     var(--footer-wood);
-  background-size:100% 100%,100% 100%;
+  /* Preserve the wood photograph's native aspect ratio instead of stretching
+     it horizontally; repeat only across the width if the viewport is wider. */
+  background-size:100% 100%,auto 100%;
   background-position:center top,center top;
-  background-repeat:no-repeat,no-repeat;
+  background-repeat:no-repeat,repeat-x;
 }
 .footer-wood-region .footer{
   background:transparent;
