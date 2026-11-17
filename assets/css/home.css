@@ -1027,10 +1027,12 @@ a.btn:focus-visible,
 
 /* Footer wood visibility fix: scale the vertical planks to the full shared surface.
    "cover" zoomed into a tiny fragment on tall mobile footers, hiding the grain. */
+/* Same wood tone and contrast filter as the lodge photo collage.
+   Applied to the shared surface so the mountain divider and footer stay seamless. */
 .footer-wood-region{
-  background-color:#49362d;
+  background-color:#36271c;
   background-image:
-    linear-gradient(180deg,rgba(35,24,18,.14),rgba(35,24,18,.24)),
+    linear-gradient(rgba(31,22,16,.62),rgba(31,22,16,.70)),
     var(--footer-wood);
   background-size:100% 100%,100% 100%;
   background-position:center top,center top;
