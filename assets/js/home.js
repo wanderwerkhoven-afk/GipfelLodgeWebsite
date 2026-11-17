@@ -233,17 +233,18 @@ function setMenuOpen(open,{restoreFocus=false}={}){
   toggle.setAttribute('aria-label',open?'Sluit navigatie':'Open navigatie');
   nav.setAttribute('aria-hidden',String(!open));
   nav.inert=!open;
-  if(open){nav.querySelector('a')?.focus({preventScroll:true});}
+  if(open){nav.querySelector('a,summary')?.focus({preventScroll:true});}
   else if(restoreFocus){toggle.focus({preventScroll:true});}
 }
 toggle?.addEventListener('click',()=>setMenuOpen(!nav.classList.contains('open'),{restoreFocus:nav.classList.contains('open')}));
 backdrop?.addEventListener('click',()=>setMenuOpen(false,{restoreFocus:true}));
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenuOpen(false)));
+nav?.querySelectorAll('.nav-group[open]').forEach(group=>group.open=false);
 document.addEventListener('keydown',event=>{
   if(!nav?.classList.contains('open'))return;
   if(event.key==='Escape'){event.preventDefault();setMenuOpen(false,{restoreFocus:true});}
   if(event.key==='Tab'){
-    const focusables=[...nav.querySelectorAll('a')];
+    const focusables=[...nav.querySelectorAll('a,summary')].filter(el=>el.getClientRects().length);
     const first=focusables[0],last=focusables[focusables.length-1];
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
