@@ -97,3 +97,6 @@
 }
 @media(max-width:360px){.lodge-equipment-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.lodge-page-hero-photo{animation:none}}
+
+/* Uniform line icons for the lodge page CTA links. */
+.lodge-link-icon{display:block;width:17px;height:17px;flex:0 0 17px}
