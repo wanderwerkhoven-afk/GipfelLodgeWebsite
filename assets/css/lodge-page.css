@@ -38,12 +38,12 @@
 .lodge-gallery-heading{text-align:center;max-width:650px;margin:0 auto 36px}
 .lodge-gallery-heading h3{font:400 clamp(49px,5.5vw,77px)/1 var(--serif);margin:13px 0 11px}
 .lodge-gallery-heading p{font:400 14px/1.7 var(--sans);color:#d9d0c5}
-.lodge-gallery-mosaic{display:grid;grid-template-columns:1.65fr 1fr 1fr;grid-template-rows:repeat(2,225px);gap:10px}
+.lodge-gallery-mosaic{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:repeat(3,175px);gap:10px}
 .lodge-photo-button{display:block;position:relative;width:100%;min-width:0;min-height:0;height:100%;padding:0;border:0;border-radius:7px;overflow:hidden;text-align:left;cursor:zoom-in;background:#4b4034}
 .lodge-photo-button img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
 .lodge-photo-button:hover img{transform:scale(1.04)}
 .lodge-photo-button span{position:absolute;inset:auto 0 0;padding:32px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.67));font:400 21px/1.2 var(--serif);color:#fff}
-.lodge-gallery-photo-1{grid-row:span 2}
+.lodge-gallery-photo-1{grid-column:span 2;grid-row:span 2}
 .lodge-all-photos{margin:23px 0 0}
 .lodge-all-photos summary{display:flex;align-items:center;justify-content:center;gap:20px;width:max-content;max-width:100%;margin:0 auto;cursor:pointer;list-style:none;padding:12px 15px;color:#ead8b8;font:600 11px/1.4 var(--sans);text-transform:uppercase;letter-spacing:.14em}
 .lodge-all-photos summary::-webkit-details-marker{display:none}
@@ -98,7 +98,7 @@
 .lodge-chapter-inner{display:flex;overflow-x:auto;scrollbar-width:none}.lodge-chapter-inner::-webkit-scrollbar{display:none}.lodge-chapter-inner a{white-space:nowrap;flex:none;padding:17px 20px;font-size:23px}
 .lodge-dark-story{padding:80px 0 85px}.lodge-centered-intro h2{font-size:clamp(49px,12vw,70px)}.lodge-centered-intro>p{font-size:14px}
 .lodge-facts{grid-template-columns:repeat(2,minmax(0,1fr));margin:60px 0 68px}.lodge-facts>div{padding:23px 6px}.lodge-facts>div:nth-child(2){border-right:0}.lodge-facts>div:nth-child(-n+2){border-bottom:1px solid rgba(220,196,163,.25)}.lodge-facts strong{font-size:45px}
-.lodge-gallery-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:230px repeat(2,145px);gap:8px}.lodge-gallery-photo-1{grid-column:span 2;grid-row:span 1}.lodge-photo-button span{font-size:18px}
+.lodge-gallery-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:230px repeat(3,145px);gap:8px}.lodge-gallery-photo-1{grid-column:span 2;grid-row:span 1}.lodge-photo-button span{font-size:18px}
 .lodge-photo-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .lodge-copy-chapters{padding-top:65px;gap:45px}.lodge-copy-chapter{grid-template-columns:1fr;gap:11px;padding-top:31px}.lodge-copy-chapter h3{font-size:49px}.lodge-copy-chapter>p{font-size:14px}
 .lodge-split-photo{min-height:330px}.lodge-split-photo .lodge-photo-button{min-height:330px}.lodge-split-content{padding:65px 6vw 78px}.lodge-split-content h2,.lodge-floorplan-copy h2{font-size:clamp(49px,11vw,64px)}
