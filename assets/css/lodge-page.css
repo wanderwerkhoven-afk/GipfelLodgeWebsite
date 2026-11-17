@@ -57,7 +57,8 @@
 .lodge-copy-chapter{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,7vw,105px);padding-top:42px;border-top:1px solid var(--color-travertine);align-items:start}
 .lodge-copy-chapter h3{font-size:clamp(45px,5.1vw,75px);line-height:.98;margin:15px 0}
 .lodge-copy-chapter>p{font:400 clamp(15px,1.35vw,18px)/1.9 var(--sans);color:var(--color-warm-graphite);margin:0;max-width:635px}
-.lodge-split-section{display:grid;grid-template-columns:1.1fr .9fr;background:var(--color-section-taupe);color:var(--color-section-text)}
+.lodge-split-section{display:block;background:var(--color-section-taupe);color:var(--color-section-text)}
+.lodge-split-main{display:grid;grid-template-columns:1.1fr .9fr}
 .lodge-split-photo{min-height:560px;max-height:790px}
 .lodge-split-photo .lodge-photo-button{border-radius:0;min-height:560px}
 .lodge-split-photo .lodge-photo-button span{font-size:30px;padding:45px 35px 25px}
@@ -93,7 +94,7 @@
 .lodge-photo-dialog figcaption{font:400 22px var(--serif);padding:10px 3px}
 .lodge-photo-dialog-close{position:absolute;right:22px;top:22px;display:grid;place-items:center;width:43px;height:43px;background:var(--color-section-ivory);color:var(--lodge-dark);border:0;cursor:pointer}
 .lodge-editorial :is(a,button,summary):focus-visible{outline:2px solid var(--wood);outline-offset:3px}
-@media(max-width:960px){.lodge-split-section{grid-template-columns:1fr}.lodge-split-photo{min-height:410px;max-height:560px}.lodge-split-photo .lodge-photo-button{min-height:410px}.lodge-split-content{padding:70px max(6vw,30px)}.lodge-floorplan-layout{grid-template-columns:1fr}.lodge-equipment-lines{gap:0 24px}}
+@media(max-width:960px){.lodge-split-main{grid-template-columns:1fr}.lodge-split-photo{min-height:410px;max-height:560px}.lodge-split-photo .lodge-photo-button{min-height:410px}.lodge-split-content{padding:70px max(6vw,30px)}.lodge-floorplan-layout{grid-template-columns:1fr}.lodge-equipment-lines{gap:0 24px}}
 @media(max-width:640px){
 .lodge-cover{min-height:590px;height:94svh}.lodge-cover-inner{padding:145px 10px 70px}.lodge-cover h1{font-size:clamp(65px,15vw,90px)}
 .lodge-chapter-inner{display:flex;overflow-x:auto;scrollbar-width:none}.lodge-chapter-inner::-webkit-scrollbar{display:none}.lodge-chapter-inner a{white-space:nowrap;flex:none;padding:17px 20px;font-size:23px}
@@ -252,3 +253,30 @@
 .lodge-wood-collage{color:#f6f1e8}
 .lodge-wood-collage .lodge-gallery-heading p{color:#e6dacc}
 .lodge-wood-collage .lodge-all-photos summary{color:#f2dfc5}
+
+/* Four unmistakable chapters: framed number labels and curated photographic triptychs.
+   Photo rows reuse original repository JPG files; no fabricated floor plan. */
+.lodge-dark-story,.lodge-split-section,.lodge-equipment-chapter,.lodge-floorplan-chapter{position:relative}
+.lodge-dark-story{border-top:7px solid var(--color-natural-oak)}
+.lodge-split-section{border-top:7px solid var(--color-travertine)}
+.lodge-equipment-chapter{border-top:7px solid var(--color-natural-oak)}
+.lodge-floorplan-chapter{border-top:7px solid var(--color-travertine)}
+.lodge-chapter-photos{padding-top:clamp(65px,8vw,105px);padding-bottom:clamp(30px,5vw,65px)}
+.lodge-chapter-photo-header{display:flex;justify-content:space-between;align-items:baseline;gap:22px;border-top:1px solid var(--color-travertine);padding-top:20px;margin-bottom:23px}
+.lodge-chapter-photo-header .lodge-eyebrow{color:var(--wood)}
+.lodge-chapter-photo-header p{max-width:475px;font:400 13px/1.65 var(--sans);color:var(--color-warm-graphite);margin:0;text-align:right}
+.lodge-chapter-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,22px)}
+.lodge-chapter-photo-grid .lodge-photo-button{aspect-ratio:3/4;height:auto;min-height:0;border-radius:8px}
+.lodge-chapter-photo-grid .lodge-photo-button img{width:100%;height:100%;object-fit:cover}
+.lodge-chapter-photo-grid .lodge-photo-button span{font-size:clamp(19px,2vw,29px)}
+.lodge-split-section .lodge-chapter-photos{padding-bottom:90px}
+.lodge-floorplan-chapter .lodge-chapter-photos{padding-bottom:10px}
+@media(max-width:700px){
+  .lodge-chapter-photo-header{display:block}
+  .lodge-chapter-photo-header p{text-align:left;margin-top:9px}
+  .lodge-chapter-photo-grid{gap:8px}
+  .lodge-chapter-photo-grid .lodge-photo-button{aspect-ratio:2/3}
+  .lodge-chapter-photo-grid .lodge-photo-button span{font-size:15px;padding:25px 8px 10px}
+  .lodge-chapter-photos{padding-top:58px;padding-bottom:35px}
+  .lodge-split-section .lodge-chapter-photos{padding-bottom:66px}
+}
