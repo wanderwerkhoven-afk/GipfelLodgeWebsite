@@ -110,16 +110,20 @@
 
 /* Rich wooden photo section, spanning the viewport while the four chapters stay intact. */
 .lodge-wood-collage{
-  width:100vw;width:100dvw;
-  margin-left:calc(50% - 50vw);margin-left:calc(50% - 50dvw);
-  padding:clamp(65px,8vw,115px) 0 clamp(70px,9vw,125px);
+  box-sizing:border-box;
+  width:100%;
+  max-width:1220px;
+  margin:0 auto;
+  padding:clamp(45px,6vw,82px) clamp(18px,4vw,58px) clamp(48px,6vw,90px);
+  border-radius:10px;
+  overflow:hidden;
   background-color:#36271c;
   background-image:linear-gradient(rgba(31,22,16,.62),rgba(31,22,16,.70)),url("../images/textures/footer-barnwood-vertical.png");
   background-position:center top,center top;
   background-size:100% 100%,100% 100%;
   background-repeat:no-repeat;
 }
-.lodge-wood-collage-inner{width:calc(100% - 48px);max-width:1100px;margin:0 auto}
+.lodge-wood-collage-inner{width:100%;max-width:1100px;margin:0 auto}
 .lodge-wood-collage .lodge-gallery-heading{margin-bottom:50px}
 .lodge-wood-collage .lodge-gallery-heading .lodge-eyebrow{color:#d9bf98}
 .lodge-wood-collage .lodge-gallery-mosaic{
@@ -143,7 +147,8 @@
 .lodge-wood-collage .lodge-photo-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .lodge-wood-collage .lodge-all-photos{margin-top:38px}
 @media(max-width:700px){
-  .lodge-wood-collage-inner{width:calc(100% - 32px)}
+  .lodge-wood-collage{padding:45px 14px 52px;border-radius:8px}
+  .lodge-wood-collage-inner{width:100%}
   .lodge-wood-collage .lodge-gallery-mosaic{columns:2;column-gap:10px}
   .lodge-wood-collage .lodge-gallery-mosaic .lodge-photo-button{
     height:calc(var(--photo-height,260px) * .73);margin-bottom:10px;
