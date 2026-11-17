@@ -1050,14 +1050,25 @@ a.btn:focus-visible,
 /* The mountain and footer use exactly the same underlying image, not separate tiles. */
 
 /* New trim-transparent divider: exact source ratio, zero extra bottom gap. */
+/* Let the mountain silhouette overlap the footer by a few CSS pixels.
+   Their wood is painted once by .footer-wood-region, so no duplicate texture
+   or join line can appear between the two surfaces. */
 .footer-wood-region .footer-mountain-edge{
   aspect-ratio:2172 / 245;
   height:auto;
   min-height:0;
-  margin:0;
+  margin:0 0 -5px;
+  position:relative;
+  z-index:2;
   overflow:hidden;
+  border:0;
 }
-.footer-wood-region .footer-mountain-edge+.footer{margin-top:-1px}
+.footer-wood-region .footer-mountain-edge+.footer{
+  position:relative;
+  z-index:1;
+  margin-top:0;
+  border-top:0;
+}
 
 /* TEMPORARY NAVY COMPARISON — from Gipfel-Lodge:
    css/site_css/base/variables.css --color-primary: #20303D.
