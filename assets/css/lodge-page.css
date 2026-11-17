@@ -48,7 +48,7 @@
 .lodge-editorial-feature-facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
 .lodge-editorial-feature-facts span{padding:10px 15px;border:1px solid var(--color-natural-oak);font:500 12px var(--sans)}
 .lodge-equipment{padding:0 0 110px}
-.lodge-equipment-imageband{min-height:530px;display:flex;align-items:center;color:#fff;text-align:center;background:linear-gradient(#19191880,#191918ae),url("../images/pictures/kitchen-1.png") center/cover}
+.lodge-equipment-imageband{min-height:530px;display:flex;align-items:center;color:#fff;text-align:center;background:linear-gradient(#19191880,#191918ae),url("../images/Foto-collage-woning/Kitchen-1.jpg") center/cover}
 .lodge-equipment-imageband .kicker{color:#e7d0ab}
 .lodge-equipment-intro{font:400 clamp(21px,2.6vw,31px)/1.45 var(--serif);text-align:center;max-width:770px;margin:75px auto 65px}
 .lodge-editorial-amenities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,7vw,100px)}
@@ -110,3 +110,8 @@
  .lodge-photo-right{grid-column:3 / -1;height:clamp(260px,91vw,430px)}
  .lodge-photo-story-item figcaption{font-size:21px;margin-top:10px}
 }
+
+/* Keep the expanded original photo story graceful even with many images. */
+.lodge-photo-story-grid{row-gap:clamp(36px,5.5vw,85px)}
+.lodge-photo-story-item img{background:var(--color-section-taupe)}
+@media(max-width:590px){.lodge-photo-story-grid{row-gap:35px}}
