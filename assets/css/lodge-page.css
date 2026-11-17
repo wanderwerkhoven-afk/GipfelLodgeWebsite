@@ -1,14 +1,6 @@
 /* Gipfel Lodge detail page — shares the global design system and site navigation. */
 .lodge-detail-page{background:var(--color-section-ivory);color:var(--color-section-text)}
-.lodge-detail-page .topbar{background:rgba(248,246,240,.96);color:var(--footer-background);box-shadow:0 2px 20px rgba(30,26,21,.06)}
-.lodge-detail-page .topbar-logo,.lodge-detail-page .lang-toggle,.lodge-detail-page .topbar-hamburger{color:var(--footer-background)}
-.lodge-detail-page .hamburger-lines span{background:var(--footer-background)}
-.lodge-detail-page .topbar-book{background:var(--footer-background);color:#fff}
-.lodge-detail-page .topbar.is-scrolled{background:rgba(248,246,240,.97)}
-.lodge-detail-page .topbar:not(.is-scrolled) .topbar-hamburger,.lodge-detail-page .topbar:not(.is-scrolled) .lang-toggle{color:var(--footer-background)}
-.lodge-detail-page .topbar:not(.is-scrolled) .hamburger-lines span{background:var(--footer-background)}
-.lodge-detail-page .topbar:not(.is-scrolled) .topbar-book{background:var(--footer-background);color:#fff}
-.lodge-detail-page .topbar .nav{color:#fff}
+/* The site-wide topbar is styled exclusively by home.css, matching the homepage. */
 .lodge-page-hero{height:clamp(590px,85svh,850px);position:relative;isolation:isolate;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .lodge-page-hero-photo,.lodge-page-hero-shade{position:absolute;inset:0;width:100%;height:100%}
 .lodge-page-hero-photo{object-fit:cover;object-position:center 52%;z-index:-2}
