@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const hero=document.querySelector('.hero');
+const hero=document.querySelector('.hero, .lodge-page-hero');
 const topbar=document.querySelector('.topbar');
 // Switch header only after its lower edge crosses the bottom of the hero.
 function updateTopbar(){
