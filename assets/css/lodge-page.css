@@ -280,3 +280,63 @@
   .lodge-chapter-photos{padding-top:58px;padding-bottom:35px}
   .lodge-split-section .lodge-chapter-photos{padding-bottom:66px}
 }
+
+/* Lodge photo preview matches the homepage's transparent, blurred zoom lightbox.
+   Carousel controls are the only additional UI. */
+.lodge-photo-dialog{
+  position:fixed;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;
+  padding:0;border:0;background:transparent;color:#fff;overflow:visible;
+}
+.lodge-photo-dialog[open]{display:flex;align-items:center;justify-content:center}
+.lodge-photo-dialog::backdrop{
+  background:var(--lightbox-backdrop-tint,rgba(22,21,20,.34));
+  -webkit-backdrop-filter:blur(var(--lightbox-backdrop-blur,16px));
+  backdrop-filter:blur(var(--lightbox-backdrop-blur,16px));
+  animation:lightbox-backdrop-in 560ms ease-out both;
+}
+.lodge-photo-dialog.is-closing::backdrop{animation:lightbox-backdrop-out 400ms ease-in both}
+.lodge-photo-dialog-shell{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.lodge-photo-dialog-top{position:absolute;z-index:3;inset:0 0 auto;display:flex;align-items:center;justify-content:flex-end;gap:15px;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right));pointer-events:none}
+.lodge-photo-dialog-top>span:first-child{display:none}
+.lodge-photo-dialog-counter{margin:0 58px 0 0;font:500 12px/1.3 var(--sans);letter-spacing:.08em;color:#fff;text-shadow:0 2px 8px #0009;opacity:0;transition:opacity 260ms}
+.lodge-photo-dialog-close{position:absolute;right:0;top:0;width:44px;height:44px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:rgba(32,30,28,.38);color:#fff;pointer-events:auto;opacity:0;transition:opacity 260ms}
+.lodge-photo-dialog-close:hover,.lodge-photo-dialog-nav:hover{background:rgba(32,30,28,.6)}
+.lodge-photo-dialog.is-visible .lodge-photo-dialog-close,.lodge-photo-dialog.is-visible .lodge-photo-dialog-counter{opacity:1}
+.lodge-photo-dialog-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:0;padding:0}
+.lodge-photo-dialog-stage figure{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;width:100%;height:100%;min-width:0;margin:0;padding:clamp(65px,9vh,90px) clamp(55px,8vw,105px) max(32px,env(safe-area-inset-bottom));overflow:visible}
+.lodge-photo-dialog-stage .lodge-photo-dialog-image{
+  display:block;flex:0 1 auto;width:auto;height:auto;aspect-ratio:auto;
+  max-width:100%;max-height:calc(100dvh - 190px);min-height:0;
+  object-fit:contain;background:transparent;border-radius:0;
+  box-shadow:0 16px 48px rgba(0,0,0,.18);will-change:transform;
+}
+.lodge-photo-dialog.is-entering .lodge-photo-dialog-image{opacity:0}
+.lodge-photo-dialog-stage .lodge-photo-dialog-caption{
+  flex:none;min-height:0;max-width:100%;padding:0;
+  font:400 clamp(27px,5vw,46px)/1.15 var(--serif);text-align:center;
+  color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45);
+  opacity:0;transition:opacity 260ms;
+}
+.lodge-photo-dialog.is-visible .lodge-photo-dialog-caption{opacity:1}
+.lodge-photo-dialog-nav{
+  position:absolute;z-index:2;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border:1px solid rgba(255,255,255,.7);
+  border-radius:50%;background:rgba(32,30,28,.38);color:#fff;
+  opacity:0;transition:opacity 260ms,background 180ms;
+}
+.lodge-photo-dialog-prev{left:max(12px,env(safe-area-inset-left))}
+.lodge-photo-dialog-next{right:max(12px,env(safe-area-inset-right))}
+.lodge-photo-dialog.is-visible .lodge-photo-dialog-nav{opacity:1}
+.lodge-photo-dialog-hint{display:none}
+@media(max-width:650px){
+  .lodge-photo-dialog-stage figure{padding:65px 52px max(32px,env(safe-area-inset-bottom));gap:16px}
+  .lodge-photo-dialog-stage .lodge-photo-dialog-image{max-height:calc(100dvh - 160px)}
+  .lodge-photo-dialog-stage .lodge-photo-dialog-caption{font-size:clamp(25px,6vw,34px)}
+  .lodge-photo-dialog-nav{width:36px;height:42px}
+  .lodge-photo-dialog-prev{left:8px}.lodge-photo-dialog-next{right:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lodge-photo-dialog::backdrop,.lodge-photo-dialog.is-closing::backdrop{animation:none}
+  .lodge-photo-dialog-stage .lodge-photo-dialog-image{will-change:auto}
+  .lodge-photo-dialog-close,.lodge-photo-dialog-counter,.lodge-photo-dialog-caption,.lodge-photo-dialog-nav{transition:none}
+}
