@@ -68,6 +68,19 @@ function move(step){
 document.querySelectorAll('.lodge-photo-button').forEach(button=>button.addEventListener('click',()=>{void open(button)}));
 prev.addEventListener('click',()=>move(-1));
 next.addEventListener('click',()=>move(1));
+dialog.querySelector('.lodge-photo-dialog-mobile-prev')?.addEventListener('click',()=>move(-1));
+dialog.querySelector('.lodge-photo-dialog-mobile-next')?.addEventListener('click',()=>move(1));
+dialog.querySelector('.lodge-photo-dialog-save')?.addEventListener('click',()=>{
+  // Use a direct image link: iOS Safari can offer Save to Photos from its image menu.
+  const src=photos[current]?.src;
+  if(!src)return;
+  const a=document.createElement('a');
+  a.href=src;
+  a.download=src.split('/').pop()?.split('?')[0]||'gipfel-lodge-foto.jpg';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
 closeButton.addEventListener('click',()=>{void close()});
 dialog.addEventListener('click',event=>{if(event.target===dialog)void close()});
 dialog.addEventListener('cancel',event=>{event.preventDefault();void close()});
