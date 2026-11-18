@@ -101,17 +101,42 @@ dialog.addEventListener('keydown',event=>{
   if(event.key==='ArrowLeft'){event.preventDefault();move(-1)}
   else if(event.key==='ArrowRight'){event.preventDefault();move(1)}
 });
-dialog.addEventListener('pointerdown',event=>{
-  if(event.pointerType==='mouse'||event.target.closest('button'))return;
-  touchStart={x:event.clientX,y:event.clientY,id:event.pointerId};
-},{passive:true});
-dialog.addEventListener('pointerup',event=>{
-  if(!touchStart||event.pointerId!==touchStart.id)return;
-  const dx=event.clientX-touchStart.x,dy=event.clientY-touchStart.y;
+// Gallery gestures accept diagonal swipes as long as horizontal travel is intentional.
+// Touch Events avoid iOS Safari's pointercancel during a diagonal finger movement.
+const swipeThreshold=32;
+function beginSwipe(x,y,id,target){
+  if(target.closest('button'))return;
+  touchStart={x,y,id,time:performance.now()};
+}
+function finishSwipe(x,y,id){
+  if(!touchStart||touchStart.id!==id)return;
+  const dx=x-touchStart.x,dy=y-touchStart.y;
+  const elapsed=performance.now()-touchStart.time;
   touchStart=null;
-  if(Math.abs(dx)>=45&&Math.abs(dx)>Math.abs(dy)*1.2)move(dx<0?1:-1);
-},{passive:true});
-dialog.addEventListener('pointercancel',()=>{touchStart=null},{passive:true});
+  // Horizontal travel must be meaningful, but a natural diagonal is fine.
+  if(Math.abs(dx)>=swipeThreshold && (Math.abs(dx)>=Math.abs(dy)*.45 || (elapsed<420 && Math.abs(dx)>=55))){
+    move(dx<0?1:-1);
+  }
+}
+if('ontouchstart' in window){
+  dialog.addEventListener('touchstart',event=>{
+    if(event.touches.length!==1){touchStart=null;return}
+    const t=event.touches[0];
+    beginSwipe(t.clientX,t.clientY,t.identifier,event.target);
+  },{passive:true});
+  dialog.addEventListener('touchend',event=>{
+    const t=[...event.changedTouches].find(t=>t.identifier===touchStart?.id);
+    if(t)finishSwipe(t.clientX,t.clientY,t.identifier);
+  },{passive:true});
+  dialog.addEventListener('touchcancel',()=>{touchStart=null},{passive:true});
+}else{
+  dialog.addEventListener('pointerdown',event=>{
+    if(event.pointerType==='mouse')return;
+    beginSwipe(event.clientX,event.clientY,event.pointerId,event.target);
+  },{passive:true});
+  dialog.addEventListener('pointerup',event=>finishSwipe(event.clientX,event.clientY,event.pointerId),{passive:true});
+  dialog.addEventListener('pointercancel',()=>{touchStart=null},{passive:true});
+}
 dialog.addEventListener('close',()=>{
   dialog.classList.remove('is-visible','is-entering','is-closing');
   unlockPageScroll();
