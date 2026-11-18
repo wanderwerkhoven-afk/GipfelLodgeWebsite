@@ -4,7 +4,7 @@
 const dialog=document.getElementById('lodgePhotoDialog');
 const gallery=document.querySelector('.lodge-gallery-mosaic');
 const overview=document.querySelector('.lodge-photo-overview');
-if(!dialog||!gallery||!overview||typeof dialog.showModal!=='function)return;
+if(!dialog||!gallery||!overview||typeof dialog.showModal!=='function')return;
 const image=dialog.querySelector('.lodge-photo-dialog-image');
 const caption=dialog.querySelector('.lodge-photo-dialog-caption');
 const counter=dialog.querySelector('.lodge-photo-dialog-counter');
