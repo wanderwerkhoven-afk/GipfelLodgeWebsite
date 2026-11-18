@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="assets/css/home.css?v=20261117-divider-seam">
-<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261117-chapter-photos">
+<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261118-home-lightbox-carousel">
 <title>Der Gipfel Lodge | Gipfel Lodge</title>
 </head>
 <body class="lodge-detail-page">
@@ -202,24 +202,5 @@
 </div>
 <script src="assets/js/home.js?v=20261117-cover-topbar" defer></script>
 <script src="assets/js/splash.js?v=20261116-vertical-wood" defer></script>
-</body></html<script src="assets/js/home.js?v=20261117-structured-navigation" defer></script>
-<script>
-(function(){
-const dialog=document.getElementById('lodgePhotoDialog');
-if(!dialog||!dialog.showModal)return;
-const photo=dialog.querySelector('img'),caption=dialog.querySelector('figcaption');
-let previous;
-document.querySelectorAll('.lodge-photo-button').forEach(button=>button.addEventListener('click',()=>{
-previous=button;photo.src=button.dataset.photo;photo.alt=button.querySelector('img')?.alt||'Gipfel Lodge';
-caption.textContent=button.dataset.caption||'';dialog.showModal();
-dialog.querySelector('.lodge-photo-dialog-close').focus();
-}));
-function close(){dialog.close()}
-dialog.querySelector('.lodge-photo-dialog-close').addEventListener('click',close);
-dialog.addEventListener('click',event=>{if(event.target===dialog)close()});
-dialog.addEventListener('close',()=>{photo.removeAttribute('src');previous?.focus({preventScroll:true})});
-})();
-</script>
-
-<script src="assets/js/lodge-gallery.js?v=20261117-chapter-photos" defer></script>
+<script src="assets/js/lodge-gallery.js?v=20261118-home-lightbox-carousel" defer></script>
 </body></html>
