@@ -17,17 +17,30 @@ if(!photos.length)return;
 let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null,backgroundTap=null,suppressOverlayClick=false;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 let lockedScrollY=0;
+let previousScrollBehavior='';
+let scrollRestoreFrame=0;
 function lockPageScroll(){
   if(document.body.classList.contains('lodge-gallery-scroll-locked'))return;
+  if(scrollRestoreFrame){cancelAnimationFrame(scrollRestoreFrame);scrollRestoreFrame=0}
   lockedScrollY=window.scrollY;
+  previousScrollBehavior=document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior='auto';
   document.body.style.top=`-${lockedScrollY}px`;
   document.body.classList.add('lodge-gallery-scroll-locked');
 }
 function unlockPageScroll(){
   if(!document.body.classList.contains('lodge-gallery-scroll-locked'))return;
+  // Restore the original page position instantly, never using the site's
+  // global smooth-scroll rule. iOS can otherwise animate from the collage top.
   document.body.classList.remove('lodge-gallery-scroll-locked');
   document.body.style.top='';
-  window.scrollTo(0,lockedScrollY);
+  window.scrollTo({left:0,top:lockedScrollY,behavior:'instant'});
+  scrollRestoreFrame=requestAnimationFrame(()=>{
+    scrollRestoreFrame=requestAnimationFrame(()=>{
+      document.documentElement.style.scrollBehavior=previousScrollBehavior;
+      scrollRestoreFrame=0;
+    });
+  });
 }
 const transform=(a,b)=>`translate(${a.left+a.width/2-b.left-b.width/2}px,${a.top+a.height/2-b.top-b.height/2}px) scale(${a.width/b.width},${a.height/b.height})`;
 async function animate(frames,duration){
@@ -70,6 +83,7 @@ async function close(){
   if(from?.width&&from.height&&to.width&&to.height){
     await animate([{transform:'none',opacity:1},{transform:transform(from,to),opacity:1}],400);
   }
+  // Native dialog focus restoration happens here; keep smooth scrolling off.
   dialog.close();closing=false;
 }
 function move(step){
