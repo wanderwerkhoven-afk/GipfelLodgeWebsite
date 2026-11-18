@@ -16,6 +16,19 @@ const photos=sources.map(button=>({button,src:button.dataset.photo,caption:butto
 if(!photos.length)return;
 let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+let lockedScrollY=0;
+function lockPageScroll(){
+  if(document.body.classList.contains('lodge-gallery-scroll-locked'))return;
+  lockedScrollY=window.scrollY;
+  document.body.style.top=`-${lockedScrollY}px`;
+  document.body.classList.add('lodge-gallery-scroll-locked');
+}
+function unlockPageScroll(){
+  if(!document.body.classList.contains('lodge-gallery-scroll-locked'))return;
+  document.body.classList.remove('lodge-gallery-scroll-locked');
+  document.body.style.top='';
+  window.scrollTo(0,lockedScrollY);
+}
 const transform=(a,b)=>`translate(${a.left+a.width/2-b.left-b.width/2}px,${a.top+a.height/2-b.top-b.height/2}px) scale(${a.width/b.width},${a.height/b.height})`;
 async function animate(frames,duration){
   if(reduced.matches||!image.animate)return;
@@ -39,7 +52,7 @@ async function open(button){
   dialog.classList.add('is-entering');
   try{await image.decode()}catch(e){}
   const from=button.querySelector('img')?.getBoundingClientRect();
-  dialog.showModal();closeButton.focus({preventScroll:true});
+  lockPageScroll();dialog.showModal();closeButton.focus({preventScroll:true});
   const to=image.getBoundingClientRect();
   dialog.classList.add('is-visible');
   if(from?.width&&from.height&&to.width&&to.height){
@@ -101,6 +114,7 @@ dialog.addEventListener('pointerup',event=>{
 dialog.addEventListener('pointercancel',()=>{touchStart=null},{passive:true});
 dialog.addEventListener('close',()=>{
   dialog.classList.remove('is-visible','is-entering','is-closing');
+  unlockPageScroll();
   image.removeAttribute('src');touchStart=null;opening=false;closing=false;
   opener?.focus({preventScroll:true});
 });
