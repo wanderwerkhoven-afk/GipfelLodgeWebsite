@@ -14,7 +14,7 @@ const closeButton=dialog.querySelector('.lodge-photo-dialog-close');
 const sources=[...gallery.querySelectorAll('.lodge-photo-button'),...overview.querySelectorAll('.lodge-photo-button')];
 const photos=sources.map(button=>({button,src:button.dataset.photo,caption:button.dataset.caption||'Gipfel Lodge',alt:button.querySelector('img')?.alt||'Gipfel Lodge'})).filter(item=>item.src);
 if(!photos.length)return;
-let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null;
+let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null,backgroundTap=null;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 let lockedScrollY=0;
 function lockPageScroll(){
@@ -95,7 +95,23 @@ dialog.querySelector('.lodge-photo-dialog-save')?.addEventListener('click',()=>{
   a.remove();
 });
 closeButton.addEventListener('click',()=>{void close()});
-dialog.addEventListener('click',event=>{if(event.target===dialog)void close()});
+// A tap on any empty part of the overlay closes it, without intercepting
+// the photo, caption, counter or navigation controls.
+function isEmptyOverlayTarget(target){
+  return target instanceof Element && !target.closest('button, .lodge-photo-dialog-image, .lodge-photo-dialog-caption, .lodge-photo-dialog-counter');
+}
+dialog.addEventListener('pointerdown',event=>{
+  if(event.pointerType==='touch')return;
+  backgroundTap={x:event.clientX,y:event.clientY,empty:isEmptyOverlayTarget(event.target)};
+});
+dialog.addEventListener('click',event=>{
+  if(!isEmptyOverlayTarget(event.target))return;
+  // Do not close after a drag or swipe.
+  if(backgroundTap && (Math.abs(event.clientX-backgroundTap.x)>12 || Math.abs(event.clientY-backgroundTap.y)>12))return;
+  if(touchStart)return;
+  void close();
+  backgroundTap=null;
+});
 dialog.addEventListener('cancel',event=>{event.preventDefault();void close()});
 dialog.addEventListener('keydown',event=>{
   if(event.key==='ArrowLeft'){event.preventDefault();move(-1)}
@@ -140,7 +156,7 @@ if('ontouchstart' in window){
 dialog.addEventListener('close',()=>{
   dialog.classList.remove('is-visible','is-entering','is-closing');
   unlockPageScroll();
-  image.removeAttribute('src');touchStart=null;opening=false;closing=false;
+  image.removeAttribute('src');touchStart=null;backgroundTap=null;opening=false;closing=false;
   opener?.focus({preventScroll:true});
 });
 })();
