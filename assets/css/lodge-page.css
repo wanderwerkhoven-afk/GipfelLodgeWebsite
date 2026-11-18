@@ -360,3 +360,15 @@
   .lodge-photo-dialog-mobile-controls .lodge-photo-dialog-save{gap:8px;padding:0 15px;font:500 12px/1.2 var(--sans);white-space:nowrap}
   .lodge-photo-dialog-mobile-controls button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 }
+
+/* iOS Safari scroll containment: keep the underlying page fixed while swiping photos. */
+body.lodge-gallery-scroll-locked{position:fixed!important;width:100%;left:0;right:0;overflow:hidden!important;overscroll-behavior:none}
+.lodge-photo-dialog,.lodge-photo-dialog-shell,.lodge-photo-dialog-stage,.lodge-photo-dialog-stage figure{
+  overscroll-behavior:contain;
+}
+.lodge-photo-dialog-stage figure,.lodge-photo-dialog-stage .lodge-photo-dialog-image{
+  touch-action:pan-x;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
