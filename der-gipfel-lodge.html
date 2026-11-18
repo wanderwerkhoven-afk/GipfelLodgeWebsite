@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="assets/css/home.css?v=20261117-divider-seam">
-<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261118-home-lightbox-carousel">
+<link rel="stylesheet" href="assets/css/lodge-page.css?v=20261118-mobile-gallery-controls">
 <title>Der Gipfel Lodge | Gipfel Lodge</title>
 </head>
 <body class="lodge-detail-page">
@@ -142,6 +142,11 @@
     <figure><img class="lodge-photo-dialog-image" alt=""><figcaption class="lodge-photo-dialog-caption"></figcaption></figure>
     <button class="lodge-photo-dialog-nav lodge-photo-dialog-next" type="button" aria-label="Volgende foto"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
   </div>
+  <div class="lodge-photo-dialog-mobile-controls" aria-label="Fotobediening">
+    <button class="lodge-photo-dialog-mobile-prev" type="button" aria-label="Vorige foto"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg></button>
+    <button class="lodge-photo-dialog-save" type="button" aria-label="Afbeelding opslaan"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 17v3h14v-3"/></svg><span>Afbeelding opslaan</span></button>
+    <button class="lodge-photo-dialog-mobile-next" type="button" aria-label="Volgende foto"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
   <p class="lodge-photo-dialog-hint">Veeg of gebruik de pijlen om meer foto's te bekijken</p>
 </div>
 </dialog>
@@ -202,5 +207,5 @@
 </div>
 <script src="assets/js/home.js?v=20261117-cover-topbar" defer></script>
 <script src="assets/js/splash.js?v=20261116-vertical-wood" defer></script>
-<script src="assets/js/lodge-gallery.js?v=20261118-lightbox-syntax-fix" defer></script>
+<script src="assets/js/lodge-gallery.js?v=20261118-mobile-save" defer></script>
 </body></html>
