@@ -14,7 +14,7 @@ const closeButton=dialog.querySelector('.lodge-photo-dialog-close');
 const sources=[...gallery.querySelectorAll('.lodge-photo-button'),...overview.querySelectorAll('.lodge-photo-button')];
 const photos=sources.map(button=>({button,src:button.dataset.photo,caption:button.dataset.caption||'Gipfel Lodge',alt:button.querySelector('img')?.alt||'Gipfel Lodge'})).filter(item=>item.src);
 if(!photos.length)return;
-let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null,backgroundTap=null;
+let current=0,opener=null,opening=false,closing=false,motion=null,touchStart=null,backgroundTap=null,suppressOverlayClick=false;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 let lockedScrollY=0;
 function lockPageScroll(){
@@ -108,7 +108,7 @@ dialog.addEventListener('click',event=>{
   if(!isEmptyOverlayTarget(event.target))return;
   // Do not close after a drag or swipe.
   if(backgroundTap && (Math.abs(event.clientX-backgroundTap.x)>12 || Math.abs(event.clientY-backgroundTap.y)>12))return;
-  if(touchStart)return;
+  if(touchStart||suppressOverlayClick){suppressOverlayClick=false;return}
   void close();
   backgroundTap=null;
 });
@@ -129,6 +129,7 @@ function finishSwipe(x,y,id){
   const dx=x-touchStart.x,dy=y-touchStart.y;
   const elapsed=performance.now()-touchStart.time;
   touchStart=null;
+  suppressOverlayClick=Math.hypot(dx,dy)>12;
   // Horizontal travel must be meaningful, but a natural diagonal is fine.
   if(Math.abs(dx)>=swipeThreshold && (Math.abs(dx)>=Math.abs(dy)*.45 || (elapsed<420 && Math.abs(dx)>=55))){
     move(dx<0?1:-1);
@@ -156,7 +157,7 @@ if('ontouchstart' in window){
 dialog.addEventListener('close',()=>{
   dialog.classList.remove('is-visible','is-entering','is-closing');
   unlockPageScroll();
-  image.removeAttribute('src');touchStart=null;backgroundTap=null;opening=false;closing=false;
+  image.removeAttribute('src');touchStart=null;backgroundTap=null;suppressOverlayClick=false;opening=false;closing=false;
   opener?.focus({preventScroll:true});
 });
 })();
